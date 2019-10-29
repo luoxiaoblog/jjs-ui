@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import './element'
+
+import './assets/styles/reset.css'
 
 import demoBlock from './components/demo-block.vue'
 import MainFooter from './components/footer.vue'
