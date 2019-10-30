@@ -1,45 +1,35 @@
 <template>
   <div class="side-nav">
-    <el-menu default-active="2"
-             class="el-menu-vertical-demo"
-             @open="handleOpen"
-             @close="handleClose">
-      <el-submenu index="1">
+    <el-menu default-active="2" @open="handleOpen" @close="handleClose">
+      <el-submenu v-for="(item, i) in data" :key="i" :index="item.name">
         <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
+          <i :class="item.icon" class="menu-icon"></i>
+          <span>{{ item.name }}</span>
         </template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
+        <el-menu-item
+          v-for="(item, j) in item.children"
+          :key="j"
+          :index="i + '-' + j"
+        >
+          <router-link
+            class=""
+            active-class="active"
+            :to="base + item.path"
+            exact
+            v-text="item.name"
+          >
+          </router-link>
+        </el-menu-item>
       </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3"
-                    disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
     </el-menu>
   </div>
 </template>
 <script>
 export default {
+  props: {
+    data: Array,
+    base: String
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath)
@@ -60,5 +50,19 @@ export default {
   min-width: 260px;
   background-color: #fff;
   box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+.el-submenu .el-menu-item {
+  padding: 0 !important;
+}
+
+.el-submenu .el-menu-item a {
+  display: block;
+  height: 100%;
+  padding: 0 45px;
 }
 </style>
