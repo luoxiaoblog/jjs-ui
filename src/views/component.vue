@@ -1,7 +1,14 @@
 <template>
-  <div class="page-container page-component">
-    <side-nav :data="navsData" :base="`/component`"></side-nav>
-    <router-view></router-view>
+  <div class="page-component__scroll el-scrollbar">
+    <div
+      class="el-scrollbar__wrap"
+      style="margin-bottom: -17px; margin-right: -17px;"
+    >
+      <div class="page-container page-component">
+        <side-nav :data="navsData" :base="`/component`"></side-nav>
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -18,9 +25,12 @@ export default {
 }
 </script>
 <style lang="scss">
+.page-component-wrapper {
+  padding: 64px 20px 100px 280px;
+}
 .page-component__scroll {
-  height: calc(100% - 80px);
-  margin-top: 80px;
+  height: calc(100% - 64px);
+  margin-top: 64px;
 
   .el-scrollbar__wrap {
     overflow-x: auto;
@@ -54,7 +64,6 @@ export default {
 
   .side-nav {
     height: 100%;
-    padding-top: 50px;
     padding-bottom: 50px;
     padding-right: 0;
 

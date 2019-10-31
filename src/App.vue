@@ -19,9 +19,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.main-wrapper__menu--open {
-  padding-top: 64px;
-  padding-left: 260px;
-}
-</style>

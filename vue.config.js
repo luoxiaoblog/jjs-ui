@@ -1,23 +1,10 @@
 const path = require('path')
-
+const webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
   configureWebpack: {
     module: {
       rules: [
-        {
-          test: /\.(jsx?|babel|es6)$/,
-          include: process.cwd(),
-          loader: 'babel-loader'
-        },
-        {
-          test: /\.vue$/,
-          loader: 'vue-loader',
-          options: {
-            compilerOptions: {
-              preserveWhitespace: false
-            }
-          }
-        },
         {
           test: /\.md$/,
           use: [
@@ -35,6 +22,16 @@ module.exports = {
           ]
         }
       ]
-    }
+    },
+    plugins: [
+      // new VueLoaderPlugin(),
+      new webpack.LoaderOptionsPlugin({
+        vue: {
+          compilerOptions: {
+            preserveWhitespace: false
+          }
+        }
+      })
+    ]
   }
 }

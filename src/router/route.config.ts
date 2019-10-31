@@ -14,13 +14,13 @@ const registerRoute = (navConfig: any): any => {
   let route: any[] = []
   route.push({
     path: '/component', // 组件
-    redirect: '/component/index',
+    redirect: '/component/message',
     component: load('component'),
     children: [
       {
-        name: 'index',
-        path: 'index',
-        component: loadDocs('index')
+        name: 'message',
+        path: 'message',
+        component: loadDocs('message')
       }
     ]
   })

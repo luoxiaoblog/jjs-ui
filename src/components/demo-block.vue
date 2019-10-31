@@ -52,9 +52,8 @@
 <script type="text/babel">
 import compoLang from '../i18n/component.json'
 // import Element from 'main/index.js'
-// import Element from  'element-ui'
 import { stripScript, stripStyle, stripTemplate } from '../util'
-// const { version } = Element
+const { version } = Element
 
 export default {
   data() {

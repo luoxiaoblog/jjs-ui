@@ -64,5 +64,6 @@ export default {
   display: block;
   height: 100%;
   padding: 0 45px;
+  color: #6e6e6e;
 }
 </style>
