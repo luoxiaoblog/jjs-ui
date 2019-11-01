@@ -19,3 +19,14 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  height: calc(100% - 64px);
+  margin-top: 64px;
+}
+</style>

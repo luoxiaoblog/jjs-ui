@@ -1,9 +1,6 @@
 <template>
   <div class="page-component__scroll el-scrollbar">
-    <div
-      class="el-scrollbar__wrap"
-      style="margin-bottom: -17px; margin-right: -17px;"
-    >
+    <div class="el-scrollbar__wrap">
       <div class="page-container page-component">
         <side-nav :data="navsData" :base="`/component`"></side-nav>
         <router-view></router-view>
@@ -29,8 +26,8 @@ export default {
   padding: 64px 20px 100px 280px;
 }
 .page-component__scroll {
-  height: calc(100% - 64px);
-  margin-top: 64px;
+  height: 100%;
+  margin-left: 260px;
 
   .el-scrollbar__wrap {
     overflow-x: auto;

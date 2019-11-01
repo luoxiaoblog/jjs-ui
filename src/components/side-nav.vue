@@ -46,6 +46,7 @@ export default {
   top: 64px;
   bottom: 0;
   left: 0;
+  z-index: 3000;
   padding: 0;
   min-width: 260px;
   background-color: #fff;

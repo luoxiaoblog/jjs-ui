@@ -24,24 +24,52 @@ const registerRoute = (navConfig: any): any => {
       }
     ]
   })
-  navConfig.forEach((nav: any) => {
-    if (nav.href) return
-    if (nav.groups) {
-      nav.groups.forEach((group: any) => {
-        group.list.forEach((nav: any) => {
-          addRoute(nav)
-        })
-      })
-    } else if (nav.children) {
-      nav.children.forEach((nav: any) => {
-        addRoute(nav)
+  navConfig.forEach((level1: any) => {
+    let path = level1.path
+    if (level1.href) return
+    if (navConfig.children) {
+      level1.children.forEach((level2: any) => {
+        level2.parentPath = path
+        if (level2.groups) {
+          level2.groups.forEach((group: any) => {
+            group.list.forEach((groupItem: any) => {
+              addRoute(groupItem)
+            })
+          })
+        } else if (level2.children) {
+          level2.children.forEach((level3: any) => {
+            addRoute(level3)
+          })
+        } else {
+          addRoute(level2)
+        }
+        addRoute(level2)
       })
     } else {
-      addRoute(nav)
+      addRoute(level1)
     }
   })
+  // navConfig.forEach((nav: any) => {
+  //   if (nav.href) return
+  //   if (nav.groups) {
+  //     nav.groups.forEach((group: any) => {
+  //       group.list.forEach((nav: any) => {
+  //         addRoute(nav)
+  //       })
+  //     })
+  //   } else if (nav.children) {
+  //     nav.children.forEach((nav: any) => {
+  //       addRoute(nav)
+  //     })
+  //   } else {
+  //     addRoute(nav)
+  //   }
+  // })
   function addRoute(page: any) {
-    const component = loadDocs(page.path.slice(1))
+    let docPath = page.parentPath
+      ? page.parentPath.slice(1) + '/' + page.path
+      : page.path.slice(1)
+    const component = loadDocs(docPath)
     let child = {
       path: page.path.slice(1),
       meta: {

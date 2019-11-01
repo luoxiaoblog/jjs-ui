@@ -1,34 +1,35 @@
 export default [
   {
-    name: 'PC UI',
-    icon: 'iconfont iconpc-f',
-    component: '',
+    name: '新系统',
+    icon: 'iconfont iconsystem',
+    path: '/new-sys',
     children: [
       {
         name: '布局',
-        path: '/pcui-layout'
+        path: '/layout'
       },
       {
         name: '表单',
-        path: '/pcui-form'
+        path: '/form'
       },
       {
         name: '表格',
-        path: '/pcui-table'
+        path: '/table'
       },
       {
         name: '详情',
-        path: '/pcui-detail'
+        path: '/detail'
       },
       {
         name: '弹窗',
-        path: '/pcui-dialog'
+        path: '/dialog'
       }
     ]
   },
   {
-    name: 'PC 组件',
-    icon: 'iconfont iconbujian',
+    name: '房源网 PC',
+    icon: 'iconfont iconpc-f',
+    path: '/fang-pc',
     children: [
       {
         name: '上传',
@@ -41,8 +42,9 @@ export default [
     ]
   },
   {
-    name: 'WAP',
+    name: '房源网 WAP',
     icon: 'iconfont iconshouji',
+    path: '/fang-wap',
     children: [
       {
         name: '子菜单',
@@ -53,6 +55,7 @@ export default [
   {
     name: '轻应用',
     icon: 'iconfont iconqingyingyongxuanzhong',
+    path: '/qyy',
     children: [
       {
         name: '轻应用子菜单',
