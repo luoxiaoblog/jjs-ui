@@ -1,33 +1,48 @@
 <template>
-  <div class="page-component__scroll el-scrollbar">
-    <div class="el-scrollbar__wrap">
-      <div class="page-container page-component">
-        <side-nav :data="navsData" :base="`/component`"></side-nav>
-        <router-view></router-view>
+  <div class="page-component">
+    <side-nav :data="navsData" :base="`/component`"></side-nav>
+    <div class="page-component__scroll" :style="{ 'margin-left': marginLeft }">
+      <div class="el-scrollbar__wrap">
+        <div class="page-container page-component">
+          <router-view></router-view>
+        </div>
       </div>
+      <el-backtop
+        target=".page-component__scroll .el-scrollbar__wrap"
+      ></el-backtop>
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import navsData from '../nav.config'
+import bus from '../bus'
 
 export default {
   props: {},
+  computed: {
+    marginLeft() {
+      return this.isCollapse ? '84px' : '260px'
+    }
+  },
   data() {
     return {
-      navsData
+      navsData,
+      isCollapse: true
     }
+  },
+  created() {
+    bus.$on('ON_COLLAPSE_CHANGE', val => {
+      this.isCollapse = val
+    })
   }
 }
 </script>
 <style lang="scss">
-.page-component-wrapper {
-  padding: 64px 20px 100px 280px;
-}
 .page-component__scroll {
   height: 100%;
   margin-left: 260px;
+  transition: 0.3s all;
 
   .el-scrollbar__wrap {
     overflow-x: auto;
@@ -40,23 +55,6 @@ export default {
 
   &.page-container {
     padding: 0;
-  }
-
-  .page-component__nav {
-    width: 240px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    margin-top: 80px;
-    transition: padding-top 0.3s;
-
-    .el-scrollbar__wrap {
-      height: 100%;
-    }
-
-    &.is-extended {
-      padding-top: 0;
-    }
   }
 
   .side-nav {
@@ -159,66 +157,6 @@ export default {
   .back-top-fade-leave-active {
     transform: translateY(-30px);
     opacity: 0;
-  }
-}
-
-@media (min-width: 1140px) {
-  .page-component__content {
-    transition: padding-right 0.3s ease;
-    &.theme-config {
-      padding-right: 26%;
-    }
-  }
-  .page-container.page-component {
-    transition: all 0.3s ease;
-    &.theme-config {
-      width: 98%;
-      .page-component__nav {
-        animation-delay: 1s;
-        padding-left: 2%;
-      }
-    }
-  }
-}
-
-@media (min-width: 1600px) {
-  .page-component__content {
-    &.theme-config {
-      padding-right: 25%;
-    }
-  }
-  .page-container.page-component {
-    &.theme-config {
-      width: 1600px;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .page-component {
-    .page-component__nav {
-      width: 100%;
-      position: static;
-      margin-top: 0;
-    }
-    .side-nav {
-      padding-top: 0;
-      padding-left: 50px;
-    }
-    .page-component__content {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    .content {
-      padding-top: 0;
-    }
-    .content > table {
-      overflow: auto;
-      display: block;
-    }
-    .page-component-up {
-      display: none;
-    }
   }
 }
 </style>

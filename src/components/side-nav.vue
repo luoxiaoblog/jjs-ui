@@ -1,6 +1,11 @@
 <template>
   <div class="side-nav">
-    <el-menu default-active="2" @open="handleOpen" @close="handleClose">
+    <el-menu
+      default-active="2"
+      @open="handleOpen"
+      @close="handleClose"
+      :collapse="isCollapse"
+    >
       <el-submenu v-for="(item, i) in data" :key="i" :index="item.name">
         <template slot="title">
           <i :class="item.icon" class="menu-icon"></i>
@@ -45,10 +50,16 @@
   </div>
 </template>
 <script>
+import bus from '../bus'
 export default {
   props: {
     data: Array,
     base: String
+  },
+  data: () => {
+    return {
+      isCollapse: true
+    }
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -57,6 +68,11 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath)
     }
+  },
+  created() {
+    bus.$on('ON_COLLAPSE_CHANGE', val => {
+      this.isCollapse = val
+    })
   }
 }
 </script>
@@ -68,9 +84,13 @@ export default {
   left: 0;
   z-index: 3000;
   padding: 0;
-  width: 260px;
+  // max-width: 260px;
   background-color: #fff;
   box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.el-menu:not(.el-menu--collapse) {
+  width: 260px;
 }
 
 .menu-icon {
@@ -89,5 +109,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.el-submenu .el-menu-item a.active {
+  color: #409eff;
 }
 </style>

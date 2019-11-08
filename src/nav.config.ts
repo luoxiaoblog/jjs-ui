@@ -8,6 +8,14 @@ export default [
         groupName: 'UI',
         groups: [
           {
+            name: '颜色',
+            path: '/color'
+          },
+          {
+            name: '字体',
+            path: '/typography'
+          },
+          {
             name: '列表页',
             path: '/listPage'
           },

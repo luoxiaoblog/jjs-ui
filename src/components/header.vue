@@ -1,7 +1,12 @@
 <template>
   <header class="header">
     <div class="menu-toggle">
-      <span class="menu-toggle__icon iconfont iconmenuClose"></span>
+      <span
+        class="menu-toggle__icon iconfont "
+        :class="[isCollapse ? 'iconmenuOpen' : 'iconmenuClose']"
+        @click="onCollapseChange"
+      >
+      </span>
     </div>
     <a class="logo">logo</a>
     <nav class="nav">
@@ -18,7 +23,21 @@
   </header>
 </template>
 <script>
-export default {}
+import bus from '../bus'
+
+export default {
+  data() {
+    return {
+      isCollapse: true
+    }
+  },
+  methods: {
+    onCollapseChange() {
+      this.isCollapse = !this.isCollapse
+      bus.$emit('ON_COLLAPSE_CHANGE', this.isCollapse)
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 $header-height: 64px;
@@ -47,6 +66,7 @@ $header-height: 64px;
 .menu-toggle__icon {
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .logo {
