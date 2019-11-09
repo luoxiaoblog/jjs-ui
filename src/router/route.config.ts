@@ -101,7 +101,14 @@ const generateMiscRoutes = (): any[] => {
     component: load('index')
   }
 
-  return [guideRoute, resourceRoute, indexRoute]
+  let templateRoute = {
+    path: '/template',
+    meta: {},
+    name: 'template',
+    component: load('template')
+  }
+
+  return [guideRoute, resourceRoute, indexRoute, templateRoute]
 }
 
 route = route.concat(generateMiscRoutes())

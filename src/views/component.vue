@@ -55,6 +55,14 @@ export default {
 
   &.page-container {
     padding: 0;
+
+    p {
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
   }
 
   .side-nav {
@@ -158,5 +166,16 @@ export default {
     transform: translateY(-30px);
     opacity: 0;
   }
+}
+
+pre {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: transparent;
+  border: none;
 }
 </style>

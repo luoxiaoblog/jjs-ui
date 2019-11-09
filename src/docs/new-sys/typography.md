@@ -132,6 +132,5 @@
 ### Font-family 代码
 
 ```css
-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
-  'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+font-family: font-family: "宋体", "微软雅黑", "Helvetica", "Arial";
 ```

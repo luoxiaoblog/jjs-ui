@@ -11,7 +11,7 @@
     <a class="logo">logo</a>
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-list__item"><a href="#">导航</a></li>
+        <li class="nav-list__item"><a href="/template">模板</a></li>
         <li class="nav-list__item"><a href="#">导航</a></li>
         <li class="nav-list__item"><a href="#">导航</a></li>
         <li class="nav-list__item"><a href="#">导航</a></li>
@@ -77,6 +77,7 @@ $header-height: 64px;
   text-align: center;
   font-size: 30px;
   color: #fff;
+  background: transparent;
 }
 
 .nav-list {

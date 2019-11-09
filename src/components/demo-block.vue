@@ -250,6 +250,12 @@ export default {
     padding: 24px;
   }
 
+  .source::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
   .meta {
     background-color: #fafafa;
     border-top: solid 1px #eaeefb;
