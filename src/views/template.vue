@@ -5,12 +5,13 @@
       <el-row :gutter="30">
         <el-col :span="8">
           <el-card :body-style="{ 'padding-bottom': 0 }">
-            <img class="el-card-image"
-                 src="@/assets/images/newSysListPage.png"
-                 alt="" />
+            <img
+              class="el-card-image"
+              src="@/assets/images/newSysListPage.png"
+              alt=""
+            />
             <div class="text-content">
-              <a href="/template/listPage.html"
-                 target="_blank">
+              <a href="/template/listPage.html" target="_blank">
                 列表页
               </a>
             </div>
@@ -18,12 +19,13 @@
         </el-col>
         <el-col :span="8">
           <el-card :body-style="{ 'padding-bottom': 0 }">
-            <img class="el-card-image"
-                 src="@/assets/images/newSysListPage.png"
-                 alt="" />
+            <img
+              class="el-card-image"
+              src="@/assets/images/newSysListPage.png"
+              alt=""
+            />
             <div class="text-content">
-              <a href="/template/detailPage.html"
-                 target="_blank">
+              <a href="/template/detailPage.html" target="_blank">
                 详情页
               </a>
             </div>
@@ -31,25 +33,27 @@
         </el-col>
         <el-col :span="8">
           <el-card :body-style="{ 'padding-bottom': 0 }">
-            <img class="el-card-image"
-                 src="@/assets/images/newSysListPage.png"
-                 alt="" />
+            <img
+              class="el-card-image"
+              src="@/assets/images/newSysListPage.png"
+              alt=""
+            />
             <div class="text-content">
-              <a href="/template/detailPage.html"
-                 target="_blank">
-                详情页
+              <a href="/template/tabs.html" target="_blank">
+                tabs
               </a>
             </div>
           </el-card>
         </el-col>
         <el-col :span="8">
           <el-card :body-style="{ 'padding-bottom': 0 }">
-            <img class="el-card-image"
-                 src="@/assets/images/newSysListPage.png"
-                 alt="" />
+            <img
+              class="el-card-image"
+              src="@/assets/images/newSysListPage.png"
+              alt=""
+            />
             <div class="text-content">
-              <a href="/template/listPage.html"
-                 target="_blank">
+              <a href="/template/listPage.html" target="_blank">
                 列表页
               </a>
             </div>
@@ -57,12 +61,13 @@
         </el-col>
         <el-col :span="8">
           <el-card :body-style="{ 'padding-bottom': 0 }">
-            <img class="el-card-image"
-                 src="@/assets/images/newSysListPage.png"
-                 alt="" />
+            <img
+              class="el-card-image"
+              src="@/assets/images/newSysListPage.png"
+              alt=""
+            />
             <div class="text-content">
-              <a href="/template/detailPage.html"
-                 target="_blank">
+              <a href="/template/detailPage.html" target="_blank">
                 详情页
               </a>
             </div>
@@ -70,12 +75,13 @@
         </el-col>
         <el-col :span="8">
           <el-card :body-style="{ 'padding-bottom': 0 }">
-            <img class="el-card-image"
-                 src="@/assets/images/newSysListPage.png"
-                 alt="" />
+            <img
+              class="el-card-image"
+              src="@/assets/images/newSysListPage.png"
+              alt=""
+            />
             <div class="text-content">
-              <a href="/template/detailPage.html"
-                 target="_blank">
+              <a href="/template/detailPage.html" target="_blank">
                 详情页
               </a>
             </div>

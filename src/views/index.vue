@@ -50,7 +50,7 @@
 }
 .cards {
   margin: 0 auto 110px;
-  width: 1140px;
+  width: 1180px;
 
   .container {
     padding: 0;

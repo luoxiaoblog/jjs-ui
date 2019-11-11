@@ -1,10 +1,10 @@
 <template>
   <div id="app" :class="{ 'is-component': isComponent }">
     <main-header></main-header>
-    <div class="main-wrapper main-wrapper__menu--open">
+    <div class="main-wrapper main-wrapper__menu--open page-container">
       <router-view></router-view>
     </div>
-    <main-footer v-if="!isComponent"></main-footer>
+    <!-- <main-footer></main-footer> -->
   </div>
 </template>
 
@@ -26,7 +26,6 @@ export default {
 }
 
 .main-wrapper {
-  height: calc(100% - 64px);
-  margin-top: 64px;
+  height: 100%;
 }
 </style>

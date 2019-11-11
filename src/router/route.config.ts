@@ -14,8 +14,11 @@ const registerRoute = (navConfig: any): any => {
   let route: any[] = []
   route.push({
     path: '/component', // 组件
-    redirect: '/component/message',
+    redirect: '/component/new-sys/color',
     component: load('component'),
+    meta: {
+      title: '组件'
+    },
     children: [
       {
         name: 'message',
@@ -89,26 +92,57 @@ const generateMiscRoutes = (): any[] => {
 
   let resourceRoute = {
     path: '/resource', // 资源
-    meta: {},
+    meta: {
+      title: ''
+    },
     name: 'resource',
     component: load('resource')
   }
 
   let indexRoute = {
     path: '/', // 首页
-    meta: {},
+    meta: {
+      title: '首页'
+    },
     name: 'home',
     component: load('index')
   }
 
   let templateRoute = {
     path: '/template',
-    meta: {},
+    meta: {
+      title: '模板'
+    },
     name: 'template',
     component: load('template')
   }
 
-  return [guideRoute, resourceRoute, indexRoute, templateRoute]
+  let shareRoute = {
+    path: '/share',
+    meta: {
+      title: '分享'
+    },
+    name: 'share',
+    component: load('share')
+  }
+
+  let changeLogRoute = {
+    path: '/changelog',
+    meta: {
+      title: '更新日志'
+    },
+    name: 'changeLog',
+    component: loadDocs('changelog')
+  }
+
+  return [
+    guideRoute,
+    resourceRoute,
+    indexRoute,
+    templateRoute,
+    shareRoute,
+    changeLogRoute
+  ]
 }
 
 route = route.concat(generateMiscRoutes())

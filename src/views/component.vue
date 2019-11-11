@@ -54,7 +54,8 @@ export default {
   height: 100%;
 
   &.page-container {
-    padding: 0;
+    width: 1180px;
+    padding: 0 0 100px;
 
     p {
       display: block;
@@ -82,7 +83,8 @@ export default {
   }
 
   .content {
-    padding-top: 50px;
+    padding-top: 64px;
+    padding-bottom: 100px;
 
     > {
       h3 {

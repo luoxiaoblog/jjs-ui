@@ -3,22 +3,59 @@ export default [
     name: '新系统',
     icon: 'iconfont iconsystem',
     path: '/new-sys',
+    meta: {
+      parent: '/',
+      title: '新系统'
+    },
     children: [
       {
         name: '颜色',
-        path: '/color'
+        path: '/color',
+        meta: {
+          title: '颜色'
+        }
       },
       {
         name: '字体',
-        path: '/typography'
+        path: '/typography',
+        meta: {
+          title: '字体'
+        }
       },
       {
         name: '按钮',
-        path: '/button'
+        path: '/button',
+        meta: {
+          title: '按钮'
+        }
       },
       {
         name: '标签',
-        path: '/label'
+        path: '/label',
+        meta: {
+          title: '标签'
+        }
+      },
+      {
+        name: '标签页',
+        path: '/tabs',
+        meta: {
+          title: '标签页'
+        }
+      },
+      {
+        name: '表格',
+        path: '/table',
+        meta: {
+          title: '表格'
+        }
+      },
+      {
+        name: '表单',
+        path: '/form',
+        meta: {
+          title: '表单'
+        }
       }
       // {
       //   groupName: '组件',
@@ -70,11 +107,17 @@ export default [
     children: [
       {
         name: '上传',
-        path: '/pccpt-upload'
+        path: '/pccpt-upload',
+        meta: {
+          parent: '/fang-pc'
+        }
       },
       {
         name: 'daterangepicker',
-        path: '/pccpt-daterangepicker'
+        path: '/pccpt-daterangepicker',
+        meta: {
+          parent: '/fang-pc'
+        }
       }
     ]
   },
@@ -85,7 +128,10 @@ export default [
     children: [
       {
         name: '子菜单',
-        path: '/wap-menu'
+        path: '/wap-menu',
+        meta: {
+          parent: '/fang-wap'
+        }
       }
     ]
   },
@@ -96,11 +142,17 @@ export default [
     children: [
       {
         name: '房源网API',
-        path: '/fyyapi'
+        path: '/fyyapi',
+        meta: {
+          parent: '/qyy'
+        }
       },
       {
         name: '乐办公API',
-        path: '/lbgapi'
+        path: '/lbgapi',
+        meta: {
+          parent: '/qyy'
+        }
       }
     ]
   }
