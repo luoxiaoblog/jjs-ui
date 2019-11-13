@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="renderer" content="webkit" />
+  <title>table</title>
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap-reset.css">
+  <link rel="stylesheet" href="https://front.leyoujia.com/plugins/tableSort/tableSort.css">
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css?v=1573435666000">
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css?v=1573435666000">
+  </link>
+
+<body>
+  <div id="main-content">
+    <div class="panel panel-border pt10 pr10 pb10 pl10">
+      <!-- 基础 -->
+      <table class="table-box" style="width: 100%;border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
+        <thead>
+          <tr>
+            <td>Column1</td>
+            <td>Column2</td>
+            <td>Column3</td>
+            <td>Column4</td>
+            <td>Column5</td>
+            <td>Column6</td>
+            <td>Column7</td>
+            <td>Column8</td>
+            <td>Column9</td>
+            <td>Column10</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <!-- 自定义列宽 -->
+      <table class="table-box" style="width: 100%; border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
+        <thead>
+          <tr>
+            <td width="100">Column1</td>
+            <td width="120">Column2</td>
+            <td width="140">Column3</td>
+            <td width="160">Column4</td>
+            <td width="180">Column5</td>
+            <td width="200">Column6</td>
+            <td width="">Column7</td>
+            <td width="">Column8</td>
+            <td width="">Column9</td>
+            <td width="">Column10</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <!-- 固定表头、固定列 -->
+      <div class="table-wrapper" style="max-height: 200px;">
+        <table class="table-box" style="width: 100%; table-layout: fixed;">
+          <thead>
+            <tr>
+              <td width="200">Column1</td>
+              <td width="200">Column2</td>
+              <td width="200">Column3</td>
+              <td width="200">Column4</td>
+              <td width="200">Column5</td>
+              <td width="200">Column6</td>
+              <td width="200">Column7</td>
+              <td width="200">Column8</td>
+              <td width="200">Column9</td>
+              <td width="200">Column10</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr>
+      <!-- 排序 -->
+      <table id="tableSort" class="table-box"
+        style="width: 100%; border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
+        <thead>
+          <tr>
+            <td width="" class="header sortIcon sorting arrow-sort">Column1</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column2</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column3</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column4</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column5</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column6</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column7</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column8</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column9</td>
+            <td width="" class="header sortIcon sorting arrow-sort">Column10</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Asdfsd</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>sdfvasd</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>xcvzcv</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <!-- 暂无数据 -->
+      <table id="tableSort" class="table-box"
+        style="width: 100%; border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
+        <thead>
+          <tr>
+            <td width="">Column1</td>
+            <td width="">Column2</td>
+            <td width="">Column3</td>
+            <td width="">Column4</td>
+            <td width="">Column5</td>
+            <td width="">Column6</td>
+            <td width="">Column7</td>
+            <td width="">Column8</td>
+            <td width="">Column9</td>
+            <td width="">Column10</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td height="75" class="text-center c666" colspan="10">暂无数据！</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://front.leyoujia.com/js/jquery.js"></script>
+  <script type="text/javascript" src="https://front.leyoujia.com/js/bootstrap.min.js"></script>
+  <script src="tableSort.js"></script>
+  <script>
+    $('#tableSort').on('click', 'thead td', function () {
+      var curIndex = $(this).index();
+      sortTable(this, 'tableSort', curIndex);
+    });
+
+    /*
+  *固定头部且固定列
+  *@param className:table外层div的选择器(String类型)
+  *@param cols: 需要固定的列(Number类型)
+  *注意:记得给外层设置最大高度
+  */
+    function fixedTds(className, cols) {
+      var css = '.table-box{border-collapse:separate;border-top:none;border-left:none;}/*要设置这个，不然边框会跑*/' +
+        '.table-box thead tr td.fixedTd,.table-box tbody tr td.fixedTd{position:relative;top:0px;z-index:1;background-color:white !important;border-right:1px solid #ddd !important;}' +
+        '.table-box thead tr:hover td.fixedTd,.table-box tbody tr:hover td.fixedTd{position:relative;top:0px;z-index:1;}' +
+        '.table-box tbody tr td.fixedTd{background-color:white !important;}' +
+        '.table-box tbody tr:hover td.fixedTd{background-color:#C1F9CB !important;}';
+      var style = document.createElement('style');
+      style.setAttribute('type', 'text/css');
+      var textCss = document.createTextNode(css);
+      style.appendChild(textCss);
+      var heads = document.getElementsByTagName("head");
+      if (heads.length) {
+        heads[0].appendChild(style);
+      } else {
+        document.documentElement.appendChild(style);
+      };
+
+      if (!className) { className = $('table').parent(); }
+      cols = cols || 0;
+      cols = cols > $(className).find('table tbody').find('tr').eq(0).find('td').length ? 0 : cols;
+      //给table外层添加样式
+      $(className).css({ 'overflow': 'auto', 'border-left': '1px solid #ddd', 'border-top': '1px solid #ddd' });
+      $(className).scroll(function () { //给table外面的div滚动事件绑定一个函数
+        var $divScroll = $(className);
+        var left = $divScroll.scrollLeft(); //获取滚动的距离
+        var top = $divScroll.scrollTop(); //获取滚动的距离
+        var trs = $divScroll.find(" table tr"); //获取表格的所有tr
+        $divScroll.find("table thead tr").find('td').addClass('fixedTd').css({ "top": top });//固定头部
+        for (var j = 0; j < cols; j++) {
+          $divScroll.find("table thead tr").find('td').eq(j).css({ 'zIndex': 2 });
+        };
+        trs.each(function (i) { //对每一个tr（每一行）进行处理
+          //固定列
+          for (var i = 0; i < cols; i++) {
+            //$divScroll.find("table tr").eq(0).find('td').eq(i).css({'zIndex':2});
+            $(this).children().eq(i).addClass('fixedTd').css({ "left": left });
+          }
+        });
+      });
+    };
+    fixedTds('.table-wrapper', 1);
+
+
+    // fixedTds('.table-scroll', 1)
+
+    // export default {
+    //   methods: {
+    //     fixedTds(className, cols) {
+    //       var css = '.table-box{border-collapse:separate;border-top:none;border-left:none;}/*要设置这个，不然边框会跑*/' +
+    //         '.table-box thead tr td.fixedTd,.table-box tbody tr td.fixedTd{position:relative;top:0px;z-index:1;background-color:white !important;border-right:1px solid #ddd !important;}' +
+    //         '.table-box thead tr:hover td.fixedTd,.table-box tbody tr:hover td.fixedTd{position:relative;top:0px;z-index:1;}' +
+    //         '.table-box tbody tr td.fixedTd{background-color:white !important;}' +
+    //         '.table-box tbody tr:hover td.fixedTd{background-color:#C1F9CB !important;}'
+    //       var style = document.createElement('style')
+    //       style.setAttribute('type', 'text/css')
+    //       var textCss = document.createTextNode(css)
+    //       style.appendChild(textCss)
+    //       var heads = document.getElementsByTagName("head")
+    //       if (heads.length) {
+    //         heads[0].appendChild(style)
+    //       } else {
+    //         document.documentElement.appendChild(style)
+    //       }
+
+    //       if (!className) { className = $('table').parent() }
+    //       cols = cols || 0
+    //       cols = cols > $(className).find('table tbody').find('tr').eq(0).find('td').length ? 0 : cols
+    //       //给table外层添加样式
+    //       $(className).css({ 'overflow': 'auto', 'border-left': '1px solid #ddd', 'border-top': '1px solid #ddd' })
+    //       $(className).scroll(function () { //给table外面的div滚动事件绑定一个函数
+    //         var $divScroll = $(className)
+    //         var left = $divScroll.scrollLeft() //获取滚动的距离
+    //         var top = $divScroll.scrollTop() //获取滚动的距离
+    //         var trs = $divScroll.find(" table tr") //获取表格的所有tr
+    //         $divScroll.find("table thead tr").find('td').addClass('fixedTd').css({ "top": top })//固定头部
+    //         for (var j = 0; j < cols; j++) {
+    //           $divScroll.find("table thead tr").find('td').eq(j).css({ 'zIndex': 2 })
+    //         }
+    //         trs.each(function (i) { //对每一个tr（每一行）进行处理
+    //           //固定列
+    //           for (var i = 0; i < cols; i++) {
+    //             //$divScroll.find("table tr").eq(0).find('td').eq(i).css({'zIndex':2});
+    //             $(this).children().eq(i).addClass('fixedTd').css({ "left": left })
+    //           }
+    //         })
+    //       })
+    //     }
+    //   },
+    //   mounted() {
+    //     this.fixedTds('.table-scroll', 1)
+    //   }
+    // }
+
+
+    // methods: {
+    //     fixedTds(className, cols) {
+    //       var css = '.table-box{border-collapse:separate;border-top:none;border-left:none;}/*要设置这个，不然边框会跑*/' +
+    //       '.table-box thead tr td.fixedTd,.table-box tbody tr td.fixedTd{position:relative;top:0px;z-index:1;background-color:white !important;border-right:1px solid #ddd !important;}' +
+    //       '.table-box thead tr:hover td.fixedTd,.table-box tbody tr:hover td.fixedTd{position:relative;top:0px;z-index:1;}' +
+    //       '.table-box tbody tr td.fixedTd{background-color:white !important;}' +
+    //       '.table-box tbody tr:hover td.fixedTd{background-color:#C1F9CB !important;}'
+    //       var style = document.createElement('style')
+    //       style.setAttribute('type', 'text/css')
+    //       var textCss = document.createTextNode(css)
+    //       style.appendChild(textCss)
+    //       var heads = document.getElementsByTagName("head")
+    //       if (heads.length) {
+    //         heads[0].appendChild(style)
+    //       } else {
+    //         document.documentElement.appendChild(style)
+    //       }
+
+    //       if (!className) { className = $('table').parent() }
+    //       cols = cols || 0
+    //       cols = cols > $(className).find('table tbody').find('tr').eq(0).find('td').length ? 0 : cols
+    //       //给table外层添加样式
+    //       $(className).css({ 'overflow': 'auto', 'border-left': '1px solid #ddd', 'border-top': '1px solid #ddd' })
+    //       $(className).scroll(function () { //给table外面的div滚动事件绑定一个函数
+    //         var $divScroll = $(className)
+    //         var left = $divScroll.scrollLeft() //获取滚动的距离
+    //         var top = $divScroll.scrollTop() //获取滚动的距离
+    //         var trs = $divScroll.find(" table tr") //获取表格的所有tr
+    //         $divScroll.find("table thead tr").find('td').addClass('fixedTd').css({ "top": top })//固定头部
+    //         for (var j = 0; j < cols; j++) {
+    //           $divScroll.find("table thead tr").find('td').eq(j).css({ 'zIndex': 2 })
+    //         }
+    //         trs.each(function (i) { //对每一个tr（每一行）进行处理
+    //           //固定列
+    //           for (var i = 0; i < cols; i++) {
+    //             //$divScroll.find("table tr").eq(0).find('td').eq(i).css({'zIndex':2});
+    //             $(this).children().eq(i).addClass('fixedTd').css({ "left": left })
+    //           }
+    //         })
+    //       })
+    //     }
+    //   },
+    //   mounted() {
+    //     this.fixedTds('.table-scroll', 1)
+    //   }
+  </script>
+</body>
+
+</html>
+
+</html>

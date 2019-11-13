@@ -1,6 +1,6 @@
 <template>
-  <header class="header">
-    <transition name="fade" mode="out-in" appear>
+  <header class="header" :class="[isHome ? 'no-shadow' : '']">
+    <div class="header-left">
       <div class="menu-toggle" v-if="isComponent">
         <span
           class="menu-toggle__icon iconfont "
@@ -9,33 +9,35 @@
         >
         </span>
       </div>
-    </transition>
-    <router-link class="logo" to="/"></router-link>
-    <span class="sys-name">前端组件平台</span>
-    <router-link to="/changelog" class="sys-version">V1.0.0</router-link>
-    <nav class="nav">
-      <ul class="nav-list">
-        <li class="nav-list__item">
-          <router-link to="/component">组件</router-link>
-        </li>
-        <li class="nav-list__item">
-          <router-link to="/template">模板</router-link>
-        </li>
-        <li class="nav-list__item">
-          <router-link to="/share">分享</router-link>
-        </li>
-      </ul>
-    </nav>
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item v-for="(item, i) in routeArr" :key="i">
-        <template v-if="routeArr.length - 1 == i">
-          {{ item.title }}
-        </template>
-        <a v-else :href="item.path">{{ item.title }}</a>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-    <div class="site-search">
-      <el-input placeholder="搜索"></el-input>
+      <router-link class="logo" to="/"></router-link>
+      <span class="sys-name">前端组件平台</span>
+      <router-link to="/changelog" class="sys-version">V1.0.0</router-link>
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item v-for="(item, i) in routeArr" :key="i">
+          <template v-if="routeArr.length - 1 == i">
+            {{ item.title }}
+          </template>
+          <a v-else :href="item.path">{{ item.title }}</a>
+        </el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div class="header-right">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <router-link to="/component">组件</router-link>
+          </li>
+          <li class="nav-list__item">
+            <router-link to="/template">模板</router-link>
+          </li>
+          <li class="nav-list__item">
+            <router-link to="/share">分享</router-link>
+          </li>
+        </ul>
+      </nav>
+      <div class="site-search" v-if="!isHome">
+        <el-input placeholder="搜索"></el-input>
+      </div>
     </div>
   </header>
 </template>
@@ -51,6 +53,24 @@ export default {
   },
   watch: {
     $route(to, from) {
+      this.refleshBreadcrumb(to, from)
+      this.resetIsCollapse(to, from)
+    }
+  },
+  computed: {
+    isComponent() {
+      return /^component-/.test(this.$route.name || '')
+    },
+    isHome() {
+      return 'home' === this.$route.name
+    }
+  },
+  methods: {
+    onCollapseChange() {
+      this.isCollapse = !this.isCollapse
+      bus.$emit('ON_COLLAPSE_CHANGE', this.isCollapse)
+    },
+    refleshBreadcrumb(to, from) {
       let routes = this.$router.options.routes
       let path = to.path.split('/')
       this.routeArr.length = 0
@@ -81,17 +101,11 @@ export default {
           path: '/'
         })
       }
-    }
-  },
-  computed: {
-    isComponent() {
-      return /^component-/.test(this.$route.name || '')
-    }
-  },
-  methods: {
-    onCollapseChange() {
-      this.isCollapse = !this.isCollapse
-      bus.$emit('ON_COLLAPSE_CHANGE', this.isCollapse)
+    },
+    resetIsCollapse(to, from) {
+      if (from.path.indexOf('component') === -1) {
+        this.isCollapse = true
+      }
     }
   }
 }
@@ -101,8 +115,9 @@ $header-height: 64px;
 
 .header {
   display: flex;
+  justify-content: center;
+  justify-content: space-between;
   position: fixed;
-  align-items: center;
   top: 0;
   right: 0;
   left: 0;
@@ -111,6 +126,17 @@ $header-height: 64px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
   background: #1976d2;
   color: #fff;
+
+  &.no-shadow {
+    box-shadow: none;
+  }
+
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
 
   .menu-toggle {
     width: $header-height;
@@ -126,6 +152,7 @@ $header-height: 64px;
   }
 
   .logo {
+    display: inline-block;
     width: 61px;
     height: 27px;
     margin: 0 10px 0 20px;

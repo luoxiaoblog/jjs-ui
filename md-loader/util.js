@@ -55,7 +55,17 @@ function genInlineComponentText(template, script) {
   // todo: 这里采用了硬编码有待改进
   script = script.trim()
   if (script) {
-    script = script.replace(/export\s+default/, 'const democomponentExport =')
+    const demoStart = script.indexOf('//DEMO_JS_SHOW_START')
+    const demoStartLen = '//DEMO_JS_SHOW_START'.length
+    const demoEnd = script.indexOf('//DEMO_JS_SHOW_END')
+    const demoEndLen = '//DEMO_JS_SHOW_END'.length
+    if (demoStart != -1 && demoEnd != -1) {
+      script = script
+        .replace(script.slice(demoStart, demoEnd + demoEndLen), '')
+        .replace(/export\s+default/, 'const democomponentExport =')
+    } else {
+      script = script.replace(/export\s+default/, 'const democomponentExport =')
+    }
   } else {
     script = 'const democomponentExport = {}'
   }

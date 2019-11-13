@@ -1,15 +1,17 @@
 <template>
   <div class="page-component">
-    <side-nav :data="navsData" :base="`/component`"></side-nav>
-    <div class="page-component__scroll" :style="{ 'margin-left': marginLeft }">
+    <side-nav :data="navsData"
+              :base="`/component`"></side-nav>
+    <div class="page-component__scroll"
+         :style="{ 'margin-left': marginLeft }">
       <div class="el-scrollbar__wrap">
         <div class="page-container page-component">
-          <router-view></router-view>
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
         </div>
       </div>
-      <el-backtop
-        target=".page-component__scroll .el-scrollbar__wrap"
-      ></el-backtop>
+      <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
     </div>
   </div>
 </template>

@@ -13,7 +13,6 @@ module.exports = function(source) {
   let id = 0 // demo 的 id
   let output = [] // 输出的内容
   let start = 0 // 字符串开始位置
-
   let commentStart = content.indexOf(startTag)
   let commentEnd = content.indexOf(endTag, commentStart + startTagLen)
   while (commentStart !== -1 && commentEnd !== -1) {

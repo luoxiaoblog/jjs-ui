@@ -1,16 +1,18 @@
 <style lang="scss" scoped>
 .banner {
   text-align: center;
+  background-image: linear-gradient(#1976d2, #8f93bf);
 }
 .banner-desc {
   padding-top: 20px;
 
   h1 {
-    font-size: 34px;
-    margin: 0 0 60px;
+    font-size: 26px;
+    // padding: 0 0 30px;
     line-height: 48px;
-    color: #555;
+    color: #fff;
     font-weight: bold;
+    letter-spacing: 2px;
   }
 
   p {
@@ -20,6 +22,15 @@
     margin: 10px 0 5px;
   }
 }
+
+.search-wrapper {
+  padding-bottom: 60px;
+
+  .el-autocomplete {
+    width: 360px;
+  }
+}
+
 .sponsors {
   display: flex;
   justify-content: center;
@@ -49,7 +60,7 @@
   }
 }
 .cards {
-  margin: 0 auto 110px;
+  margin: 80px auto 110px;
   width: 1180px;
 
   .container {
@@ -198,7 +209,17 @@
       <div class="banner-desc">
         <h1>网站快速成型工具</h1>
       </div>
+      <div class="search-wrapper">
+        <el-autocomplete
+          prefix-icon="el-icon-search"
+          class="inline-input"
+          placeholder="请输入内容"
+          :trigger-on-focus="false"
+          @select="handleSelect"
+        ></el-autocomplete>
+      </div>
     </div>
+
     <div class="cards">
       <ul class="container">
         <li>
@@ -252,6 +273,9 @@
 export default {
   data() {
     return {}
+  },
+  methods: {
+    handleSelect() {}
   },
   mounted() {}
 }
