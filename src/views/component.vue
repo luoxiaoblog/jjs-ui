@@ -1,9 +1,7 @@
 <template>
   <div class="page-component">
-    <side-nav :data="navsData"
-              :base="`/component`"></side-nav>
-    <div class="page-component__scroll"
-         :style="{ 'margin-left': marginLeft }">
+    <side-nav :data="navsData" :base="`/component`"></side-nav>
+    <div class="page-component__scroll" :style="{ 'margin-left': marginLeft }">
       <div class="el-scrollbar__wrap">
         <div class="page-container page-component">
           <keep-alive>
@@ -11,7 +9,9 @@
           </keep-alive>
         </div>
       </div>
-      <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
+      <el-backtop
+        target=".page-component__scroll .el-scrollbar__wrap"
+      ></el-backtop>
     </div>
   </div>
 </template>
@@ -19,7 +19,6 @@
 import Vue from 'vue'
 import navsData from '../nav.config'
 import bus from '../bus'
-
 export default {
   props: {},
   computed: {
@@ -28,10 +27,7 @@ export default {
     }
   },
   data() {
-    return {
-      navsData,
-      isCollapse: true
-    }
+    return { navsData, isCollapse: true }
   },
   created() {
     bus.$on('ON_COLLAPSE_CHANGE', val => {

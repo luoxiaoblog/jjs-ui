@@ -7,37 +7,107 @@
 :::demo
 
 ```html
-    <!-- 基础 -->
-    <table class="table-box" style="width: 100%;border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
-      <thead>
-        <tr>
-          <td width="180">日期</td>
-          <td width="180">姓名</td>
-          <td>地址</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2016-05-02</td>
-          <td>王小虎</td>
-          <td>上海市普陀区金沙江路 1518 弄</td>
-        </tr>
-        <tr>
-          <td>2016-05-02</td>
-          <td>王小虎</td>
-          <td>上海市普陀区金沙江路 1518 弄</td>
-        </tr>
-        <tr>
-          <td>2016-05-02</td>
-          <td>王小虎</td>
-          <td>上海市普陀区金沙江路 1518 弄</td>
-        </tr>
-      </tbody>
-    </table>
+<table
+  class="table-box"
+  style="width: 100%;border-left: 1px solid #ddd;border-top: 1px solid #ddd;"
+>
+  <thead>
+    <tr>
+      <td width="180">日期</td>
+      <td width="180">姓名</td>
+      <td>地址</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2016-05-02</td>
+      <td>王小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+    <tr>
+      <td>2016-05-02</td>
+      <td>王小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+    <tr>
+      <td>2016-05-02</td>
+      <td>王小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
 :::
 
+### 单选
+
+高亮展示选中行
+
+:::demo 点击行会为当前 tr 加上`current-row`class
+
+```html
+<style>
+  .table-box tr.current-row > td {
+    background-color: #ecf5ff;
+  }
+</style>
+
+<table
+  id="tableSingleSelect"
+  class="table-box"
+  style="width: 100%;border-left: 1px solid #ddd;border-top: 1px solid #ddd;"
+>
+  <thead>
+    <tr>
+      <td width="180">日期</td>
+      <td width="180">姓名</td>
+      <td>地址</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2016-05-02</td>
+      <td>王小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+    <tr>
+      <td>2016-05-02</td>
+      <td>王小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+    <tr>
+      <td>2016-05-02</td>
+      <td>王小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  //DEMO_JS_RUN_START
+  export default {
+    mounted() {
+      $('#tableSingleSelect').on('click', 'tbody tr', function() {
+        $(this)
+          .siblings()
+          .removeClass('current-row')
+          .end()
+          .addClass('current-row')
+      })
+    }
+  } //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+  $('#tableSingleSelect').on('click', 'tbody tr', function() {
+    $(this)
+      .siblings()
+      .removeClass('current-row')
+      .end()
+      .addClass('current-row')
+  })
+</script>
+```
+
+:::
 
 ### 固定表头和列
 
@@ -111,7 +181,7 @@
       </table>
     </div>
 
-    <script> 
+    <script>
     //DEMO_JS_RUN_START
     export default {
       methods: {
@@ -159,7 +229,7 @@
       mounted() {
         this.fixedTds('.table-scroll', 1)
       }
-    } 
+    }
     //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
     fixedTds('.table-scroll', 1)
 
@@ -203,64 +273,91 @@
         })
       })
     }//DEMO_JS_SHOW_END
-    </script> 
+    </script>
 ```
 
 :::
 
 ### 排序
 
-
 :::demo
 
 ```html
-    <table id="tableSort" class="table-box" style="width: 100%;border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
-      <thead>
-        <tr>
-          <td width="180" class="sortIcon sorting arrow-sort">日期</td>
-          <td width="180" class="sortIcon sorting arrow-sort">姓名</td>
-          <td class="sortIcon sorting arrow-sort">地址</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2019-11-11</td>
-          <td>王小虎</td>
-          <td>上海市普陀区金沙江路 1518 弄</td>
-        </tr>
-        <tr>
-          <td>2019-11-12</td>
-          <td>张小虎</td>
-          <td>上海市普陀区金沙江路 1518 弄</td>
-        </tr>
-        <tr>
-          <td>2019-11-13</td>
-          <td>李小虎</td>
-          <td>上海市普陀区金沙江路 1518 弄</td>
-        </tr>
-      </tbody>
-    </table>
+<table
+  id="tableSort"
+  class="table-box"
+  style="width: 100%;border-left: 1px solid #ddd;border-top: 1px solid #ddd;"
+>
+  <thead>
+    <tr>
+      <td width="180" class="sortIcon sorting arrow-sort">日期</td>
+      <td width="180" class="sortIcon sorting arrow-sort">姓名</td>
+      <td class="sortIcon sorting arrow-sort">地址</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2019-11-11</td>
+      <td>王小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+    <tr>
+      <td>2019-11-12</td>
+      <td>张小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+    <tr>
+      <td>2019-11-13</td>
+      <td>李小虎</td>
+      <td>上海市普陀区金沙江路 1518 弄</td>
+    </tr>
+  </tbody>
+</table>
 
-    <script>
-      //DEMO_JS_RUN_START
-      export default {
-        methods: {
-
-        },
-        mounted() {
-          $('#tableSort').on('click', 'thead td', function () {
-            var curIndex = $(this).index();
-            window.sortTable(this, 'tableSort', curIndex);
-          });
-        }
-      }
-      //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-      $('#tableSort').on('click', 'thead td', function () {
-        var curIndex = $(this).index();
-        sortTable(this, 'tableSort', curIndex);
-      });//DEMO_JS_SHOW_END
-    </script>
+<script>
+  //DEMO_JS_RUN_START
+  export default {
+    methods: {},
+    mounted() {
+      $('#tableSort').on('click', 'thead td', function() {
+        var curIndex = $(this).index()
+        sortTable(this, 'tableSort', curIndex)
+      })
+    }
+  }
+  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+  $('#tableSort').on('click', 'thead td', function() {
+    var curIndex = $(this).index()
+    sortTable(this, 'tableSort', curIndex)
+  }) 
+  //DEMO_JS_SHOW_END
+</script>
 ```
 
 :::
 
+### 暂无数据
+
+:::demo
+
+```html
+<table
+  class="table-box"
+  style="width: 100%;border-left: 1px solid #ddd;border-top: 1px solid #ddd;"
+>
+  <thead>
+    <tr>
+      <td width="180">日期</td>
+      <td width="180">姓名</td>
+      <td>地址</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td height="75" class="text-center c666" colspan="3">暂无数据！</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+:::

@@ -12,9 +12,10 @@
       <div class="description" v-if="$slots.default">
         <slot></slot>
       </div>
-      <div class="highlight">
+
+      <el-tabs v-model="activeName">
         <slot name="highlight"></slot>
-      </div>
+      </el-tabs>
     </div>
     <div
       class="demo-block-control"
@@ -63,10 +64,12 @@ export default {
         html: '',
         style: ''
       },
+
       hovering: false,
       isExpanded: false,
       fixedControl: false,
-      scrollParent: null
+      scrollParent: null,
+      activeName: 'html'
     }
   },
 
@@ -87,8 +90,8 @@ export default {
         style || ''
       ).trim()}\n`
       jsTpl = jsTpl
-        ? jsTpl + '\nvar Ctor = Vue.extend(Main)\nnew Ctor().$mount(\'#app\')'
-        : 'new Vue().$mount(\'#app\')'
+        ? jsTpl + '\nvar Ctor = Vue.extend(Main)\nnew Ctor().$mount("#app")'
+        : 'new Vue().$mount("#app")'
       const data = {
         js: jsTpl,
         css: cssTpl,
@@ -284,6 +287,7 @@ export default {
     code {
       color: #5e6d82;
       background-color: #e6effb;
+
       margin: 0 4px;
       display: inline-block;
       padding: 1px 5px;
@@ -309,6 +313,10 @@ export default {
         content: none;
       }
     }
+  }
+
+  .el-tabs__nav-wrap {
+    padding: 0 20px;
   }
 
   .demo-block-control {

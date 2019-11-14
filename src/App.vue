@@ -1,5 +1,6 @@
 <template>
-  <div id="app" :class="{ 'is-component': isComponent }">
+  <div id="app"
+       :class="{ 'is-component': isComponent }">
     <main-header></main-header>
     <div class="main-wrapper main-wrapper__menu--open page-container">
       <router-view></router-view>

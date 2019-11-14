@@ -10,7 +10,11 @@
   <link rel="stylesheet" href="https://front.leyoujia.com/plugins/tableSort/tableSort.css">
   <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css?v=1573435666000">
   <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css?v=1573435666000">
-  </link>
+  <style>
+    .table-box tr.current-row>td {
+      background-color: #ecf5ff;
+    }
+  </style>
 
 <body>
   <div id="main-content">
@@ -126,6 +130,80 @@
           </tr>
         </tbody>
       </table>
+      <hr>
+       <!-- 单选 -->
+       <table id="tableSingleSelect" class="table-box" style="width: 100%; border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
+          <thead>
+            <tr>
+              <td  width="30">序号</td>
+              <td width="">Column7</td>
+              <td width="">Column8</td>
+              <td width="">Column9</td>
+              <td width="">Column10</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+              <td>Cell</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <!-- 多选 -->
+        <table id="tableMutilSelect" class="table-box" style="width: 100%; border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
+           <thead>
+             <tr>
+               <td width="30"><input type="checkbox" class="select-all"></td>
+               <td width="">Column7</td>
+               <td width="">Column8</td>
+               <td width="">Column9</td>
+               <td width="">Column10</td>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td><input type="checkbox" class="select-row"></td>
+               <td>Cell</td>
+               <td>Cell</td>
+               <td>Cell</td>
+               <td>Cell</td>
+               
+             </tr>
+             <tr>
+              <td><input type="checkbox" class="select-row"></td>
+               <td>Cell</td>
+               <td>Cell</td>
+               <td>Cell</td>
+               <td>Cell</td>
+             </tr>
+             <tr>
+              <td><input type="checkbox" class="select-row"></td>
+               <td>Cell</td>
+               <td>Cell</td>
+               <td>Cell</td>
+               <td>Cell</td>
+             </tr>
+           </tbody>
+         </table>
       <hr>
       <!-- 固定表头、固定列 -->
       <div class="table-wrapper" style="max-height: 200px;">
@@ -330,8 +408,44 @@
 
   <script type="text/javascript" src="https://front.leyoujia.com/js/jquery.js"></script>
   <script type="text/javascript" src="https://front.leyoujia.com/js/bootstrap.min.js"></script>
+  <script src="https://front.leyoujia.com/plugins/icheck/icheck.min.js"></script>
   <script src="tableSort.js"></script>
   <script>
+
+    $('#tableMutilSelect').find('.select-row').on('ifChecked', function () {
+      var $curTr = $(this).parents('tr:eq(0)')
+      $curTr.addClass('selected');
+      if ($curTr.siblings().not('.selected').length == 0) {
+        $(this).parents('table:eq(0)').find('.select-all').iCheck('check');
+      }
+    }).on('ifUnchecked', function () {
+      $(this).parents('tr:eq(0)').removeClass('selected'); 
+    }).end()
+    .find('.select-all').on('ifChecked', function () {
+      $(this).parents('table:eq(0)').find('.select-row').iCheck('check');
+    })
+    
+    $('#tableMutilSelect').find('.select-all').on('ifUnchecked', function () {
+      $(this).parents('table:eq(0)').find('.select-row').iCheck('uncheck');
+    })
+
+
+    $('#tableSingleSelect').on('click', 'tbody tr', function () {
+      $(this).siblings().removeClass('current-row')
+      .end().addClass('current-row')
+    });
+
+    initiCheck('body input');
+
+    function  initiCheck(obj){
+        $(obj).iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%'
+        });
+    };
+
+
     $('#tableSort').on('click', 'thead td', function () {
       var curIndex = $(this).index();
       sortTable(this, 'tableSort', curIndex);

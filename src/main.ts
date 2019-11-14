@@ -3,7 +3,11 @@ import App from './App.vue'
 import router from './router'
 import './element'
 import hljs from 'highlight.js'
+import 'highlightjs-line-numbers.js'
+window.hljs = hljs
 import 'highlight.js/styles/github.css'
+// import 'highlight.js/styles/atom-one-light.css'
+// import 'highlight.js/styles/monokai-sublime.css'
 import './assets/styles/reset.css'
 import './assets/styles/common.scss'
 import './demo-styles/index.scss'
@@ -27,6 +31,10 @@ router.afterEach(route => {
   Vue.nextTick(() => {
     const blocks = document.querySelectorAll('pre code:not(.hljs)')
     Array.prototype.forEach.call(blocks, hljs.highlightBlock)
+
+    debugger
+
+    hljs.initLineNumbersOnLoad()
   })
 })
 
