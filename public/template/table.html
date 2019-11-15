@@ -8,12 +8,42 @@
   <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap-reset.css">
   <link rel="stylesheet" href="https://front.leyoujia.com/plugins/tableSort/tableSort.css">
+  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css?v=1573435666000">
   <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css?v=1573435666000">
   <style>
     .table-box tr.current-row>td {
       background-color: #ecf5ff;
     }
+
+    .form-item {
+      text-align: left;
+    }
+
+    label.form-item-label {
+      width: 90px;
+      color: #99a9bf;
+      text-align: right;
+      vertical-align: middle;
+      font-size: 14px;
+      color: #606266;
+      line-height: 28px;
+      padding: 0 12px 0 0;
+      box-sizing: border-box;
+    }
+
+    .form-item-content {
+      vertical-align: top;
+      line-height: 28px;
+      position: relative;
+      font-size: 14px;
+    }
+
+    .table-box__expanded-cell {
+      display: none;
+    }
+
+    
   </style>
 
 <body>
@@ -342,7 +372,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>Asdfsd</td>
+            <td>
+              <span class="fa fa-angle-right"></span>
+            </td>
             <td>Cell</td>
             <td>Cell</td>
             <td>Cell</td>
@@ -403,6 +435,62 @@
           </tr>
         </tbody>
       </table>
+
+      <hr>
+      <!-- 展开行 -->
+      <table id="tableExpand" class="table-box"
+        style="width: 100%; border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
+        <thead>
+          <tr>
+            <td width="50"></td>
+            <td width="">Column2</td>
+            <td width="">Column3</td>
+            <td width="">Column4</td>
+            <td width="">Column5</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="javascript:;" class="blue table-box__expand-toggle table-box__noexpand">展开</a></td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td colspan="5" class="table-box__expanded-cell">
+              <form>
+                <div class="form-item clearfix">
+                  <label class="fl form-item-label">aaaa</label>
+                  <div class="fl form-item-content">aaaaaaaa</div>
+                </div>
+                <div class="form-item clearfix">
+                  <label class="fl form-item-label">aaaa</label>
+                  <div class="fl form-item-content">aaaaaaaa</div>
+                </div>
+                <div class="form-item clearfix">
+                  <label class="fl form-item-label">aaaa</label>
+                  <div class="fl form-item-content">aaaaaaaa</div>
+                </div>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <td><a href="javascript:;" class="">展开</a></td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td><a href="javascript:;" class="">展开</a></td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -412,6 +500,14 @@
   <script src="tableSort.js"></script>
   <script>
 
+    $('#tableExpand').on('click', '.table-box__expand-toggle', function () {
+      var isExpanded = !$(this).hasClass('table-box__noexpand')
+      $(this).toggleClass('table-box__noexpand')
+             .parents('tr:eq(0)')
+             .next().find('.table-box__expanded-cell').toggle(!isExpanded)   
+      $(this).text(isExpanded ? '展开' : '收起')
+    })
+
     $('#tableMutilSelect').find('.select-row').on('ifChecked', function () {
       var $curTr = $(this).parents('tr:eq(0)')
       $curTr.addClass('selected');
@@ -420,12 +516,11 @@
       }
     }).on('ifUnchecked', function () {
       $(this).parents('tr:eq(0)').removeClass('selected'); 
+      $(this).parents('table:eq(0)').find('.select-all').prop('checked', false).parent().removeClass('checked');
     }).end()
     .find('.select-all').on('ifChecked', function () {
       $(this).parents('table:eq(0)').find('.select-row').iCheck('check');
-    })
-    
-    $('#tableMutilSelect').find('.select-all').on('ifUnchecked', function () {
+    }).on('ifUnchecked', function () {
       $(this).parents('table:eq(0)').find('.select-row').iCheck('uncheck');
     })
 

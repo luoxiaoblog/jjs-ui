@@ -36,7 +36,7 @@ module.exports = md => {
         res += `<el-tab-pane label="Css" name="css">
                   <div class="highlight">
                     <pre v-pre><code class="css">
-                    ${md.utils.escapeHtml(css)}
+                    ${css}
                     </code></pre>
                   </div>
                 </el-tab-pane>`
@@ -45,7 +45,7 @@ module.exports = md => {
         res += `<el-tab-pane label="Javascript" name="javascript">
                   <div class="highlight">
                     <pre v-pre><code class="javascript">
-                    ${md.utils.escapeHtml(javascript)}
+                    ${javascript}
                     </code></pre>
                   </div>
                 </el-tab-pane>`

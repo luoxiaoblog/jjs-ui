@@ -2,4 +2,31 @@
   .table-box tr.current-row > td {
     background-color: #ecf5ff;
   }
+
+  .form-item {
+    text-align: left;
+  }
+
+  label.form-item-label {
+    width: 90px;
+    color: #99a9bf;
+    text-align: right;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #666666;
+    line-height: 28px;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+  }
+
+  .form-item-content {
+    vertical-align: top;
+    line-height: 28px;
+    position: relative;
+    font-size: 12px;
+  }
+
+  .table-box__expanded-cell {
+    display: none;
+  }
 }
