@@ -27,13 +27,33 @@
         margin-left: 70px;
       }
 
-      .form-item__input {
-        margin-right: 5px;
+      .form-item__input-wrap {
+        float: left;
       }
 
       textarea {
         resize: vertical;
       }
+
+      /* .error {
+        color: #ff0000;
+      } */
+      .form-item__input-wrap.error input.error,
+      .form-item__input-wrap.error textarea.error,
+      .form-item__input-wrap.error .combo-input {
+        border: 1px solid #ff0000;
+      }
+
+      span.error {
+        float: left;
+        width: 20px;
+        height: 28px;
+        background-image: url('https://front.leyoujia.com/plugins/validform/images/error.png');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+
     </style>
   <body>
     <div id="main-content" class="line-28">
@@ -75,7 +95,9 @@
             <div class="form-item col-xs-4">
               <label class="form-item__label">建筑面积</label>
               <div class="form-item__content">
-                <input type="text" placeholder="请输入建筑面积" autocomplete="off">
+                <div class="form-item__input">  
+                  <input type="text" placeholder="请输入建筑面积" autocomplete="off">
+                </div>
               </div>
             </div>
           </div>
@@ -85,7 +107,9 @@
           <div class="form-item">
             <label class="form-item__label">活动名称</label>
             <div class="form-item__content">
-              <input type="text" placeholder="请输入活动名称" autocomplete="off">
+              <div class="form-item__input">  
+                <input type="text" placeholder="请输入活动名称" autocomplete="off">
+              </div>
             </div>
           </div>
           <div class="form-item">
@@ -100,14 +124,16 @@
           <div class="form-item">
             <label class="form-item__label">活动时间</label>
             <div class="clearfix form-item__content">
-              <div class="fl relative"> 
-                <input class="w100" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" type="text" id="date1" name="date1" value="" placeholder="选择日期" autocomplete="off">
-                <a class="wdate-ico" href="javascript:;" onclick="WdatePicker({el:'date1', dateFmt:'yyyy-MM-dd'})"><i class="fa fa-calendar"></i></a>
-              </div>
-              <span class="fl">-</span>
-              <div class="fl relative">
-                <input class="w100" onclick="WdatePicker({dateFmt:'HH:mm:ss'})" type="text" id="time1" name="time1" value="" placeholder="选择时间" autocomplete="off">
-                <a class="wdate-ico" href="javascript:;" onclick="WdatePicker({el:'timeStart', dateFmt:'HH:mm:ss'})"><i class="fa fa-calendar"></i></a>
+              <div class="form-item__input">              
+                <div class="fl relative"> 
+                  <input class="w100" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" type="text" id="date1" name="date1" value="" placeholder="选择日期" autocomplete="off">
+                  <a class="wdate-ico" href="javascript:;" onclick="WdatePicker({el:'date1', dateFmt:'yyyy-MM-dd'})"><i class="fa fa-calendar"></i></a>
+                </div>
+                <span class="fl">-</span>
+                <div class="fl relative">
+                  <input class="w100" onclick="WdatePicker({dateFmt:'HH:mm:ss'})" type="text" id="time1" name="time1" value="" placeholder="选择时间" autocomplete="off">
+                  <a class="wdate-ico" href="javascript:;" onclick="WdatePicker({el:'timeStart', dateFmt:'HH:mm:ss'})"><i class="fa fa-calendar"></i></a>
+                </div>
               </div>
             </div>
           </div>
@@ -147,6 +173,89 @@
             <button class="btn btn-primary">提交</button>
           </div>
         </form>
+
+        <hr>
+        <!-- 校验 -->
+        <form id="validateForm" style="width: 480px;">
+          <div class="form-item">
+            <label class="form-item__label">活动名称</label>
+            <div class="form-item__content clearfix">
+              <div class="form-item__input-wrap">
+                <input type="text" name="name" placeholder="请输入活动名称" autocomplete="off">      
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="form-item__label">活动区域</label>
+            <div class="form-item__content clearfix">
+              <div class="form-item__input-wrap">
+                <select style="width: 138px;" name="region">
+                  <option selected disabled value="">请选择</option>
+                  <option value="1">区域一</option>
+                  <option value="2">区域二</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="form-item__label">活动时间</label>
+            <div class="clearfix form-item__content">
+              <div class="form-item__input-wrap">
+                <div class="fl relative"> 
+                  <input class="w100" name="date1" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" type="text" id="date1" name="date1" value="" placeholder="选择日期" autocomplete="off">
+                  <a class="wdate-ico" href="javascript:;" onclick="WdatePicker({el:'date1', dateFmt:'yyyy-MM-dd'})"><i class="fa fa-calendar"></i></a>
+                </div>
+                <span class="fl">-</span>
+                <div class="fl relative">
+                  <input class="w100" name="date2" onclick="WdatePicker({dateFmt:'HH:mm:ss'})" type="text" id="time1" name="time1" value="" placeholder="选择时间" autocomplete="off">
+                  <a class="wdate-ico" href="javascript:;" onclick="WdatePicker({el:'timeStart', dateFmt:'HH:mm:ss'})"><i class="fa fa-calendar"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="form-item__label">活动性质</label>
+            <div class="clearfix form-item__content">
+              <div class="form-item__input-wrap">
+                <span class="fl mr10">
+                  <input type="checkbox" name="type" class="fl mr5">
+                  <span class="fl">美食/餐厅线上活动</span>
+                </span>
+                <span class="fl">
+                  <input type="checkbox" name="type" class="fl mr5">
+                  <span class="fl">线下主题活动</span>
+                </span>
+               </div> 
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="form-item__label">特殊资源</label>
+            <div class="clearfix form-item__content">
+              <div class="form-item__input-wrap">
+                <span class="fl mr10">
+                  <input type="radio" name="resource" class="fl mr5">
+                  <span class="fl">线上品牌商赞助</span>
+                </span>
+                <span class="fl">
+                  <input type="radio" name="resource" class="fl mr5">
+                  <span class="fl">线下场地免费</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="form-item__label">活动形式</label>
+            <div class="clearfix form-it form-item__content">
+              <div class="form-item__input-wrap" style="width: 390px;">
+                <textarea name="desc" autocomplete="off" style="min-height: 28px; margin-top: 0px; margin-bottom: 0px; height: 101px;"></textarea>                
+              </div>
+            </div>  
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary mr10" type="submit">提交</button>
+            <button class="btn btn-white">重置</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -161,7 +270,170 @@
     <script src="https://front.leyoujia.com/plugins/datepicker/WdatePicker.js"></script>
     <script src="https://front.leyoujia.com/plugins/icheck/icheck.min.js"></script>
     <script src="https://front.leyoujia.com/plugins/comboSelect/combo.select.js"></script>
+    <script src="jquery.validate.js"></script>
     <script>
+var isFirstInvalid = true;
+$("#validateForm").validate({
+  debug: true,
+  ignore: ':hidden, .combo-input',
+  submitHandler: function(form) {
+    alert('submit')
+  },
+  invalidHandler: function (event, validator) {
+    debugger
+  },
+  rules: {
+    name: 'required',
+    region: 'required',
+    date1: 'required',
+    date2: 'required',
+    type: 'required',
+    resource: 'required',
+    desc: {
+      required: true,
+      maxlength: 500
+    }
+  },
+  messages: {
+    name: '请输入活动名称',
+    region: '请输入活动区域',
+    date1: '请输入活动日期',
+    date2: '请输入活动时间',
+    type: '请选择活动性质',
+    resource: '请选择特殊资源',
+    desc: {
+      required: '请输入活动形式',
+      maxlength: '活动形式不能超过500个字符'
+    }
+  },
+  errorElement: 'span',
+  errorPlacement: function(error, element) {
+    console.log('errorPlacement')    
+    var $inputWrap = $(element).parents('.form-item__input-wrap').addClass('error');
+    if (!$inputWrap.next().hasClass('invalid-icon')) {
+      error.addClass('invalid-icon').popover({
+        html: true,
+        content: '<span style="color: #ff0000;">' + error.text() + '</span>',
+        trigger: 'hover',
+        placement: 'top'
+      })
+      error.insertAfter($inputWrap);
+    }
+
+   
+
+    if (isFirstInvalid) {
+      error.popover('show');
+      isFirstInvalid = false;
+    }
+    
+    // error.appendTo( element.parent("td").next("td") );
+  },
+  // showErrorLabel: function(errorMap, errorList) {
+  //   var errorTpl = $('<span class="error invalid-icon"></span>');
+  //   $.each(errorList, function (i, item) {
+  //     var error = errorTpl.clone();
+  //     var inputWrap = $(item.element).addClass('error').parents('.form-item__input-wrap').addClass('error');
+  //     if (!inputWrap.next().hasClass('invalid-icon')) {
+  //       error.addClass('invalid-icon').popover({
+  //         html: true,
+  //         content: '<span style="color: #ff0000;">' + item.message + '</span>',
+  //         trigger: 'hover',
+  //         placement: 'top'
+  //       }).text('')
+  //       error.insertAfter(inputWrap);
+  //     }
+  //   });
+  // }
+
+  showErrorLabel: function (element, message) {
+    var place, group, errorID, v,
+				error = this.errorsFor( element ),
+				elementID = this.idOrName( element ),
+				describedBy = $( element ).attr( "aria-describedby" );
+
+			if ( error.length ) {
+
+				// Refresh error/success class
+				error.removeClass( this.settings.validClass ).addClass( this.settings.errorClass );
+
+				// Replace message on existing label
+				error.popover('destroy').popover({
+          html: true,
+          content: '<span style="color: #ff0000;">' + message + '</span>',
+          trigger: 'hover',
+          placement: 'top'
+        });
+			} else {
+
+				// Create error element
+				error = $( "<" + this.settings.errorElement + ">" )
+					.attr( "id", elementID + "-error" )
+          .addClass( this.settings.errorClass )
+					.attr('data-content', message || "" );
+
+				// Maintain reference to the element to be placed into the DOM
+				place = error;
+				if ( this.settings.wrapper ) {
+
+					// Make sure the element is visible, even in IE
+					// actually showing the wrapped element is handled elsewhere
+					place = error.hide().show().wrap( "<" + this.settings.wrapper + "/>" ).parent();
+				}
+				if ( this.labelContainer.length ) {
+					this.labelContainer.append( place );
+				} else if ( this.settings.errorPlacement ) {
+					this.settings.errorPlacement.call( this, place, $( element ) );
+				} else {
+					place.insertAfter( element );
+				}
+
+				// Link error back to the element
+				if ( error.is( "label" ) ) {
+
+					// If the error is a label, then associate using 'for'
+					error.attr( "for", elementID );
+
+					// If the element is not a child of an associated label, then it's necessary
+					// to explicitly apply aria-describedby
+				} else if ( error.parents( "label[for='" + this.escapeCssMeta( elementID ) + "']" ).length === 0 ) {
+					errorID = error.attr( "id" );
+
+					// Respect existing non-error aria-describedby
+					if ( !describedBy ) {
+						describedBy = errorID;
+					} else if ( !describedBy.match( new RegExp( "\\b" + this.escapeCssMeta( errorID ) + "\\b" ) ) ) {
+
+						// Add to end of list if not already present
+						describedBy += " " + errorID;
+					}
+					$( element ).attr( "aria-describedby", describedBy );
+
+					// If this element is grouped, then assign to all elements in the same group
+					group = this.groups[ element.name ];
+					if ( group ) {
+						v = this;
+						$.each( v.groups, function( name, testgroup ) {
+							if ( testgroup === group ) {
+								$( "[name='" + v.escapeCssMeta( name ) + "']", v.currentForm )
+									.attr( "aria-describedby", error.attr( "id" ) );
+							}
+						} );
+					}
+				}
+			}
+			if ( !message && this.settings.success ) {
+				error.text( "" );
+				if ( typeof this.settings.success === "string" ) {
+					error.addClass( this.settings.success );
+				} else {
+					this.settings.success( error, element );
+				}
+			}
+			this.toShow = this.toShow.add( error );
+  }
+});
+
     initiCheck('body input');
 
     $('select').comboSelect();

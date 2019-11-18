@@ -56,6 +56,13 @@ export default [
         meta: {
           title: '表单'
         }
+      },
+      {
+        name: '指引',
+        path: '/zhiyin',
+        meta: {
+          title: '指引'
+        }
       }
       // {
       //   groupName: '组件',

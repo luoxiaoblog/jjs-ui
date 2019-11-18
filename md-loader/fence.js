@@ -27,26 +27,24 @@ module.exports = md => {
     if (token.info === 'html' && isInDemoContainer) {
       let res = `<template slot="highlight"><el-tab-pane label="Html" name="html">
                   <div class="highlight">
-                    <pre v-pre><code class="html">
-                    ${md.utils.escapeHtml(html)}
-                    </code></pre>
+                    <pre v-pre>
+                      <code class="html">${md.utils.escapeHtml(html)}</code>
+                    </pre>
                   </div>
                 </el-tab-pane>`
       if (css) {
         res += `<el-tab-pane label="Css" name="css">
                   <div class="highlight">
-                    <pre v-pre><code class="css">
-                    ${css}
-                    </code></pre>
+                    <pre v-pre>
+                      <code class="css">${css}</code>
+                    </pre>
                   </div>
                 </el-tab-pane>`
       }
       if (javascript) {
         res += `<el-tab-pane label="Javascript" name="javascript">
                   <div class="highlight">
-                    <pre v-pre><code class="javascript">
-                    ${javascript}
-                    </code></pre>
+                    <pre v-pre><code class="javascript">${javascript}</code></pre>
                   </div>
                 </el-tab-pane>`
       }
