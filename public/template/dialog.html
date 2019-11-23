@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="renderer" content="webkit" />
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap-reset.css">
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css?v=1573435666000">
+  <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css?v=1573435666000">
+  <link rel="stylesheet" href="https://front.leyoujia.com/plugins/dialog/ui-dialog.css">
+  </link>
+
+<body>
+  <div id="main-content">
+    <button type="button" class="fl mr10 btn btn-primary" onclick="dialog1()">自动关闭提示</button>
+    <button type="button" class="fl mr10 btn btn-primary">自动关闭含一个btn的提示框</button>
+    <button type="button" class="fl mr10 btn btn-primary">两个按钮的提示框</button>
+    <button type="button" class="fl mr10 btn btn-primary">多个按钮的提示框</button>
+  </div>
+  <script type="text/javascript" src="https://front.leyoujia.com/js/jquery.js"></script>
+  <script type="text/javascript" src="https://front.leyoujia.com/js/bootstrap.min.js"></script>
+  <script src="https://front.leyoujia.com/plugins/dialog/dialog-min.js" charset="utf-8"></script>
+  <script>
+    function dialog1() {
+      noBtnAutoModalDialog('1.5s 自动关闭提示框', 1500, function() {
+        alert('关闭时的回调')
+      });
+    }
+  </script>
+</body>
+
+</html>
+
+</html>

@@ -335,7 +335,7 @@ export default {
     &.is-fixed {
       position: fixed;
       bottom: 0;
-      width: 868px;
+      width: 1178px;
     }
 
     i {

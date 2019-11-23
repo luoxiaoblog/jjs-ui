@@ -63,7 +63,85 @@ export default [
         meta: {
           title: '指引'
         }
+      },
+      {
+        name: '弹框',
+        path: '/messageBox',
+        meta: {
+          title: '弹框'
+        }
+      },
+      {
+        name: '对话框',
+        path: '/dialog',
+        meta: {
+          title: '对话框'
+        }
+      },
+      {
+        name: '上传',
+        path: '/upload',
+        meta: {
+          title: '上传'
+        }
+      },
+      {
+        name: '图片预览',
+        path: '/viewer',
+        meta: {
+          title: '图片预览'
+        }
+      },
+      {
+        name: '图片裁剪',
+        path: '/cropper',
+        meta: {
+          title: '图片裁剪'
+        }
+      },
+      {
+        name: '富文本框',
+        path: '/richTextEditor',
+        meta: {
+          title: '富文本框'
+        }
+      },
+      {
+        name: '加载',
+        path: '/loading',
+        meta: {
+          title: '加载'
+        }
+      },
+      {
+        name: '树形控件',
+        path: '/tree',
+        meta: {
+          title: '树形控件'
+        }
+      },
+      {
+        name: '标记',
+        path: '/badge',
+        meta: {
+          title: '标记'
+        }
+      },
+      {
+        name: '步骤条',
+        path: '/steps',
+        meta: {
+          title: '步骤条'
+        }
+      },
+      {
+        name: '时间线',
+        path: '/timeline',
+        meta: {
+          title: '时间线'
+        }
       }
+
       // {
       //   groupName: '组件',
       //   groups: [

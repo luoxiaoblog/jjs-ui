@@ -32,7 +32,7 @@
               </el-tooltip>
             </el-menu-item>
           </el-menu-item-group>
-          <el-menu-item v-else :index="i + '-' + j" :key="j">
+          <el-menu-item v-else :index="i + '-' + j" :key="j" style="overflow-y: auto;max-height: 500px;">
             <el-tooltip :content="child.name" placement="right">
               <router-link
                 class=""
@@ -82,7 +82,7 @@ export default {
   top: 64px;
   bottom: 0;
   left: 0;
-  z-index: 3000;
+  z-index: 9;
   padding: 0;
   // max-width: 260px;
   background-color: #fff;
@@ -91,6 +91,8 @@ export default {
 
 .el-menu:not(.el-menu--collapse) {
   width: 260px;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .menu-icon {
