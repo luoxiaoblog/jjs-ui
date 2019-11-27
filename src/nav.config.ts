@@ -44,6 +44,20 @@ export default [
         }
       },
       {
+        name: '单选框',
+        path: '/radio',
+        meta: {
+          title: '单选框'
+        }
+      },
+      {
+        name: '多选框',
+        path: '/checkbox',
+        meta: {
+          title: '多选框'
+        }
+      },
+      {
         name: '表格',
         path: '/table',
         meta: {
@@ -139,6 +153,13 @@ export default [
         path: '/timeline',
         meta: {
           title: '时间线'
+        }
+      },
+      {
+        name: '穿梭框',
+        path: '/transfer',
+        meta: {
+          title: '穿梭框'
         }
       }
 

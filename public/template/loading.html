@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap-reset.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css?v=1573435666000">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css?v=1573435666000">
+    <style>
+      .loading-wrapper {
+        position: relative;
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin-left: 5px;
+        border: 1px solid #dddddd;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  <body>
+    <div id="main-content">
+      <div class="clearfix">
+        <button type="button" class="fl mr10 btn btn-primary show-loading">纯图案</button>
+        <button type="button" class="fl mr10 btn btn-primary show-loading">纯文字</button>
+        <button type="button" class="fl mr10 btn btn-primary show-loading">图片加文字</button>
+        <button type="button" class="fl mr10 btn btn-primary show-loading">进度条</button>
+        <button type="button" class="fl mr10 btn btn-primary show-loading">额外样式</button>
+        <button type="button" class="fl mr10 btn btn-primary hide-loading">隐藏loading</button>
+      </div>
+      <div class="clearfix mt10">
+        <div class="loading-wrapper">纯图案</div>
+        <div class="loading-wrapper">纯文字</div>
+        <div class="loading-wrapper">图片加文字</div>
+        <div class="loading-wrapper">进度条</div>
+        <div class="loading-wrapper">额外样式</div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://front.leyoujia.com/js/jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://front.leyoujia.com/js/bootstrap.min.js"
+    ></script>
+    <script src="https://front.leyoujia.com/plugins/loading/loadingLayer.js"></script>
+    <script>
+    $(function() {
+      $(document.body).on('click', '.show-loading', function () {
+        var type = $(this).index();
+        var opts = {
+          type: type,
+          obj: '.loading-wrapper:eq(' + type + ')',
+          class: type == 4 ? 'reverse' : ''
+        }
+        showLoadingLayer(opts); 
+      }).on('click', '.hide-loading', function () {
+      hideLoadingLayer();
+      });
+    });
+    </script>
+  </body>
+</html>
+</html>
