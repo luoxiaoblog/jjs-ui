@@ -156,6 +156,13 @@ export default [
         }
       },
       {
+        name: '文字提示',
+        path: '/tooltip',
+        meta: {
+          title: '文字提示'
+        }
+      },
+      {
         name: '穿梭框',
         path: '/transfer',
         meta: {
