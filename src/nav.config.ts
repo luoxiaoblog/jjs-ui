@@ -79,6 +79,13 @@ export default [
         }
       },
       {
+        name: '消息提示',
+        path: '/message',
+        meta: {
+          title: '消息提示'
+        }
+      },
+      {
         name: '弹框',
         path: '/messageBox',
         meta: {
@@ -160,13 +167,6 @@ export default [
         path: '/tooltip',
         meta: {
           title: '文字提示'
-        }
-      },
-      {
-        name: '穿梭框',
-        path: '/transfer',
-        meta: {
-          title: '穿梭框'
         }
       }
 

@@ -43,6 +43,43 @@
       display: none;
     }
 
+  .sortIcon:before {
+    content: " ";
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #999;
+    display: block;
+    width: 0;
+    height: 0;
+    top: -5px;
+    right: -10px;
+    bottom: 0;
+    position: absolute;
+    margin: auto 0;
+}
+
+.sortIcon:after {
+    content: " ";
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #999;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 6px;
+    right: -10px;
+    bottom: 0;
+    position: absolute;
+    margin: auto 0;
+}
+
+.sorting_asc .sortIcon:before {
+  border-bottom-color: #4B4B4B;
+}
+.sorting_desc .sortIcon:after {
+  border-top-color: #4B4B4B;
+}
+
     
   </style>
 
@@ -358,16 +395,16 @@
         style="width: 100%; border-left: 1px solid #ddd;border-top: 1px solid #ddd;">
         <thead>
           <tr>
-            <td width="" class="header sortIcon sorting arrow-sort">Column1</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column2</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column3</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column4</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column5</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column6</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column7</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column8</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column9</td>
-            <td width="" class="header sortIcon sorting arrow-sort">Column10</td>
+            <td width="" class=" sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
+            <td width="" class="  sorting "><span class="arrow-sort sortIcon relative" >Column1</span></td>
           </tr>
         </thead>
         <tbody>

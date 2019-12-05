@@ -6,7 +6,7 @@ var Step = (function() {
     this.status = options.status
     this.template =
       this.template ||
-      '\n    <div class="lyj-step" style="flex-basis: 25%; margin-right: 0px;">\n      <div class="lyj-step__head">\n        <div class="lyj-step__line" style="margin-right: 0px;">\n          <i class="lyj-step__line-inner" style="transition-delay: 0ms; border-width: 1px; width: 100%;"></i>\n        </div>\n        <div class="lyj-step__icon">\n          <div class="lyj-step__icon-inner"></div>\n        </div>\n      </div>\n      <div class="lyj-step__main">\n        <div class="lyj-step__title"></div>\n        <div class="lyj-step__description"></div>\n      </div>\n    </div>\n    '
+      '\n    <div class="lyj-step" style="margin-right: 0px;">\n      <div class="lyj-step__head">\n        <div class="lyj-step__line" style="margin-right: 0px;">\n          <i class="lyj-step__line-inner" style="transition-delay: 0ms; border-width: 1px; width: 100%;"></i>\n        </div>\n        <div class="lyj-step__icon">\n          <div class="lyj-step__icon-inner"></div>\n        </div>\n      </div>\n      <div class="lyj-step__main">\n        <div class="lyj-step__title"></div>\n        <div class="lyj-step__description"></div>\n      </div>\n    </div>\n    '
     this.element = this.createElement()
   }
   Step.prototype.createElement = function() {
@@ -58,8 +58,13 @@ var Steps = (function() {
     var step = el.find('.lyj-step')
     el.addClass('lyj-steps').addClass('lyj-steps--' + this.direction)
     step.addClass('is-' + this.direction)
-    if (this.direction == 'horizontal') {
-      step.css('flex-basis', Math.floor((1 / this.stepList.length) * 100) + '%')
+    if (this.space === undefined) {
+      step.css(
+        'flex-basis',
+        Math.floor((1 / (this.stepList.length - 1)) * 100) + '%'
+      )
+    } else {
+      step.css('flex-basis', this.space)
     }
     if (this.alignCenter) {
       step.addClass('is-center')
@@ -109,6 +114,9 @@ var Steps = (function() {
       }
       if (step.icon === undefined) {
         statusObj.find('.lyj-step__icon-inner').text(i + 1)
+      }
+      if (i == _this.stepList.length - 1 && !_this.alignCenter) {
+        step.element.addClass('is-flex')
       }
       el.append(step.element)
     })

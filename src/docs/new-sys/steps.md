@@ -69,3 +69,107 @@
 ```
 
 :::
+
+### Step 的间距
+
+定制 Step 的间距
+
+:::demo `space`确定每个 step 的间距，不填写将自适应间距。支持百分比。
+
+```html
+<div id="steps2"></div>
+<script>
+  //DEMO_JS_RUN_START
+  export default {
+    mounted() {
+      $('#steps2').lyj_steps({
+        space: 200,
+        stepList: [
+          {
+            title: '步骤一'
+          },
+          {
+            title: '步骤二'
+          },
+          {
+            title: '步骤三'
+          }
+        ]
+      })
+    }
+  }
+  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+  $('#steps2').lyj_steps({
+    space: '20%',
+    stepList: [
+      {
+        title: '步骤一'
+      },
+      {
+        title: '步骤二'
+      },
+      {
+        title: '步骤三'
+      }
+    ]
+  })
+  //DEMO_JS_SHOW_END
+</script>
+```
+
+:::
+
+:::
+
+### 竖式步骤条
+
+竖直方向的步骤条。
+
+:::demo 设置`direction`属性为 vertical 即可, 设置`alignCenter`属性为 false 可使 `title` 和 `description` 文字左对齐
+
+```html
+<div style="height: 300px;">
+  <div id="steps3"></div>
+</div>
+<script>
+  //DEMO_JS_RUN_START
+  export default {
+    mounted() {
+      $('#steps3').lyj_steps({
+        direction: 'vertical',
+        alignCenter: false,
+        stepList: [
+          {
+            title: '步骤一'
+          },
+          {
+            title: '步骤二'
+          },
+          {
+            title: '步骤三'
+          }
+        ]
+      })
+    }
+  }
+  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+  $('#steps3').lyj_steps({
+    direction: 'vertical',
+    alignCenter: false,
+    stepList: [
+      {
+        title: '步骤一'
+      },
+      {
+        title: '步骤二'
+      },
+      {
+        title: '步骤三'
+      }
+    ]
+  })
+  //DEMO_JS_SHOW_END
+</script>
+```
+
+:::

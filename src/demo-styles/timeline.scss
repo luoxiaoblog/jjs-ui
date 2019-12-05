@@ -1,6 +1,20 @@
-.demo-timeline .source .radio {
-  margin-bottom: 20px;
-}
-.demo-timeline .source .radio .el-radio-group {
-  margin-left: 20px;
+.demo-timeline {
+  .lyj-card {
+    border-radius: 4px;
+    border: 1px solid #ebeef5;
+    background-color: #fff;
+    overflow: hidden;
+    color: #303133;
+    transition: 0.3s;
+  }
+
+  .lyj-card.is-always-shadow,
+  .lyj-card.is-hover-shadow:focus,
+  .lyj-card.is-hover-shadow:hover {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .lyj-card__body {
+    padding: 20px;
+  }
 }
