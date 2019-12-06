@@ -65,6 +65,13 @@ export default [
         }
       },
       {
+        name: '日期选择器',
+        path: '/datetimepicker',
+        meta: {
+          title: '日期选择器'
+        }
+      },
+      {
         name: '表单',
         path: '/form',
         meta: {
