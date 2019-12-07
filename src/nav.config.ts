@@ -58,6 +58,13 @@ export default [
         }
       },
       {
+        name: '可搜索下拉框',
+        path: '/comboSelect',
+        meta: {
+          title: '可搜索下拉框'
+        }
+      },
+      {
         name: '表格',
         path: '/table',
         meta: {

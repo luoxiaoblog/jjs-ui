@@ -40,6 +40,7 @@ var Checkbox = (function() {
       .find('.lyj-checkbox__input')
       .addBack()
       .toggleClass('is-checked', this.checked)
+    this.element.find('.lyj-checkbox__original').prop('checked', this.checked)
   }
   Checkbox.prototype.refleshCptDisableStatus = function() {
     var $inputOriginal = this.element.find('.lyj-checkbox__original')
@@ -118,6 +119,26 @@ var CheckboxGroup = (function() {
       checkbox.disabled = _this.disabled
       checkbox.refleshCptDisableStatus()
     })
+  }
+  CheckboxGroup.prototype.getValue = function(includeDisabled) {
+    var _this = this
+    if (includeDisabled === void 0) {
+      includeDisabled = false
+    }
+    if (includeDisabled) {
+      return this._value
+    }
+    if (this.disabled) {
+      return []
+    }
+    var t = this._value.slice()
+    this.checkboxGroup.forEach(function(checkbox) {
+      var i = _this.value.indexOf(checkbox.value)
+      if (i !== -1 && checkbox.disabled) {
+        t.splice(i, 1)
+      }
+    })
+    return t
   }
   Object.defineProperty(CheckboxGroup.prototype, 'value', {
     get: function() {

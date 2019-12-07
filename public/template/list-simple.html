@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <title>简单列表页</title>
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap-reset.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css">
+    <link rel="stylesheet" href="../badge.css">
+    <link rel="stylesheet" href="../checkbox.css">
+    <style>
+      .lyj-badge__content.is-fixed {
+        transform: translateY(-50%) translateX(80%);
+      }
+
+      .quick-label {
+        font-size: 12px;
+        line-height: 22px;
+        color: #4c4d50;
+        padding: 0 8px;
+        cursor: pointer;
+        border-radius: 2px;
+        border: 1px solid #e3e3e3;
+      }
+
+      .quick-label:hover {
+        background-color: #eceeef;
+      }
+
+      .quick-label.curr {
+        color: #0275d8;
+        border: 1px solid #0275d8;
+      }
+
+      #quickLabelWrapper {
+        margin-top: 2px;
+      }
+    </style>
+  </link>
+  <body>
+    <div id="main-content" class="line-28">
+      <div class="panel panel-border" style="margin:10px 0;">
+        <div class="panel-body" style="min-height: 300px;">
+          <div class="clearfix sub-nav">
+            <a class="curr" style="margin-left:-1px;" href="javascript:;">当前页A</a>
+            <a href="javascript:;">标签页B</a>
+            <a id="badgeDot" href="javascript:;"><span>标签页C</span></a>
+            <a id="badgeNew" href="javascript:;"><span>标签页D</span></a>
+            <span class="fr">
+              <button type="button" class="fl mr5 btn btn-primary">按钮</button>
+              <button type="button" class="fl btn btn-primary">按钮</button>
+            </span>         
+          </div>
+          <form class="clearfix mt10">
+            <div class="clearfix">
+                <input type="text" class="fl mr5" placeholder="部门" disabled>
+                <input type="text" style="width: 80px;" class="fl mr5" placeholder="姓名">
+                <div id="searchCheckbox1" class="fl mr10"></div>
+                <div id="searchCheckbox2" class="fl mr10"></div>
+                <span class="fl">发布时间：</span>
+                <div class="fl relative" >
+                  <input
+                    style="width: 100px;"
+                    onclick="WdatePicker({readOnly:true, maxDate:'#F{$dp.$D(\'endDate\')}'})"
+                    type="text"
+                    id="startDate"
+                    name="startDate"
+                    placeholder="开始时间"
+                  />
+                  <a
+                    class="wdate-ico"
+                    href="javascript:;"
+                    onclick="WdatePicker({el:'startDate', readOnly:true, maxDate:'#F{$dp.$D(\'endDate\')}'})"
+                  ></a>
+                </div>
+                <div class="fl line-28">-</div>
+                <div class="fl relative mr5">
+                  <input
+                    style="width: 100px;"
+                    onclick="WdatePicker({readOnly:true, minDate:'#F{$dp.$D(\'startDate\')}'})"
+                    type="text"
+                    id="endDate"
+                    name="endDate"
+                    placeholder="结束时间"
+                  />
+                  <a
+                    class="wdate-ico"
+                    href="javascript:;"
+                    onclick="WdatePicker({el:'endDate', readOnly:true, minDate:'#F{$dp.$D(\'startDate\')}'})"
+                  ></a>
+                </div>
+                <input type="text" style="width: 160px;" class="fl" placeholder="关键词搜索">
+                <span class="fr">
+                  <button type="button" class="fl mr5 btn btn-primary">查询</button>
+                  <button type="button" class="fl btn btn-white">重置</button>
+                </span>  
+            </div>
+            <div class="clearfix mt5">
+              <span class="fl mr5">快速标签：</span>
+              <div id="quickLabelWrapper" class="fl">
+                <span class="fl mr5 quick-label">五星房源</span>
+                <span class="fl mr5 quick-label">四星房源</span>
+                <span class="fl mr5 quick-label">三星房源</span>
+              </div>
+            </div>  
+          </form>
+          <div class="mt10">
+            <table class="table-box" style="width: 100%;">
+              <thead>
+                <tr>
+                  <td width="50">序号</td>
+                  <td width="160">提交时间</td>
+                  <td width="100">客户姓名</td>
+                  <td width="120">客户电话</td>
+                  <td width="100">被投诉人</td>
+                  <td width="120">员工电话</td>
+                  <td width="100">成交类型</td>
+                  <td width="120">投诉编号</td>
+                  <td width="100">是否上传附件</td>
+                </tr>       
+              </thead>
+              <tbody>
+                <tr data-id="1">
+                  <td>1</td>
+                  <td>2019/11/26 14:32:46</td>
+                  <td>张先生</td>
+                  <td>123123213233</td>
+                  <td>李小姐</td>
+                  <td>123123213233</td>
+                  <td>租赁</td>
+                  <td><a href="javascript:;" class="blue">J61268983</a></td>
+                  <td>是</td>
+                </tr>
+                <tr data-id="2">
+                  <td>2</td>
+                  <td>2019/11/26 14:32:46</td>
+                  <td>张先生</td>
+                  <td>123123213233</td>
+                  <td>李小姐</td>
+                  <td>123123213233</td>
+                  <td>租赁</td>
+                  <td><a href="javascript:;" class="blue">J61268983</a></td>
+                  <td>是</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clearfix page-item mt5">
+              <div class="fl line-28 mr10">共有 <span>912</span> 条记录</div>
+              <button class="fl btn btn-white pageButton mr5" type="button" page="1">首页</button>
+              <button class="fl btn btn-white mr5 curr-disable pageButton" type="button" page="0">上一页</button>
+              <button class="fl btn btn-white mr5 pageButton curr-page " type="button" title="1" page="1">1</button>
+              <button class="fl btn btn-white mr5 pageButton" type="button" title="2" page="2">2</button>
+              <button class="fl btn btn-white mr5 pageButton"type="button" title="3" page="3">3</button>
+              <button class="fl btn btn-white mr5 pageButton" type="button" title="4" page="4">4</button>
+              <button class="fl btn btn-white mr5 pageButton"type="button" title="5" page="5">5</button>
+              <button class="fl btn btn-white mr5  pageButton" type="button" page="2">下一页</button>
+              <button class="fl btn btn-white mr5 pageButton" type="button" page="19" style="margin-right:0;">尾页</button>
+              <input type="hidden" id="totalPage" value="19" />
+              <div class="fl line-28 ml10">跳转</div>
+              <input class="fl mr5" type="text" id="inputPageNo" placeholder="1" oldvalue="1" value="1" onkeyup="" onafterpaste=""/>
+              <div class="fl line-28">/<span class="all-page ml3">19</span>页，</div>
+              <div class="fl line-28">每页显示</div>
+              <input class="fl" type="text" id="inputPageSize" placeholder="50" oldvalue="50" value="50" onkeyup="" onafterpaste=""/>
+              <div class="fl line-28 mr10">条</div>
+              <button class="fl btn btn-white" onclick="" type="button">确定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+                        
+    
+
+    <script src="https://front.leyoujia.com/js/jquery.js"></script>
+    <script src="https://front.leyoujia.com/js/bootstrap.min.js"></script>
+    <script src="https://front.leyoujia.com/plugins/datepicker/WdatePicker.js"></script>
+    <script src="../badge.js"></script>
+    <script src="../checkbox.js"></script>  
+    <script>
+      $(function () {
+        $('#badgeNew').lyj_badge({ value: 'new' })
+        $('#badgeDot').lyj_badge({ isDot: true })
+
+        $('#searchCheckbox1').lyj_checkboxGroup({
+          name: 'type',
+          checkboxGroup: [{
+            value: '1',
+            label: '含直属'
+          }],
+          changeHandler: function (val) {
+            if (val.length == 1) {
+              $('#searchCheckbox2').data('checkboxGroup').value = []
+            }
+          }
+        })
+
+        $('#searchCheckbox2').lyj_checkboxGroup({
+          name: 'type',
+          checkboxGroup: [{
+            value: '2',
+            label: '含所有下属'
+          }],
+          changeHandler: function (val) {
+            if (val.length == 1) {
+              $('#searchCheckbox1').data('checkboxGroup').value = []
+            }
+          }
+        })
+
+        $('#quickLabelWrapper').on('click', '.quick-label', function () {
+          var labels = []
+          $(this).toggleClass('curr')
+          $(this).parent().find('.quick-label.curr').each(function (i, item) {
+            labels.push($(item).text())
+          })
+          console.log(labels)
+        })
+      })
+    </script>
+  </body>
+</html>
+</html>

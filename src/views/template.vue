@@ -11,8 +11,8 @@
               alt=""
             />
             <div class="text-content">
-              <a href="/template/listPage.html" target="_blank">
-                列表页
+              <a href="/template/list-simple.html" target="_blank">
+                简单列表页
               </a>
             </div>
           </el-card>

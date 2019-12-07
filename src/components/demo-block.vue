@@ -13,7 +13,7 @@
         <slot></slot>
       </div>
 
-      <el-tabs v-model="activeName">
+      <el-tabs v-model="activeName" @tab-click="onTabsClick">
         <slot name="highlight"></slot>
       </el-tabs>
     </div>
@@ -129,6 +129,26 @@ export default {
     removeScrollHandler() {
       this.scrollParent &&
         this.scrollParent.removeEventListener('scroll', this.scrollHandler)
+    },
+
+    onTabsClick() {
+      this.$nextTick(() => {
+        this.codeArea.style.height = `${this.codeAreaHeight() + 1}px`
+        setTimeout(() => {
+          this.scrollHandler()
+        }, 200)
+      })
+    },
+
+    codeAreaHeight() {
+      if (this.$el.getElementsByClassName('description').length > 0) {
+        return (
+          this.$el.getElementsByClassName('description')[0].clientHeight +
+          this.$el.getElementsByClassName('el-tabs')[0].clientHeight +
+          20
+        )
+      }
+      return this.$el.getElementsByClassName('el-tabs')[0].clientHeight
     }
   },
 
@@ -161,23 +181,12 @@ export default {
 
     codeArea() {
       return this.$el.getElementsByClassName('meta')[0]
-    },
-
-    codeAreaHeight() {
-      if (this.$el.getElementsByClassName('description').length > 0) {
-        return (
-          this.$el.getElementsByClassName('description')[0].clientHeight +
-          this.$el.getElementsByClassName('highlight')[0].clientHeight +
-          20
-        )
-      }
-      return this.$el.getElementsByClassName('highlight')[0].clientHeight
     }
   },
 
   watch: {
     isExpanded(val) {
-      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0'
+      this.codeArea.style.height = val ? `${this.codeAreaHeight() + 1}px` : '0'
       if (!val) {
         this.fixedControl = false
         this.$refs.control.style.left = '0'
@@ -313,10 +322,19 @@ export default {
         content: none;
       }
     }
+
+    code.hljs.css,
+    code.hljs.html {
+      margin-top: -17px;
+    }
   }
 
   .el-tabs__nav-wrap {
     padding: 0 20px;
+  }
+
+  .el-tabs__header {
+    margin: 0;
   }
 
   .demo-block-control {

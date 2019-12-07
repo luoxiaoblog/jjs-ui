@@ -224,19 +224,19 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 item，时间
         placement: 'top',
         timestamp: '2019-12-05',
         content:
-          '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/05 20:46</p></div></div>'
+          '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/05 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
       },
       {
         placement: 'top',
         timestamp: '2019-12-04',
         content:
-          '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/04 20:46</p></div></div>'
+          '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/04 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
       },
       {
         placement: 'top',
         timestamp: '2019-12-03',
         content:
-          '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/03 20:46</p></div></div>'
+          '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/03 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
       }
     ]
   })

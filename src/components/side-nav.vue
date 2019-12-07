@@ -20,29 +20,25 @@
               :index="i + '-' + k"
               :key="k"
             >
-              <el-tooltip :content="groupItem.name" placement="right">
-                <router-link
-                  class=""
-                  active-class="active"
-                  :to="base + item.path + groupItem.path"
-                  exact
-                  v-text="groupItem.name"
-                >
-                </router-link>
-              </el-tooltip>
-            </el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item v-else :index="i + '-' + j" :key="j" style="overflow-y: auto;max-height: 500px;">
-            <el-tooltip :content="child.name" placement="right">
               <router-link
                 class=""
                 active-class="active"
-                :to="base + item.path + child.path"
+                :to="base + item.path + groupItem.path"
                 exact
-                v-text="child.name"
+                v-text="groupItem.name"
               >
               </router-link>
-            </el-tooltip>
+            </el-menu-item>
+          </el-menu-item-group>
+          <el-menu-item v-else :index="i + '-' + j" :key="j">
+            <router-link
+              class=""
+              active-class="active"
+              :to="base + item.path + child.path"
+              exact
+              v-text="child.name"
+            >
+            </router-link>
           </el-menu-item>
         </template>
       </el-submenu>
@@ -83,6 +79,8 @@ export default {
   bottom: 0;
   left: 0;
   z-index: 9;
+  max-height: 100%;
+  overflow-y: auto;
   padding: 0;
   // max-width: 260px;
   background-color: #fff;
@@ -91,8 +89,6 @@ export default {
 
 .el-menu:not(.el-menu--collapse) {
   width: 260px;
-  max-height: 100%;
-  overflow-y: auto;
 }
 
 .menu-icon {
@@ -115,5 +111,12 @@ export default {
 
 .el-submenu .el-menu-item a.active {
   color: #409eff;
+}
+</style>
+
+<style>
+ul.el-menu.el-menu--popup.el-menu--popup-right-start {
+  max-height: 600px;
+  overflow: auto;
 }
 </style>
