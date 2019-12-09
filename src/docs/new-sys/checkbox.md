@@ -19,33 +19,33 @@
 <div id="checkboxGroup1"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'name1',
-        checkboxGroup: [
-          {
-            label: '备选项',
-            value: '1'
-          }
-        ]
-      }
-      $('#checkboxGroup1').lyj_checkboxGroup(options)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'name1',
+      checkboxGroup: [
+        {
+          label: '备选项',
+          value: '1'
+        }
+      ]
     }
+    $('#checkboxGroup1').lyj_checkboxGroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'name1',
-    checkboxGroup: [
-      {
-        label: '备选项',
-        value: '1'
-      }
-    ]
-  }
-  $('#checkboxGroup1').lyj_checkboxGroup(options)
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'name1',
+  checkboxGroup: [
+    {
+      label: '备选项',
+      value: '1'
+    }
+  ]
+}
+$('#checkboxGroup1').lyj_checkboxGroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -61,35 +61,35 @@
 <div id="checkboxGroup2"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'name2',
-        disabled: true,
-        checkboxGroup: [
-          {
-            label: '备选项',
-            value: '1'
-          }
-        ]
-      }
-      $('#checkboxGroup2').lyj_checkboxGroup(options)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'name2',
+      disabled: true,
+      checkboxGroup: [
+        {
+          label: '备选项',
+          value: '1'
+        }
+      ]
     }
+    $('#checkboxGroup2').lyj_checkboxGroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'name2',
-    disabled: true,
-    checkboxGroup: [
-      {
-        label: '备选项',
-        value: '1'
-      }
-    ]
-  }
-  $('#checkboxGroup2').lyj_checkboxGroup(options)
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'name2',
+  disabled: true,
+  checkboxGroup: [
+    {
+      label: '备选项',
+      value: '1'
+    }
+  ]
+}
+$('#checkboxGroup2').lyj_checkboxGroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -103,71 +103,71 @@
 <div id="checkboxGroup3"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'name3',
-        value: 'e',
-        checkboxGroup: [
-          {
-            label: '复选框 A',
-            value: 'a'
-          },
-          {
-            label: '复选框 B',
-            value: 'b'
-          },
-          {
-            label: '复选框 C',
-            value: 'c'
-          },
-          {
-            label: '禁用',
-            value: 'd',
-            disabled: true
-          },
-          {
-            label: '禁用且选中',
-            value: 'e',
-            disabled: true
-          }
-        ]
-      }
-      $('#checkboxGroup3').lyj_checkboxGroup(options)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'name3',
+      value: 'e',
+      checkboxGroup: [
+        {
+          label: '复选框 A',
+          value: 'a'
+        },
+        {
+          label: '复选框 B',
+          value: 'b'
+        },
+        {
+          label: '复选框 C',
+          value: 'c'
+        },
+        {
+          label: '禁用',
+          value: 'd',
+          disabled: true
+        },
+        {
+          label: '禁用且选中',
+          value: 'e',
+          disabled: true
+        }
+      ]
     }
+    $('#checkboxGroup3').lyj_checkboxGroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'name3',
-    value: ['e'],
-    checkboxGroup: [
-      {
-        label: '复选框 A',
-        value: 'a'
-      },
-      {
-        label: '复选框 B',
-        value: 'b'
-      },
-      {
-        label: '复选框 C',
-        value: 'c'
-      },
-      {
-        label: '禁用',
-        value: 'd',
-        disabled: true
-      },
-      {
-        label: '禁用且选中',
-        value: 'e',
-        disabled: true
-      }
-    ]
-  }
-  $('#checkboxGroup3').lyj_checkboxGroup(options)
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'name3',
+  value: ['e'],
+  checkboxGroup: [
+    {
+      label: '复选框 A',
+      value: 'a'
+    },
+    {
+      label: '复选框 B',
+      value: 'b'
+    },
+    {
+      label: '复选框 C',
+      value: 'c'
+    },
+    {
+      label: '禁用',
+      value: 'd',
+      disabled: true
+    },
+    {
+      label: '禁用且选中',
+      value: 'e',
+      disabled: true
+    }
+  ]
+}
+$('#checkboxGroup3').lyj_checkboxGroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 

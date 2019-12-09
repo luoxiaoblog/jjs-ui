@@ -51,17 +51,17 @@
 </div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('[data-toggle="tooltip"]').tooltip()
-    }
-  }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $(function() {
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
     $('[data-toggle="tooltip"]').tooltip()
-  })
-  //DEMO_JS_SHOW_END
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$(function() {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 

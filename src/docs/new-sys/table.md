@@ -68,9 +68,9 @@
 
 ```html
 <style>
-  .table-box tr.current-row > td {
-    background-color: #ecf5ff;
-  }
+.table-box tr.current-row > td {
+  background-color: #ecf5ff;
+}
 </style>
 
 <table
@@ -105,25 +105,25 @@
 </table>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#tableSingleSelect').on('click', 'tbody tr', function() {
-        $(this)
-          .siblings()
-          .removeClass('current-row')
-          .end()
-          .addClass('current-row')
-      })
-    }
-  } //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#tableSingleSelect').on('click', 'tbody tr', function() {
-    $(this)
-      .siblings()
-      .removeClass('current-row')
-      .end()
-      .addClass('current-row')
-  })//DEMO_JS_SHOW_END
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#tableSingleSelect').on('click', 'tbody tr', function() {
+      $(this)
+        .siblings()
+        .removeClass('current-row')
+        .end()
+        .addClass('current-row')
+    })
+  }
+} //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#tableSingleSelect').on('click', 'tbody tr', function() {
+  $(this)
+    .siblings()
+    .removeClass('current-row')
+    .end()
+    .addClass('current-row')
+})//DEMO_JS_SHOW_END
 </script>
 ```
 :::
@@ -172,62 +172,64 @@
 </table>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#tableMutilSelect').find('.select-row').on('ifChecked', function () {
-      var $curTr = $(this).parents('tr:eq(0)')
-      $curTr.addClass('selected')
-      if ($curTr.siblings().not('.selected').length == 0) {
-        $(this).parents('table:eq(0)').find('.select-all').iCheck('check')
-      }
-      }).on('ifUnchecked', function () {
-        $(this).parents('tr:eq(0)').removeClass('selected')
-        $(this).parents('table:eq(0)').find('.select-all').prop('checked', false).parent().removeClass('checked')
-      }).end()
-      .find('.select-all').on('ifChecked', function () {
-        $(this).parents('table:eq(0)').find('.select-row').iCheck('check')
-      }).on('ifUnchecked', function () {
-        $(this).parents('table:eq(0)').find('.select-row').iCheck('uncheck')
-      })
-
-      this.initiCheck('#tableMutilSelect input')
-    },
-    methods: {
-       initiCheck(obj) {
-        $(obj).iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%'
-        })
-      }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#tableMutilSelect').find('.select-row').on('ifChecked', function () {
+    var $curTr = $(this).parents('tr:eq(0)')
+    $curTr.addClass('selected')
+    if ($curTr.siblings().not('.selected').length == 0) {
+      $(this).parents('table:eq(0)').find('.select-all').iCheck('check')
     }
-  } //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
- $('#tableMutilSelect').find('.select-row').on('ifChecked', function () {
-  var $curTr = $(this).parents('tr:eq(0)')
-  $curTr.addClass('selected')
-  if ($curTr.siblings().not('.selected').length == 0) {
-    $(this).parents('table:eq(0)').find('.select-all').iCheck('check')
-  }
-  }).on('ifUnchecked', function () {
-    $(this).parents('tr:eq(0)').removeClass('selected')
-    $(this).parents('table:eq(0)').find('.select-all').prop('checked', false).parent().removeClass('checked')
-  }).end()
-  .find('.select-all').on('ifChecked', function () {
-    $(this).parents('table:eq(0)').find('.select-row').iCheck('check')
-  }).on('ifUnchecked', function () {
-    $(this).parents('table:eq(0)').find('.select-row').iCheck('uncheck')
-  })
-
-  initiCheck('#tableMutilSelect input')
-
-  function initiCheck(obj) {
-    $(obj).iCheck({
-        checkboxClass: 'icheckbox_square-blue',
-        radioClass: 'iradio_square-blue',
-        increaseArea: '20%'
+    }).on('ifUnchecked', function () {
+      $(this).parents('tr:eq(0)').removeClass('selected')
+      $(this).parents('table:eq(0)').find('.select-all').prop('checked', false).parent().removeClass('checked')
+    }).end()
+    .find('.select-all').on('ifChecked', function () {
+      $(this).parents('table:eq(0)').find('.select-row').iCheck('check')
+    }).on('ifUnchecked', function () {
+      $(this).parents('table:eq(0)').find('.select-row').iCheck('uncheck')
     })
-  }//DEMO_JS_SHOW_END
+
+    this.initiCheck('#tableMutilSelect input')
+  },
+  methods: {
+     initiCheck(obj) {
+      $(obj).iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%'
+      })
+    }
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#tableMutilSelect').find('.select-row').on('ifChecked', function () {
+var $curTr = $(this).parents('tr:eq(0)')
+$curTr.addClass('selected')
+if ($curTr.siblings().not('.selected').length == 0) {
+  $(this).parents('table:eq(0)').find('.select-all').iCheck('check')
+}
+}).on('ifUnchecked', function () {
+  $(this).parents('tr:eq(0)').removeClass('selected')
+  $(this).parents('table:eq(0)').find('.select-all').prop('checked', false).parent().removeClass('checked')
+}).end()
+.find('.select-all').on('ifChecked', function () {
+  $(this).parents('table:eq(0)').find('.select-row').iCheck('check')
+}).on('ifUnchecked', function () {
+  $(this).parents('table:eq(0)').find('.select-row').iCheck('uncheck')
+})
+
+initiCheck('#tableMutilSelect input')
+
+function initiCheck(obj) {
+  $(obj).iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%'
+  })
+}
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -238,126 +240,78 @@
 :::demo
 
 ```html
-    <div class="table-scroll" style="max-height: 140px;">
-      <table class="table-box" style="width: 100%; table-layout: fixed;">
-        <thead>
-          <tr>
-            <td width="180">日期</td>
-            <td width="180">姓名</td>
-            <td width="280">地址</td>
-            <td width="280">地址</td>
-            <td width="280">地址</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2016-05-02</td>
-            <td>王小虎</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-          </tr>
-          <tr>
-            <td>2016-05-02</td>
-            <td>王小虎</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-          </tr>
-          <tr>
-            <td>2016-05-02</td>
-            <td>王小虎</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-          </tr>
-            <tr>
-            <td>2016-05-02</td>
-            <td>王小虎</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-          </tr>
-            <tr>
-            <td>2016-05-02</td>
-            <td>王小虎</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-          </tr>
-          </tr>
-            <tr>
-            <td>2016-05-02</td>
-            <td>王小虎</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-          </tr>
-          </tr>
-            <tr>
-            <td>2016-05-02</td>
-            <td>王小虎</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-            <td>上海市普陀区金沙江路 1518 弄</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="table-scroll" style="max-height: 140px;">
+  <table class="table-box" style="width: 100%; table-layout: fixed;">
+    <thead>
+      <tr>
+        <td width="180">日期</td>
+        <td width="180">姓名</td>
+        <td width="280">地址</td>
+        <td width="280">地址</td>
+        <td width="280">地址</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2016-05-02</td>
+        <td>王小虎</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+      </tr>
+      <tr>
+        <td>2016-05-02</td>
+        <td>王小虎</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+      </tr>
+      <tr>
+        <td>2016-05-02</td>
+        <td>王小虎</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+      </tr>
+        <tr>
+        <td>2016-05-02</td>
+        <td>王小虎</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+      </tr>
+        <tr>
+        <td>2016-05-02</td>
+        <td>王小虎</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+      </tr>
+      </tr>
+        <tr>
+        <td>2016-05-02</td>
+        <td>王小虎</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+      </tr>
+      </tr>
+        <tr>
+        <td>2016-05-02</td>
+        <td>王小虎</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+        <td>上海市普陀区金沙江路 1518 弄</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-    <script>
-    //DEMO_JS_RUN_START
-    export default {
-      methods: {
-        fixedTds(className, cols) {
-          var css = '.table-box{border-collapse:separate;border-top:none;border-left:none;}/*要设置这个，不然边框会跑*/' +
-          '.table-box thead tr td.fixedTd,.table-box tbody tr td.fixedTd{position:relative;top:0px;z-index:1;background-color:white !important;border-right:1px solid #ddd !important;}' +
-          '.table-box thead tr:hover td.fixedTd,.table-box tbody tr:hover td.fixedTd{position:relative;top:0px;z-index:1;}' +
-          '.table-box tbody tr td.fixedTd{background-color:white !important;}' +
-          '.table-box tbody tr:hover td.fixedTd{background-color:#C1F9CB !important;}'
-          var style = document.createElement('style')
-          style.setAttribute('type', 'text/css')
-          var textCss = document.createTextNode(css)
-          style.appendChild(textCss)
-          var heads = document.getElementsByTagName("head")
-          if (heads.length) {
-            heads[0].appendChild(style)
-          } else {
-            document.documentElement.appendChild(style)
-          }
-
-          if (!className) { className = $('table').parent() }
-          cols = cols || 0
-          cols = cols > $(className).find('table tbody').find('tr').eq(0).find('td').length ? 0 : cols
-          //给table外层添加样式
-          $(className).css({ 'overflow': 'auto', 'border-left': '1px solid #ddd', 'border-top': '1px solid #ddd' })
-          $(className).scroll(function () { //给table外面的div滚动事件绑定一个函数
-            var $divScroll = $(className)
-            var left = $divScroll.scrollLeft() //获取滚动的距离
-            var top = $divScroll.scrollTop() //获取滚动的距离
-            var trs = $divScroll.find(" table tr") //获取表格的所有tr
-            $divScroll.find("table thead tr").find('td').addClass('fixedTd').css({ "top": top })//固定头部
-            for (var j = 0; j < cols; j++) {
-              $divScroll.find("table thead tr").find('td').eq(j).css({ 'zIndex': 2 })
-            }
-            trs.each(function (i) { //对每一个tr（每一行）进行处理
-              //固定列
-              for (var i = 0; i < cols; i++) {
-                //$divScroll.find("table tr").eq(0).find('td').eq(i).css({'zIndex':2});
-                $(this).children().eq(i).addClass('fixedTd').css({ "left": left })
-              }
-            })
-          })
-        }
-      },
-      mounted() {
-        this.fixedTds('.table-scroll', 1)
-      }
-    }
-    //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-    fixedTds('.table-scroll', 1)
-
-    function fixedTds(className, cols) {
+<script>
+//DEMO_JS_RUN_START
+export default {
+  methods: {
+    fixedTds(className, cols) {
       var css = '.table-box{border-collapse:separate;border-top:none;border-left:none;}/*要设置这个，不然边框会跑*/' +
       '.table-box thead tr td.fixedTd,.table-box tbody tr td.fixedTd{position:relative;top:0px;z-index:1;background-color:white !important;border-right:1px solid #ddd !important;}' +
       '.table-box thead tr:hover td.fixedTd,.table-box tbody tr:hover td.fixedTd{position:relative;top:0px;z-index:1;}' +
@@ -396,8 +350,57 @@
           }
         })
       })
-    }//DEMO_JS_SHOW_END
-    </script>
+    }
+  },
+  mounted() {
+    this.fixedTds('.table-scroll', 1)
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+fixedTds('.table-scroll', 1)
+
+function fixedTds(className, cols) {
+  var css = '.table-box{border-collapse:separate;border-top:none;border-left:none;}/*要设置这个，不然边框会跑*/' +
+  '.table-box thead tr td.fixedTd,.table-box tbody tr td.fixedTd{position:relative;top:0px;z-index:1;background-color:white !important;border-right:1px solid #ddd !important;}' +
+  '.table-box thead tr:hover td.fixedTd,.table-box tbody tr:hover td.fixedTd{position:relative;top:0px;z-index:1;}' +
+  '.table-box tbody tr td.fixedTd{background-color:white !important;}' +
+  '.table-box tbody tr:hover td.fixedTd{background-color:#C1F9CB !important;}'
+  var style = document.createElement('style')
+  style.setAttribute('type', 'text/css')
+  var textCss = document.createTextNode(css)
+  style.appendChild(textCss)
+  var heads = document.getElementsByTagName("head")
+  if (heads.length) {
+    heads[0].appendChild(style)
+  } else {
+    document.documentElement.appendChild(style)
+  }
+
+  if (!className) { className = $('table').parent() }
+  cols = cols || 0
+  cols = cols > $(className).find('table tbody').find('tr').eq(0).find('td').length ? 0 : cols
+  //给table外层添加样式
+  $(className).css({ 'overflow': 'auto', 'border-left': '1px solid #ddd', 'border-top': '1px solid #ddd' })
+  $(className).scroll(function () { //给table外面的div滚动事件绑定一个函数
+    var $divScroll = $(className)
+    var left = $divScroll.scrollLeft() //获取滚动的距离
+    var top = $divScroll.scrollTop() //获取滚动的距离
+    var trs = $divScroll.find(" table tr") //获取表格的所有tr
+    $divScroll.find("table thead tr").find('td').addClass('fixedTd').css({ "top": top })//固定头部
+    for (var j = 0; j < cols; j++) {
+      $divScroll.find("table thead tr").find('td').eq(j).css({ 'zIndex': 2 })
+    }
+    trs.each(function (i) { //对每一个tr（每一行）进行处理
+      //固定列
+      for (var i = 0; i < cols; i++) {
+        //$divScroll.find("table tr").eq(0).find('td').eq(i).css({'zIndex':2});
+        $(this).children().eq(i).addClass('fixedTd').css({ "left": left })
+      }
+    })
+  })
+}
+//DEMO_JS_SHOW_END
+</script>
 ```
 
 :::
@@ -439,22 +442,22 @@
 </table>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    methods: {},
-    mounted() {
-      $('#tableSort').on('click', 'thead td', function() {
-        var curIndex = $(this).index()
-        sortTable(this, 'tableSort', curIndex)
-      })
-    }
+//DEMO_JS_RUN_START
+export default {
+  methods: {},
+  mounted() {
+    $('#tableSort').on('click', 'thead td', function() {
+      var curIndex = $(this).index()
+      sortTable(this, 'tableSort', curIndex)
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#tableSort').on('click', 'thead td', function() {
-    var curIndex = $(this).index()
-    sortTable(this, 'tableSort', curIndex)
-  })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#tableSort').on('click', 'thead td', function() {
+  var curIndex = $(this).index()
+  sortTable(this, 'tableSort', curIndex)
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -494,32 +497,32 @@
 
 ```html
 <style>
-  .form-item {
-    text-align: left;
-  }
+.form-item {
+  text-align: left;
+}
 
-  label.form-item-label {
-    width: 90px;
-    color: #99a9bf;
-    text-align: right;
-    vertical-align: middle;
-    font-size: 14px;
-    color: #606266;
-    line-height: 28px;
-    padding: 0 12px 0 0;
-    box-sizing: border-box;
-  }
+label.form-item-label {
+  width: 90px;
+  color: #99a9bf;
+  text-align: right;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #606266;
+  line-height: 28px;
+  padding: 0 12px 0 0;
+  box-sizing: border-box;
+}
 
-  .form-item-content {
-    vertical-align: top;
-    line-height: 28px;
-    position: relative;
-    font-size: 14px;
-  }
+.form-item-content {
+  vertical-align: top;
+  line-height: 28px;
+  position: relative;
+  font-size: 14px;
+}
 
-  .table-box__expanded-cell {
-    display: none;
-  }
+.table-box__expanded-cell {
+  display: none;
+}
 </style>
 
 <table id="tableExpand" class="table-box"
@@ -657,25 +660,27 @@
 </table>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#tableExpand').on('click', '.table-box__expand-toggle', function () {
-        var isExpanded = !$(this).hasClass('table-box__noexpand')
-        $(this).toggleClass('table-box__noexpand')
-              .parents('tr:eq(0)')
-              .next().find('.table-box__expanded-cell').toggle(!isExpanded)   
-        $(this).text(isExpanded ? '展开' : '收起')
-      })
-    }
-  } //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#tableExpand').on('click', '.table-box__expand-toggle', function () {
-    var isExpanded = !$(this).hasClass('table-box__noexpand')
-    $(this).toggleClass('table-box__noexpand')
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#tableExpand').on('click', '.table-box__expand-toggle', function () {
+      var isExpanded = !$(this).hasClass('table-box__noexpand')
+      $(this).toggleClass('table-box__noexpand')
             .parents('tr:eq(0)')
             .next().find('.table-box__expanded-cell').toggle(!isExpanded)   
-    $(this).text(isExpanded ? '展开' : '收起')
-  })//DEMO_JS_SHOW_END
+      $(this).text(isExpanded ? '展开' : '收起')
+    })
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#tableExpand').on('click', '.table-box__expand-toggle', function () {
+  var isExpanded = !$(this).hasClass('table-box__noexpand')
+  $(this).toggleClass('table-box__noexpand')
+          .parents('tr:eq(0)')
+          .next().find('.table-box__expanded-cell').toggle(!isExpanded)   
+  $(this).text(isExpanded ? '展开' : '收起')
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 :::

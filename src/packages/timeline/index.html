@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_1544706_fkt90oq3f3h.css"
+    />
+    <style>
+      .lyj-timeline {
+        margin: 0;
+        font-size: 14px;
+        list-style: none;
+      }
+
+      .lyj-timeline .lyj-timeline-item:last-child .lyj-timeline-item__tail {
+        display: none;
+      }
+
+      .lyj-timeline-item {
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .lyj-timeline-item__wrapper {
+        position: relative;
+        padding-left: 28px;
+        top: -3px;
+      }
+
+      .lyj-timeline-item__tail {
+        position: absolute;
+        left: 4px;
+        height: 100%;
+        border-left: 2px solid #e4e7ed;
+      }
+
+      .lyj-timeline-item__icon {
+        color: #fff;
+        font-size: 13px;
+      }
+
+      .lyj-timeline-item__node {
+        position: absolute;
+        background-color: #e4e7ed;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .lyj-timeline-item__node--normal {
+        left: -1px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .lyj-timeline-item__node--large {
+        left: -2px;
+        width: 14px;
+        height: 14px;
+      }
+
+      .lyj-timeline-item__node--primary {
+        background-color: #409eff;
+      }
+
+      .lyj-timeline-item__node--success {
+        background-color: #67c23a;
+      }
+
+      .lyj-timeline-item__node--warning {
+        background-color: #e6a23c;
+      }
+
+      .lyj-timeline-item__node--danger {
+        background-color: #f56c6c;
+      }
+
+      .lyj-timeline-item__node--info {
+        background-color: #909399;
+      }
+
+      .lyj-timeline-item__dot {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .lyj-timeline-item__content {
+        color: #303133;
+      }
+
+      .lyj-timeline-item__timestamp {
+        color: #909399;
+        line-height: 1;
+        font-size: 13px;
+      }
+
+      .lyj-timeline-item__timestamp.is-top {
+        margin-bottom: 8px;
+        padding-top: 4px;
+      }
+
+      .lyj-timeline-item__timestamp.is-bottom {
+        margin-top: 8px;
+      }
+
+      #timeline .lyj-icon-fire {
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="lyj-timeline">
+      <li class="lyj-timeline-item">
+        <div class="lyj-timeline-item__tail"></div>
+        <div
+          class="lyj-timeline-item__node lyj-timeline-item__node--normal lyj-timeline-item__node--"
+        ></div>
+        <div class="lyj-timeline-item__wrapper">
+          <div class="lyj-timeline-item__content">
+            活动按期开始
+          </div>
+          <div class="lyj-timeline-item__timestamp is-bottom">
+            2018-04-15
+          </div>
+        </div>
+      </li>
+      <li class="lyj-timeline-item">
+        <div class="lyj-timeline-item__tail"></div>
+        <div
+          class="lyj-timeline-item__node lyj-timeline-item__node--normal lyj-timeline-item__node--"
+        ></div>
+        <div class="lyj-timeline-item__wrapper">
+          <div class="lyj-timeline-item__content">
+            通过审核
+          </div>
+          <div class="lyj-timeline-item__timestamp is-bottom">
+            2018-04-13
+          </div>
+        </div>
+      </li>
+      <li class="lyj-timeline-item">
+        <div class="lyj-timeline-item__tail"></div>
+        <div
+          class="lyj-timeline-item__node lyj-timeline-item__node--normal lyj-timeline-item__node--"
+        ></div>
+        <div class="lyj-timeline-item__wrapper">
+          <div class="lyj-timeline-item__content">
+            创建成功
+          </div>
+          <div class="lyj-timeline-item__timestamp is-bottom">
+            2018-04-11
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <ul id="timeline"></ul>
+    <button type="button" id="btn">reverse</button>
+    <script
+      type="text/javascript"
+      src="https://front.leyoujia.com/js/jquery.js"
+    ></script>
+    <script src="src/timeline.js"></script>
+    <script>
+      $('#timeline').lyj_timeline({
+        timelimeItemOptionsList: [
+          {
+            timestamp: '2019-12-05',
+            content: 'timeline 组件开发',
+            color: 'blue'
+          },
+          {
+            timestamp: '2019-12-04',
+            content: 'steps 组件开发',
+            type: 'warning'
+          },
+          {
+            timestamp: '2019-12-03',
+            content: 'steps 组件开发'
+          },
+          {
+            timestamp: '2019-12-02',
+            content: 'checkbox 组件开发',
+            icon: 'iconfont lyj-icon-fire',
+            type: 'primary'
+          }
+        ]
+      })
+
+      $('#btn').click(function() {
+        $('#timeline').data('timeline').reverse = !$('#timeline').data(
+          'timeline'
+        ).reverse
+      })
+    </script>
+  </body>
+</html>

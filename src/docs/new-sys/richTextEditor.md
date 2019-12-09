@@ -23,39 +23,39 @@ wangEditor —— 轻量级 web 富文本编辑器，配置方便，使用简单
 </div>
 <div id="div1"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      var E = window.wangEditor
-      var editor = new E('#div1')
-      editor.create()
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    var E = window.wangEditor
+    var editor = new E('#div1')
+    editor.create()
 
-      $('#btn1').click(function() {
-        // 禁用编辑功能
-        editor.$textElem.attr('contenteditable', false)
-      })
+    $('#btn1').click(function() {
+      // 禁用编辑功能
+      editor.$textElem.attr('contenteditable', false)
+    })
 
-      $('#btn2').click(function() {
-        // 开启编辑功能
-        editor.$textElem.attr('contenteditable', true)
-      })
-    }
+    $('#btn2').click(function() {
+      // 开启编辑功能
+      editor.$textElem.attr('contenteditable', true)
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var E = window.wangEditor
-  var editor = new E('#div1')
-  editor.create()
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var E = window.wangEditor
+var editor = new E('#div1')
+editor.create()
 
-  $('#btn1').click(function() {
-    // 禁用编辑功能
-    editor.$textElem.attr('contenteditable', false)
-  })
+$('#btn1').click(function() {
+  // 禁用编辑功能
+  editor.$textElem.attr('contenteditable', false)
+})
 
-  $('#btn2').click(function() {
-    // 开启编辑功能
-    editor.$textElem.attr('contenteditable', true)
-  })
-  //DEMO_JS_SHOW_END
+$('#btn2').click(function() {
+  // 开启编辑功能
+  editor.$textElem.attr('contenteditable', true)
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -85,59 +85,59 @@ wangEditor —— 轻量级 web 富文本编辑器，配置方便，使用简单
 </div>
 <div id="div2"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      var E = window.wangEditor
-      var editor = new E('#div2')
-      editor.create()
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    var E = window.wangEditor
+    var editor = new E('#div2')
+    editor.create()
 
-      $('#btn3').click(function() {
-        editor.txt.html('<p>用 JS 设置的内容</p>')
-      })
+    $('#btn3').click(function() {
+      editor.txt.html('<p>用 JS 设置的内容</p>')
+    })
 
-      $('#btn4').click(function() {
-        editor.txt.append('<p>追加的内容</p>')
-      })
+    $('#btn4').click(function() {
+      editor.txt.append('<p>追加的内容</p>')
+    })
 
-      $('#btn5').click(function() {
-        editor.txt.clear()
-      })
+    $('#btn5').click(function() {
+      editor.txt.clear()
+    })
 
-      $('#btn6').click(function() {
-        alert(editor.txt.text())
-      })
+    $('#btn6').click(function() {
+      alert(editor.txt.text())
+    })
 
-      $('#btn7').click(function() {
-        alert(editor.txt.html())
-      })
-    }
+    $('#btn7').click(function() {
+      alert(editor.txt.html())
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var E = window.wangEditor
-  var editor = new E('#div2')
-  editor.create()
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var E = window.wangEditor
+var editor = new E('#div2')
+editor.create()
 
-  $('#btn3').click(function() {
-    editor.txt.html('<p>用 JS 设置的内容</p>')
-  })
+$('#btn3').click(function() {
+  editor.txt.html('<p>用 JS 设置的内容</p>')
+})
 
-  $('#btn4').click(function() {
-    editor.txt.append('<p>追加的内容</p>')
-  })
+$('#btn4').click(function() {
+  editor.txt.append('<p>追加的内容</p>')
+})
 
-  $('#btn5').click(function() {
-    editor.txt.clear()
-  })
+$('#btn5').click(function() {
+  editor.txt.clear()
+})
 
-  $('#btn6').click(function() {
-    alert(editor.txt.text())
-  })
+$('#btn6').click(function() {
+  alert(editor.txt.text())
+})
 
-  $('#btn7').click(function() {
-    alert(editor.txt.html())
-  })
-  //DEMO_JS_SHOW_END
+$('#btn7').click(function() {
+  alert(editor.txt.html())
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -158,39 +158,39 @@ wangEditor —— 轻量级 web 富文本编辑器，配置方便，使用简单
   <p>欢迎使用 wangEditor 富文本编辑器</p>
 </div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      var E = window.wangEditor
-      var editor = new E('#div3')
-      editor.customConfig.onchange = function(html) {
-        // html 即变化之后的内容
-        alert(html)
-      }
-      editor.create()
-
-      $('#btn8').on('click', function() {
-        editor.txt.append('<p>追加的内容</p>')
-        // 如果未配置 editor.customConfig.onchange，则 editor.change 为 undefined
-        editor.change && editor.change()
-      })
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    var E = window.wangEditor
+    var editor = new E('#div3')
+    editor.customConfig.onchange = function(html) {
+      // html 即变化之后的内容
+      alert(html)
     }
-  }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var E = window.wangEditor
-  var editor = new E('#div3')
-  editor.customConfig.onchange = function(html) {
-    // html 即变化之后的内容
-    alert(html)
-  }
-  editor.create()
+    editor.create()
 
-  $('#btn8').on('click', function() {
-    editor.txt.append('<p>追加的内容</p>')
-    // 如果未配置 editor.customConfig.onchange，则 editor.change 为 undefined
-    editor.change && editor.change()
-  })
-  //DEMO_JS_SHOW_END
+    $('#btn8').on('click', function() {
+      editor.txt.append('<p>追加的内容</p>')
+      // 如果未配置 editor.customConfig.onchange，则 editor.change 为 undefined
+      editor.change && editor.change()
+    })
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var E = window.wangEditor
+var editor = new E('#div3')
+editor.customConfig.onchange = function(html) {
+  // html 即变化之后的内容
+  alert(html)
+}
+editor.create()
+
+$('#btn8').on('click', function() {
+  editor.txt.append('<p>追加的内容</p>')
+  // 如果未配置 editor.customConfig.onchange，则 editor.change 为 undefined
+  editor.change && editor.change()
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -207,31 +207,31 @@ wangEditor —— 轻量级 web 富文本编辑器，配置方便，使用简单
 ```html
 <div id="div4"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      var E = window.wangEditor
-      var editor = new E('#div4')
-      editor.customConfig.onfocus = function() {
-        $.lyj_message.message('onfocus')
-      }
-      editor.customConfig.onblur = function(html) {
-        $.lyj_message.message('onblur')
-      }
-      editor.create()
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    var E = window.wangEditor
+    var editor = new E('#div4')
+    editor.customConfig.onfocus = function() {
+      $.lyj_message.message('onfocus')
     }
+    editor.customConfig.onblur = function(html) {
+      $.lyj_message.message('onblur')
+    }
+    editor.create()
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var E = window.wangEditor
-  var editor = new E('#div4')
-  editor.customConfig.onfocus = function() {
-    $.lyj_message.message('onfocus')
-  }
-  editor.customConfig.onblur = function(html) {
-    $.lyj_message.message('onblur')
-  }
-  editor.create()
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var E = window.wangEditor
+var editor = new E('#div4')
+editor.customConfig.onfocus = function() {
+  $.lyj_message.message('onfocus')
+}
+editor.customConfig.onblur = function(html) {
+  $.lyj_message.message('onblur')
+}
+editor.create()
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -246,21 +246,21 @@ wangEditor —— 轻量级 web 富文本编辑器，配置方便，使用简单
 ```html
 <div id="div5"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      var E = window.wangEditor
-      var editor = new E('#div5')
-      editor.customConfig.zIndex = 100
-      editor.create()
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    var E = window.wangEditor
+    var editor = new E('#div5')
+    editor.customConfig.zIndex = 100
+    editor.create()
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var E = window.wangEditor
-  var editor = new E('#div5')
-  editor.customConfig.zIndex = 100
-  editor.create()
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var E = window.wangEditor
+var editor = new E('#div5')
+editor.customConfig.zIndex = 100
+editor.create()
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -275,76 +275,76 @@ wangEditor —— 轻量级 web 富文本编辑器，配置方便，使用简单
 ```html
 <div id="div6"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      var E = window.wangEditor
-      var editor = new E('#div6')
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    var E = window.wangEditor
+    var editor = new E('#div6')
 
-      editor.customConfig.emotions = [
-        {
-          title: '默认',
-          type: 'image',
-          content: [
-            {
-              alt: '[坏笑]',
-              src:
-                'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/50/pcmoren_huaixiao_org.png'
-            },
-            {
-              alt: '[舔屏]',
-              src:
-                'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/pcmoren_tian_org.png'
-            }
-          ]
-        },
-        {
-          title: 'emoji',
-          type: 'emoji',
-          content: ['😀', '😃', '😄', '😁', '😆']
-        }
-      ]
+    editor.customConfig.emotions = [
+      {
+        title: '默认',
+        type: 'image',
+        content: [
+          {
+            alt: '[坏笑]',
+            src:
+              'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/50/pcmoren_huaixiao_org.png'
+          },
+          {
+            alt: '[舔屏]',
+            src:
+              'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/pcmoren_tian_org.png'
+          }
+        ]
+      },
+      {
+        title: 'emoji',
+        type: 'emoji',
+        content: ['😀', '😃', '😄', '😁', '😆']
+      }
+    ]
 
-      editor.create()
-    }
+    editor.create()
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var E = window.wangEditor
-  var editor = new E('#div6')
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var E = window.wangEditor
+var editor = new E('#div6')
 
-  // 表情面板可以有多个 tab ，因此要配置成一个数组。数组每个元素代表一个 tab 的配置
-  editor.customConfig.emotions = [
-    {
-      // tab 的标题
-      title: '默认',
-      // type -> 'emoji' / 'image'
-      type: 'image',
-      // content -> 数组
-      content: [
-        {
-          alt: '[坏笑]',
-          src:
-            'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/50/pcmoren_huaixiao_org.png'
-        },
-        {
-          alt: '[舔屏]',
-          src:
-            'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/pcmoren_tian_org.png'
-        }
-      ]
-    },
-    {
-      // tab 的标题
-      title: 'emoji',
-      // type -> 'emoji' / 'image'
-      type: 'emoji',
-      // content -> 数组
-      content: ['😀', '😃', '😄', '😁', '😆']
-    }
-  ]
+// 表情面板可以有多个 tab ，因此要配置成一个数组。数组每个元素代表一个 tab 的配置
+editor.customConfig.emotions = [
+  {
+    // tab 的标题
+    title: '默认',
+    // type -> 'emoji' / 'image'
+    type: 'image',
+    // content -> 数组
+    content: [
+      {
+        alt: '[坏笑]',
+        src:
+          'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/50/pcmoren_huaixiao_org.png'
+      },
+      {
+        alt: '[舔屏]',
+        src:
+          'http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/40/pcmoren_tian_org.png'
+      }
+    ]
+  },
+  {
+    // tab 的标题
+    title: 'emoji',
+    // type -> 'emoji' / 'image'
+    type: 'emoji',
+    // content -> 数组
+    content: ['😀', '😃', '😄', '😁', '😆']
+  }
+]
 
-  editor.create()
-  //DEMO_JS_SHOW_END
+editor.create()
+//DEMO_JS_SHOW_END
 </script>
 ```
 

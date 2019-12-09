@@ -23,30 +23,32 @@
 
 <script>
 //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('.show-loading1').click(function () {
-        var opts = {
-          type: 0,
-          obj: '.loading-wrapper1'
-        }
-        showLoadingLayer(opts);
-      });
-      $('.hide-loading1').click(function() {
-        hideLoadingLayer();
-      });
-    }
-  }//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('.show-loading1').click(function () {
-    var opts = {
-      type: 1,
-      obj: '.loading-wrapper1'
-    }
-    showLoadingLayer(opts);
-  });
-  $('.hide-loading1').click(function() {
-    hideLoadingLayer();
-  });//DEMO_JS_SHOW_END
+export default {
+  mounted() {
+    $('.show-loading1').click(function () {
+      var opts = {
+        type: 0,
+        obj: '.loading-wrapper1'
+      }
+      showLoadingLayer(opts);
+    });
+    $('.hide-loading1').click(function() {
+      hideLoadingLayer();
+    });
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('.show-loading1').click(function () {
+  var opts = {
+    type: 1,
+    obj: '.loading-wrapper1'
+  }
+  showLoadingLayer(opts);
+});
+$('.hide-loading1').click(function() {
+  hideLoadingLayer();
+});
+//DEMO_JS_SHOW_END
 </script>
 
 ```
@@ -67,30 +69,32 @@
 
 <script>
 //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('.show-loading2').click(function () {
-        var opts = {
-          type: 1,
-          obj: '.loading-wrapper2'
-        }
-        showLoadingLayer(opts);
-      });
-      $('.hide-loading2').click(function() {
-        hideLoadingLayer();
-      });
-    }
-  }//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('.show-loading1').click(function () {
-    var opts = {
-      type: 1,
-      obj: '.loading-wrapper2'
-    }
-    showLoadingLayer(opts);
-  });
-  $('.hide-loading2').click(function() {
-    hideLoadingLayer();
-  });//DEMO_JS_SHOW_END
+export default {
+  mounted() {
+    $('.show-loading2').click(function () {
+      var opts = {
+        type: 1,
+        obj: '.loading-wrapper2'
+      }
+      showLoadingLayer(opts);
+    });
+    $('.hide-loading2').click(function() {
+      hideLoadingLayer();
+    });
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('.show-loading1').click(function () {
+  var opts = {
+    type: 1,
+    obj: '.loading-wrapper2'
+  }
+  showLoadingLayer(opts);
+});
+$('.hide-loading2').click(function() {
+  hideLoadingLayer();
+});
+//DEMO_JS_SHOW_END
 </script>
 ```
 :::
@@ -110,30 +114,32 @@
 
 <script>
 //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('.show-loading3').click(function () {
-        var opts = {
-          type: 2,
-          obj: '.loading-wrapper3'
-        }
-        showLoadingLayer(opts);
-      });
-      $('.hide-loading3').click(function() {
-        hideLoadingLayer();
-      });
-    }
-  }//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('.show-loading3').click(function () {
-    var opts = {
-      type: 2,
-      obj: '.loading-wrapper3'
-    }
-    showLoadingLayer(opts);
-  });
-  $('.hide-loading3').click(function() {
-    hideLoadingLayer();
-  });//DEMO_JS_SHOW_END
+export default {
+  mounted() {
+    $('.show-loading3').click(function () {
+      var opts = {
+        type: 2,
+        obj: '.loading-wrapper3'
+      }
+      showLoadingLayer(opts);
+    });
+    $('.hide-loading3').click(function() {
+      hideLoadingLayer();
+    });
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('.show-loading3').click(function () {
+  var opts = {
+    type: 2,
+    obj: '.loading-wrapper3'
+  }
+  showLoadingLayer(opts);
+});
+$('.hide-loading3').click(function() {
+  hideLoadingLayer();
+});
+//DEMO_JS_SHOW_END
 </script>
 ```
 :::
@@ -153,30 +159,32 @@
 
 <script>
 //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('.show-loading4').click(function () {
-        var opts = {
-          type: 3,
-          obj: '.loading-wrapper4'
-        }
-        showLoadingLayer(opts);
-      });
-      $('.hide-loading4').click(function() {
-        hideLoadingLayer();
-      });
-    }
-  }//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('.show-loading4').click(function () {
-    var opts = {
-      type: 3,
-      obj: '.loading-wrapper4'
-    }
-    showLoadingLayer(opts);
-  });
-  $('.hide-loading4').click(function() {
-    hideLoadingLayer();
-  });//DEMO_JS_SHOW_END
+export default {
+  mounted() {
+    $('.show-loading4').click(function () {
+      var opts = {
+        type: 3,
+        obj: '.loading-wrapper4'
+      }
+      showLoadingLayer(opts);
+    });
+    $('.hide-loading4').click(function() {
+      hideLoadingLayer();
+    });
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('.show-loading4').click(function () {
+  var opts = {
+    type: 3,
+    obj: '.loading-wrapper4'
+  }
+  showLoadingLayer(opts);
+});
+$('.hide-loading4').click(function() {
+  hideLoadingLayer();
+});
+//DEMO_JS_SHOW_END
 </script>
 ```
 :::
@@ -196,32 +204,34 @@
 
 <script>
 //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('.show-loading5').click(function () {
-        var opts = {
-          type: 2,
-          obj: '.loading-wrapper5',
-          class: 'reverse'
-        }
-        showLoadingLayer(opts);
-      });
-      $('.hide-loading5').click(function() {
-        hideLoadingLayer();
-      });
-    }
-  }//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('.show-loading5').click(function () {
-    var opts = {
-      type: 2,
-      obj: '.loading-wrapper5',
-      class: 'reverse'
-    }
-    showLoadingLayer(opts);
-  });
-  $('.hide-loading5').click(function() {
-    hideLoadingLayer();
-  });//DEMO_JS_SHOW_END
+export default {
+  mounted() {
+    $('.show-loading5').click(function () {
+      var opts = {
+        type: 2,
+        obj: '.loading-wrapper5',
+        class: 'reverse'
+      }
+      showLoadingLayer(opts);
+    });
+    $('.hide-loading5').click(function() {
+      hideLoadingLayer();
+    });
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('.show-loading5').click(function () {
+  var opts = {
+    type: 2,
+    obj: '.loading-wrapper5',
+    class: 'reverse'
+  }
+  showLoadingLayer(opts);
+});
+$('.hide-loading5').click(function() {
+  hideLoadingLayer();
+});
+//DEMO_JS_SHOW_END
 </script>
 ```
 :::

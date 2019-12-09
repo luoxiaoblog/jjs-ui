@@ -19,41 +19,41 @@
 <div id="radiogroup1"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'sex',
-        radioGroup: [
-          {
-            label: '男',
-            value: '1'
-          },
-          {
-            label: '女',
-            value: '2'
-          }
-        ]
-      }
-      $('#radiogroup1').lyj_radiogroup(options)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'sex',
+      radioGroup: [
+        {
+          label: '男',
+          value: '1'
+        },
+        {
+          label: '女',
+          value: '2'
+        }
+      ]
     }
+    $('#radiogroup1').lyj_radiogroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'sex',
-    radioGroup: [
-      {
-        label: '男',
-        value: '1'
-      },
-      {
-        label: '女',
-        value: '2'
-      }
-    ]
-  }
-  $('#radiogroup1').lyj_radiogroup(options)
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'sex',
+  radioGroup: [
+    {
+      label: '男',
+      value: '1'
+    },
+    {
+      label: '女',
+      value: '2'
+    }
+  ]
+}
+$('#radiogroup1').lyj_radiogroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -69,43 +69,43 @@
 <div id="radiogroup2"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'type',
-        value: '1',
-        radioGroup: [
-          {
-            label: '按区域查找',
-            value: '1'
-          },
-          {
-            label: '按地铁查找',
-            value: '2'
-          }
-        ]
-      }
-      $('#radiogroup2').lyj_radiogroup(options)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'type',
+      value: '1',
+      radioGroup: [
+        {
+          label: '按区域查找',
+          value: '1'
+        },
+        {
+          label: '按地铁查找',
+          value: '2'
+        }
+      ]
     }
+    $('#radiogroup2').lyj_radiogroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'type',
-    value: '1',
-    radioGroup: [
-      {
-        label: '按区域查找',
-        value: '1'
-      },
-      {
-        label: '按地铁查找',
-        value: '2'
-      }
-    ]
-  }
-  $('#radiogroup2').lyj_radiogroup(options)
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'type',
+  value: '1',
+  radioGroup: [
+    {
+      label: '按区域查找',
+      value: '1'
+    },
+    {
+      label: '按地铁查找',
+      value: '2'
+    }
+  ]
+}
+$('#radiogroup2').lyj_radiogroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -121,49 +121,49 @@
 <div id="radiogroup3"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'type',
-        radioGroup: [
-          {
-            label: '备选项',
-            value: '1'
-          },
-          {
-            label: '备选项',
-            value: '2'
-          },
-          {
-            label: '备选项',
-            value: '3'
-          }
-        ]
-      }
-      $('#radiogroup3').lyj_radiogroup(options)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'type',
+      radioGroup: [
+        {
+          label: '备选项',
+          value: '1'
+        },
+        {
+          label: '备选项',
+          value: '2'
+        },
+        {
+          label: '备选项',
+          value: '3'
+        }
+      ]
     }
+    $('#radiogroup3').lyj_radiogroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'type',
-    radioGroup: [
-      {
-        label: '备选项',
-        value: '1'
-      },
-      {
-        label: '备选项',
-        value: '2'
-      },
-      {
-        label: '备选项',
-        value: '3'
-      }
-    ]
-  }
-  $('#radiogroup3').lyj_radiogroup(options)
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'type',
+  radioGroup: [
+    {
+      label: '备选项',
+      value: '1'
+    },
+    {
+      label: '备选项',
+      value: '2'
+    },
+    {
+      label: '备选项',
+      value: '3'
+    }
+  ]
+}
+$('#radiogroup3').lyj_radiogroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -177,55 +177,55 @@
 <div id="radiogroup4"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'type',
-        radioGroup: [
-          {
-            label: '备选项',
-            value: '1'
-          },
-          {
-            label: '备选项',
-            value: '2'
-          },
-          {
-            label: '备选项',
-            value: '3'
-          }
-        ],
-        changeHandler: val => {
-          alert(val)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'type',
+      radioGroup: [
+        {
+          label: '备选项',
+          value: '1'
+        },
+        {
+          label: '备选项',
+          value: '2'
+        },
+        {
+          label: '备选项',
+          value: '3'
         }
+      ],
+      changeHandler: val => {
+        alert(val)
       }
-      $('#radiogroup4').lyj_radiogroup(options)
     }
+    $('#radiogroup4').lyj_radiogroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'type',
-    radioGroup: [
-      {
-        label: '备选项',
-        value: '1'
-      },
-      {
-        label: '备选项',
-        value: '2'
-      },
-      {
-        label: '备选项',
-        value: '3'
-      }
-    ],
-    changeHandler: function(val) {
-      alert(val)
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'type',
+  radioGroup: [
+    {
+      label: '备选项',
+      value: '1'
+    },
+    {
+      label: '备选项',
+      value: '2'
+    },
+    {
+      label: '备选项',
+      value: '3'
     }
+  ],
+  changeHandler: function(val) {
+    alert(val)
   }
-  $('#radiogroup4').lyj_radiogroup(options)
-  //DEMO_JS_SHOW_END
+}
+$('#radiogroup4').lyj_radiogroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -243,51 +243,51 @@
 <div id="radiogroup5"></div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'type',
-        disabled: true,
-        radioGroup: [
-          {
-            label: '备选项',
-            value: '1'
-          },
-          {
-            label: '备选项',
-            value: '2'
-          },
-          {
-            label: '备选项',
-            value: '3'
-          }
-        ]
-      }
-      $('#radiogroup5').lyj_radiogroup(options)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'type',
+      disabled: true,
+      radioGroup: [
+        {
+          label: '备选项',
+          value: '1'
+        },
+        {
+          label: '备选项',
+          value: '2'
+        },
+        {
+          label: '备选项',
+          value: '3'
+        }
+      ]
     }
+    $('#radiogroup5').lyj_radiogroup(options)
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  var options = {
-    name: 'type',
-    disabled: true,
-    radioGroup: [
-      {
-        label: '备选项',
-        value: '1'
-      },
-      {
-        label: '备选项',
-        value: '2'
-      },
-      {
-        label: '备选项',
-        value: '3'
-      }
-    ]
-  }
-  $('#radiogroup5').lyj_radiogroup(options)
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+var options = {
+  name: 'type',
+  disabled: true,
+  radioGroup: [
+    {
+      label: '备选项',
+      value: '1'
+    },
+    {
+      label: '备选项',
+      value: '2'
+    },
+    {
+      label: '备选项',
+      value: '3'
+    }
+  ]
+}
+$('#radiogroup5').lyj_radiogroup(options)
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -314,78 +314,78 @@
 </div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      let options = {
-        name: 'type',
-        radioGroup: [
-          {
-            label: '备选项',
-            value: '1'
-          },
-          {
-            label: '备选项',
-            value: '2'
-          },
-          {
-            label: '备选项',
-            value: '3'
-          }
-        ]
-      }
-      $('#radiogroup6').lyj_radiogroup(options)
-      $('.btn-wrapper').on('click', '.btn.btn-primary', function() {
-        var radiogroup = $('#radiogroup6').data('radiogroup')
-        var id = $(this).attr('id')
-        if (id == 'btn1') {
-          radiogroup.disabled = true
-        } else if (id == 'btn2') {
-          radiogroup.disabled = false
-        } else if (id == 'btn3') {
-          radiogroup.value = '3'
-        } else if (id == 'btn4') {
-          radiogroup.value = '1'
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    let options = {
+      name: 'type',
+      radioGroup: [
+        {
+          label: '备选项',
+          value: '1'
+        },
+        {
+          label: '备选项',
+          value: '2'
+        },
+        {
+          label: '备选项',
+          value: '3'
         }
-      })
+      ]
     }
-  }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  let options = {
-    name: 'type',
-    disabled: true,
-    radioGroup: [
-      {
-        label: '备选项',
-        value: '1'
-      },
-      {
-        label: '备选项',
-        value: '2'
-      },
-      {
-        label: '备选项',
-        value: '3'
+    $('#radiogroup6').lyj_radiogroup(options)
+    $('.btn-wrapper').on('click', '.btn.btn-primary', function() {
+      var radiogroup = $('#radiogroup6').data('radiogroup')
+      var id = $(this).attr('id')
+      if (id == 'btn1') {
+        radiogroup.disabled = true
+      } else if (id == 'btn2') {
+        radiogroup.disabled = false
+      } else if (id == 'btn3') {
+        radiogroup.value = '3'
+      } else if (id == 'btn4') {
+        radiogroup.value = '1'
       }
-    ]
+    })
   }
-  $('#radiogroup6').lyj_radiogroup(options)
-
-  $('.btn-wrapper').on('click', '.btn.btn-primary', function() {
-    // 获取组件对象
-    var radiogroup = $('#radiogroup6').data('radiogroup')
-    var id = $(this).attr('id')
-    if (id == 'btn1') {
-      radiogroup.disabled = true
-    } else if (id == 'btn2') {
-      radiogroup.disabled = false
-    } else if (id == 'btn3') {
-      radiogroup.value = '3'
-    } else if (id == 'btn4') {
-      radiogroup.value = '1'
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+let options = {
+  name: 'type',
+  disabled: true,
+  radioGroup: [
+    {
+      label: '备选项',
+      value: '1'
+    },
+    {
+      label: '备选项',
+      value: '2'
+    },
+    {
+      label: '备选项',
+      value: '3'
     }
-  })
-  //DEMO_JS_SHOW_END
+  ]
+}
+$('#radiogroup6').lyj_radiogroup(options)
+
+$('.btn-wrapper').on('click', '.btn.btn-primary', function() {
+  // 获取组件对象
+  var radiogroup = $('#radiogroup6').data('radiogroup')
+  var id = $(this).attr('id')
+  if (id == 'btn1') {
+    radiogroup.disabled = true
+  } else if (id == 'btn2') {
+    radiogroup.disabled = false
+  } else if (id == 'btn3') {
+    radiogroup.value = '3'
+  } else if (id == 'btn4') {
+    radiogroup.value = '1'
+  }
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 

@@ -4,3 +4,5 @@ declare module '*.vue' {
 }
 
 declare module 'highlight.js'
+
+declare module 'clipboard'

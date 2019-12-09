@@ -15,37 +15,37 @@
 <button id="btn4" type="button" class="btn btn-white fl mr20">错误</button>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#btn1').click(function() {
-        $.lyj_message.success('恭喜你，这是一条成功消息')
-      })
-      $('#btn2').click(function() {
-        $.lyj_message.warning('警告哦，这是一条警告消息')
-      })
-      $('#btn3').click(function() {
-        $.lyj_message.info('这是一条消息提示')
-      })
-      $('#btn4').click(function() {
-        $.lyj_message.error('错了哦，这是一条错误消息')
-      })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#btn1').click(function() {
+      $.lyj_message.success('恭喜你，这是一条成功消息')
+    })
+    $('#btn2').click(function() {
+      $.lyj_message.warning('警告哦，这是一条警告消息')
+    })
+    $('#btn3').click(function() {
+      $.lyj_message.info('这是一条消息提示')
+    })
+    $('#btn4').click(function() {
+      $.lyj_message.error('错了哦，这是一条错误消息')
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#btn1').click(function() {
-    $.lyj_message.success('恭喜你，这是一条成功消息')
-  })
-  $('#btn2').click(function() {
-    $.lyj_message.warning('警告哦，这是一条警告消息')
-  })
-  $('#btn3').click(function() {
-    $.lyj_message.info('这是一条消息提示')
-  })
-  $('#btn4').click(function() {
-    $.lyj_message.error('错了哦，这是一条错误消息')
-  })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#btn1').click(function() {
+  $.lyj_message.success('恭喜你，这是一条成功消息')
+})
+$('#btn2').click(function() {
+  $.lyj_message.warning('警告哦，这是一条警告消息')
+})
+$('#btn3').click(function() {
+  $.lyj_message.info('这是一条消息提示')
+})
+$('#btn4').click(function() {
+  $.lyj_message.error('错了哦，这是一条错误消息')
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -63,23 +63,23 @@
 </button>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#btn5').click(function() {
-        $.lyj_message.success(
-          '恭喜你，这是一条<b style="color: red">成功消息</b>'
-        )
-      })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#btn5').click(function() {
+      $.lyj_message.success(
+        '恭喜你，这是一条<b style="color: red">成功消息</b>'
+      )
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#btn5').click(function() {
-    $.lyj_message.success(
-      '恭喜你，这是一条&lt;b style="color: red"&gt;成功消息&lt;/b&gt;'
-    )
-  })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#btn5').click(function() {
+  $.lyj_message.success(
+    '恭喜你，这是一条&lt;b style="color: red"&gt;成功消息&lt;/b&gt;'
+  )
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -98,69 +98,69 @@
 <button id="btn9" type="button" class="btn btn-white fl mr20">错误</button>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#btn6').click(function() {
-        $.lyj_message.message({
-          type: 'success',
-          msg: '恭喜你，这是一条成功消息',
-          showClose: true
-        })
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#btn6').click(function() {
+      $.lyj_message.message({
+        type: 'success',
+        msg: '恭喜你，这是一条成功消息',
+        showClose: true
       })
-      $('#btn7').click(function() {
-        $.lyj_message.message({
-          type: 'warning',
-          msg: '警告哦，这是一条警告消息',
-          showClose: true
-        })
+    })
+    $('#btn7').click(function() {
+      $.lyj_message.message({
+        type: 'warning',
+        msg: '警告哦，这是一条警告消息',
+        showClose: true
       })
-      $('#btn8').click(function() {
-        $.lyj_message.message({
-          type: 'info',
-          msg: '这是一条消息提示',
-          showClose: true
-        })
+    })
+    $('#btn8').click(function() {
+      $.lyj_message.message({
+        type: 'info',
+        msg: '这是一条消息提示',
+        showClose: true
       })
-      $('#btn9').click(function() {
-        $.lyj_message.message({
-          type: 'error',
-          msg: '错了哦，这是一条错误消息',
-          showClose: true
-        })
+    })
+    $('#btn9').click(function() {
+      $.lyj_message.message({
+        type: 'error',
+        msg: '错了哦，这是一条错误消息',
+        showClose: true
       })
-    }
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#btn6').click(function() {
-    $.lyj_message.message({
-      type: 'success',
-      msg: '恭喜你，这是一条成功消息',
-      showClose: true
-    })
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#btn6').click(function() {
+  $.lyj_message.message({
+    type: 'success',
+    msg: '恭喜你，这是一条成功消息',
+    showClose: true
   })
-  $('#btn7').click(function() {
-    $.lyj_message.message({
-      type: 'warning',
-      msg: '警告哦，这是一条警告消息',
-      showClose: true
-    })
+})
+$('#btn7').click(function() {
+  $.lyj_message.message({
+    type: 'warning',
+    msg: '警告哦，这是一条警告消息',
+    showClose: true
   })
-  $('#btn8').click(function() {
-    $.lyj_message.message({
-      type: 'info',
-      msg: '这是一条消息提示',
-      showClose: true
-    })
+})
+$('#btn8').click(function() {
+  $.lyj_message.message({
+    type: 'info',
+    msg: '这是一条消息提示',
+    showClose: true
   })
-  $('#btn9').click(function() {
-    $.lyj_message.message({
-      type: 'error',
-      msg: '错了哦，这是一条错误消息',
-      showClose: true
-    })
+})
+$('#btn9').click(function() {
+  $.lyj_message.message({
+    type: 'error',
+    msg: '错了哦，这是一条错误消息',
+    showClose: true
   })
-  //DEMO_JS_SHOW_END
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -176,29 +176,29 @@
 <button id="btn10" type="button" class="btn btn-white fl mr20">成功</button>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#btn10').click(function() {
-        $.lyj_message.message({
-          type: 'info',
-          msg: '这是一条不会自动关闭的消息',
-          showClose: true,
-          duration: 0
-        })
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#btn10').click(function() {
+      $.lyj_message.message({
+        type: 'info',
+        msg: '这是一条不会自动关闭的消息',
+        showClose: true,
+        duration: 0
       })
-    }
-  }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#btn10').click(function() {
-    $.lyj_message.message({
-      type: 'info',
-      msg: '这是一条不会自动关闭的消息',
-      showClose: true,
-      duration: 0
     })
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#btn10').click(function() {
+  $.lyj_message.message({
+    type: 'info',
+    msg: '这是一条不会自动关闭的消息',
+    showClose: true,
+    duration: 0
   })
-  //DEMO_JS_SHOW_END
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 

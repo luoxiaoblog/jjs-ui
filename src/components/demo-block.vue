@@ -51,6 +51,7 @@
 </template>
 
 <script type="text/babel">
+import ClipboardJS from 'clipboard'
 import compoLang from '../i18n/component.json'
 // import Element from 'main/index.js'
 import { stripScript, stripStyle, stripTemplate } from '../util'
@@ -69,7 +70,8 @@ export default {
       isExpanded: false,
       fixedControl: false,
       scrollParent: null,
-      activeName: 'html'
+      activeName: 'html',
+      clipboard: null
     }
   },
 
@@ -191,6 +193,7 @@ export default {
         this.fixedControl = false
         this.$refs.control.style.left = '0'
         this.removeScrollHandler()
+        this.clipboard && this.clipboard.destroy()
         return
       }
       setTimeout(() => {
@@ -200,6 +203,22 @@ export default {
         this.scrollParent &&
           this.scrollParent.addEventListener('scroll', this.scrollHandler)
         this.scrollHandler()
+        let copyEl = this.$refs['meta'].querySelectorAll('.copy')
+        this.clipboard = new ClipboardJS(copyEl, {
+          target: function(trigger) {
+            return trigger.nextElementSibling
+          },
+          text: function(trigger) {
+            return trigger.nextElementSibling.innerText
+          }
+        })
+        this.clipboard.on('success', () => {
+          this.$message.success('复制成功')
+        })
+
+        this.clipboard.on('error', e => {
+          this.$message.error('复制失败')
+        })
       }, 200)
     }
   },
@@ -322,11 +341,6 @@ export default {
         content: none;
       }
     }
-
-    code.hljs.css,
-    code.hljs.html {
-      margin-top: -17px;
-    }
   }
 
   .el-tabs__nav-wrap {
@@ -335,6 +349,10 @@ export default {
 
   .el-tabs__header {
     margin: 0;
+  }
+
+  .el-tab-pane {
+    position: relative;
   }
 
   .demo-block-control {
@@ -394,6 +412,19 @@ export default {
       padding-left: 5px;
       padding-right: 25px;
     }
+  }
+
+  .copy {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #409eff;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .copy:hover {
+    color: #66b1ff;
   }
 }
 </style>

@@ -16,22 +16,22 @@
 
 ```html
 <style>
-  .form-item {
-    margin-bottom: 10px;
-  }
+.form-item {
+  margin-bottom: 10px;
+}
 
-  label.form-item__label {
-    width: 70px;
-    float: left;
-    text-align: right;
-    padding-right: 10px;
-    box-sizing: border-box;
-  }
+label.form-item__label {
+  width: 70px;
+  float: left;
+  text-align: right;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
 
-  .form-item__content {
-    position: relative;
-    margin-left: 70px;
-  }
+.form-item__content {
+  position: relative;
+  margin-left: 70px;
+}
 </style>
 
 
@@ -92,30 +92,30 @@
 
 ```html
 <style>
-  .form-item {
-    margin-bottom: 10px;
-  }
+.form-item {
+  margin-bottom: 10px;
+}
 
-  label.form-item__label {
-    width: 70px;
-    float: left;
-    text-align: right;
-    padding-right: 10px;
-    box-sizing: border-box;
-  }
+label.form-item__label {
+  width: 70px;
+  float: left;
+  text-align: right;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
 
-  .form-item__content {
-    position: relative;
-    margin-left: 70px;
-  }
+.form-item__content {
+  position: relative;
+  margin-left: 70px;
+}
 
-  .form-item__input {
-    margin-right: 5px;
-  }
+.form-item__input {
+  margin-right: 5px;
+}
 
-  textarea {
-    resize: vertical;
-  }
+textarea {
+  resize: vertical;
+}
 </style>
 
 
@@ -138,7 +138,7 @@
   <div class="form-item">
     <label class="form-item__label">活动时间</label>
     <div class="clearfix form-item__content">
-      <div class="fl relative"> 
+      <div class="fl relative">
         <input class="w100" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" type="text" id="date1" name="date1" value="" placeholder="选择日期" autocomplete="off">
         <a class="wdate-ico" href="javascript:;" onclick="WdatePicker({el:'date1', dateFmt:'yyyy-MM-dd'})"><i class="fa fa-calendar"></i></a>
       </div>
@@ -187,32 +187,34 @@
 </form>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      this.initiCheck('body input')
-      $('select').comboSelect()
-    },
-    methods: {
-      initiCheck(obj){
-        $(obj).iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%'
-        })
-      } 
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    this.initiCheck('body input')
+    $('select').comboSelect()
+  },
+  methods: {
+    initiCheck(obj){
+      $(obj).iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%'
+      })
     }
-  }//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  initiCheck('body input')
-  $('select').comboSelect()
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+initiCheck('body input')
+$('select').comboSelect()
 
-  function initiCheck(obj){
-    $(obj).iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%'
-    })
-  }//DEMO_JS_SHOW_END
+function initiCheck(obj){
+  $(obj).iCheck({
+    checkboxClass: 'icheckbox_square-blue',
+    radioClass: 'iradio_square-blue',
+    increaseArea: '20%'
+  })
+}
+//DEMO_JS_SHOW_END
 </script>
 ```
 :::

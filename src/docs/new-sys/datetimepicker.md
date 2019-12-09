@@ -230,145 +230,145 @@ WdatePicker 是一款强大的日期插件。
   </div>
 </div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      var self = this
-      $('#wrapper')
-        .on('click', '.add', () => {
-          var $tpl = $('#wrapper')
-            .find('.row:eq(0)')
-            .clone()
-          var len = $('#wrapper').find('.row').length
-          $tpl.find('input').val('')
-          this.refleshRow($tpl, len)
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    var self = this
+    $('#wrapper')
+      .on('click', '.add', () => {
+        var $tpl = $('#wrapper')
+          .find('.row:eq(0)')
+          .clone()
+        var len = $('#wrapper').find('.row').length
+        $tpl.find('input').val('')
+        this.refleshRow($tpl, len)
 
-          $tpl
-            .find('.add')
-            .removeClass('add')
-            .addClass('delete')
-            .text('删除')
+        $tpl
+          .find('.add')
+          .removeClass('add')
+          .addClass('delete')
+          .text('删除')
 
-          $tpl.appendTo($('#wrapper'))
-        })
-        .on('click', '.delete', function() {
-          var i = $(this)
-            .parents('.row')
-            .index()
-          $(this)
-            .parents('.row')
-            .remove()
-          var $rows = $('#wrapper').find('.row')
-          for (; i < $rows.length; i++) {
-            var $row = $rows.eq(i)
-            self.refleshRow($row, i)
-          }
-        })
-    },
-    methods: {
-      refleshRow(row, i) {
-        row.find('input:eq(0)').attr({
-          id: 'dynamicStartDate' + i,
-          name: 'dynamicStartDate' + i,
-          onclick:
-            "WdatePicker({readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
-            i +
-            "\\')}'})"
-        })
-        row.find('.wdate-ico:eq(0)').attr({
-          onclick:
-            "WdatePicker({el: 'dynamicStartDate" +
-            i +
-            "',readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
-            i +
-            "\\')}'})"
-        })
-        row.find('input:eq(1)').attr({
-          id: 'dynamicEndDate' + i,
-          name: 'dynamicEndDate' + i,
-          onclick:
-            "WdatePicker({readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
-            i +
-            "\\')}'})"
-        })
-        row.find('.wdate-ico:eq(1)').attr({
-          onclick:
-            "WdatePicker({el: 'dynamicEndDate" +
-            i +
-            "',readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
-            i +
-            "\\')}'})"
-        })
-      }
+        $tpl.appendTo($('#wrapper'))
+      })
+      .on('click', '.delete', function() {
+        var i = $(this)
+          .parents('.row')
+          .index()
+        $(this)
+          .parents('.row')
+          .remove()
+        var $rows = $('#wrapper').find('.row')
+        for (; i < $rows.length; i++) {
+          var $row = $rows.eq(i)
+          self.refleshRow($row, i)
+        }
+      })
+  },
+  methods: {
+    refleshRow(row, i) {
+      row.find('input:eq(0)').attr({
+        id: 'dynamicStartDate' + i,
+        name: 'dynamicStartDate' + i,
+        onclick:
+          "WdatePicker({readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
+          i +
+          "\\')}'})"
+      })
+      row.find('.wdate-ico:eq(0)').attr({
+        onclick:
+          "WdatePicker({el: 'dynamicStartDate" +
+          i +
+          "',readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
+          i +
+          "\\')}'})"
+      })
+      row.find('input:eq(1)').attr({
+        id: 'dynamicEndDate' + i,
+        name: 'dynamicEndDate' + i,
+        onclick:
+          "WdatePicker({readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
+          i +
+          "\\')}'})"
+      })
+      row.find('.wdate-ico:eq(1)').attr({
+        onclick:
+          "WdatePicker({el: 'dynamicEndDate" +
+          i +
+          "',readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
+          i +
+          "\\')}'})"
+      })
     }
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#wrapper')
-    .on('click', '.add', function() {
-      var $tpl = $('#wrapper')
-        .find('.row:eq(0)')
-        .clone()
-      var len = $('#wrapper').find('.row').length
-      $tpl.find('input').val('')
-      refleshRow($tpl, len)
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#wrapper')
+  .on('click', '.add', function() {
+    var $tpl = $('#wrapper')
+      .find('.row:eq(0)')
+      .clone()
+    var len = $('#wrapper').find('.row').length
+    $tpl.find('input').val('')
+    refleshRow($tpl, len)
 
-      $tpl
-        .find('.add')
-        .removeClass('add')
-        .addClass('delete')
-        .text('删除')
+    $tpl
+      .find('.add')
+      .removeClass('add')
+      .addClass('delete')
+      .text('删除')
 
-      $tpl.appendTo($('#wrapper'))
-    })
-    .on('click', '.delete', function() {
-      var i = $(this)
-        .parents('.row')
-        .index()
-      $(this)
-        .parents('.row')
-        .remove()
-      var $rows = $('#wrapper').find('.row')
-      for (; i < $rows.length; i++) {
-        var $row = $rows.eq(i)
-        refleshRow($row, i)
-      }
-    })
+    $tpl.appendTo($('#wrapper'))
+  })
+  .on('click', '.delete', function() {
+    var i = $(this)
+      .parents('.row')
+      .index()
+    $(this)
+      .parents('.row')
+      .remove()
+    var $rows = $('#wrapper').find('.row')
+    for (; i < $rows.length; i++) {
+      var $row = $rows.eq(i)
+      refleshRow($row, i)
+    }
+  })
 
-  function refleshRow(row, i) {
-    row.find('input:eq(0)').attr({
-      id: 'dynamicStartDate' + i,
-      name: 'dynamicStartDate' + i,
-      onclick:
-        "WdatePicker({readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
-        i +
-        "\\')}'})"
-    })
-    row.find('.wdate-ico:eq(0)').attr({
-      onclick:
-        "WdatePicker({el: 'dynamicStartDate" +
-        i +
-        "',readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
-        i +
-        "\\')}'})"
-    })
-    row.find('input:eq(1)').attr({
-      id: 'dynamicEndDate' + i,
-      name: 'dynamicEndDate' + i,
-      onclick:
-        "WdatePicker({readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
-        i +
-        "\\')}'})"
-    })
-    row.find('.wdate-ico:eq(1)').attr({
-      onclick:
-        "WdatePicker({el: 'dynamicEndDate" +
-        i +
-        "',readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
-        i +
-        "\\')}'})"
-    })
-  }
-  //DEMO_JS_SHOW_END
+function refleshRow(row, i) {
+  row.find('input:eq(0)').attr({
+    id: 'dynamicStartDate' + i,
+    name: 'dynamicStartDate' + i,
+    onclick:
+      "WdatePicker({readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
+      i +
+      "\\')}'})"
+  })
+  row.find('.wdate-ico:eq(0)').attr({
+    onclick:
+      "WdatePicker({el: 'dynamicStartDate" +
+      i +
+      "',readOnly: true,maxDate: '#F{$dp.$D(\\'dynamicEndDate" +
+      i +
+      "\\')}'})"
+  })
+  row.find('input:eq(1)').attr({
+    id: 'dynamicEndDate' + i,
+    name: 'dynamicEndDate' + i,
+    onclick:
+      "WdatePicker({readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
+      i +
+      "\\')}'})"
+  })
+  row.find('.wdate-ico:eq(1)').attr({
+    onclick:
+      "WdatePicker({el: 'dynamicEndDate" +
+      i +
+      "',readOnly: true,minDate: '#F{$dp.$D(\\'dynamicStartDate" +
+      i +
+      "\\')}'})"
+  })
+}
+//DEMO_JS_SHOW_END
 </script>
 ```
 

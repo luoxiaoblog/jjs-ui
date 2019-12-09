@@ -77,7 +77,8 @@ export default {
       new Viewer(tarImg, { navbar: false });
     }
   }
-}//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
 $(function() {
     var tarImg = $('#testViewer')[0];
     if (tarImg.querySelectorAll("img").length > 0) {

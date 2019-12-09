@@ -25,16 +25,18 @@ export default {
   mounted() {
     $('#btn1').on('click', function() {
       noBtnAutoModalDialog('1.5s 自动关闭提示框', 1500, function() {
-        alert('关闭时的回调')
+        $.lyj_message.info('关闭时的回调')
       });
     })
   }
-} //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
 $('#btn1').on('click', function() {
   noBtnAutoModalDialog('1.5s 自动关闭提示框', 1500, function() {
-    alert('关闭时的回调')
+    $.lyj_message.info('关闭时的回调')
   });
-})//DEMO_JS_SHOW_END
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -53,16 +55,18 @@ export default {
   mounted() {
     $('#btn2').on('click', function() {
       OneBtnAutoModalDialog('3s 自动关闭提示框', 300, '确定', function() {
-        console.log('关闭时的回调')
+        $.lyj_message.info('关闭时的回调')
       }, 3000);
     })
   }
-} //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
 $('#btn2').on('click', function() {
   OneBtnAutoModalDialog('3s 自动关闭提示框', 300, '确定', function() {
-    console.log('关闭时的回调')
+    $.lyj_message.info('关闭时的回调')
   }, 3000);
-})//DEMO_JS_SHOW_END
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -83,35 +87,37 @@ export default {
         value: "确定",
         autofocus: true,//是否高亮
         callback: function(){
-          alert('您点击了确定')
+          $.lyj_message.info('您点击了确定')
         }
       },{
         value: "关闭",
         autofocus: false,
         callback: function(){
-          alert('您点击了关闭')
+          $.lyj_message.info('您点击了关闭')
         }
       }];
       btnsDialog('多个按钮的提示框', 360, btnObj);
     })
   }
-} //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
 $('#btn3').on('click', function() {
   var btnObj=[{
     value: "确定",
     autofocus: true,//是否高亮
     callback: function(){
-      alert('您点击了确定')
+      $.lyj_message.info('您点击了确定')
     }
   },{
     value: "关闭",
     autofocus: false,
     callback: function(){
-      alert('您点击了关闭')
+      $.lyj_message.info('您点击了关闭')
     }
   }];
   btnsDialog('多个按钮的提示框', 360, btnObj);
-})//DEMO_JS_SHOW_END
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 

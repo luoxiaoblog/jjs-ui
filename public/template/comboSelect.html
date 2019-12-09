@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap-reset.css">
+    <link rel="stylesheet" href="https://front.leyoujia.com/plugins/comboSelect/combo.select.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css?v=1573435666000">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css?v=1573435666000">
+  </link>
+  <body>
+    <div id="main-content">
+     <select name="type" id="type1" style="width: 138px;">
+      
+     </select>
+
+     <select name="type" id="type2" style="width: 138px;">
+        <option value=""  selected>type0</option>
+        <option value="1">type1</option>
+        <option value="2">type2</option>
+        <option value="3">type3</option>
+      </select>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://front.leyoujia.com/js/jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://front.leyoujia.com/js/bootstrap.min.js"
+    ></script>
+    <!-- <script src="https://front.leyoujia.com/plugins/comboSelect/combo.select.js"></script> -->
+    <!-- <script src="https://front.leyoujia.com/plugins/comboSelect/combo.select.ablefilter.js"></script> -->
+    <script src="combo.select.js"></script>
+    <script>
+      
+      for (var i = 0; i < 1000; i++) {
+        $('<option value="'+i+'">type'+ i +'</option>').appendTo($('#type1'))
+      }
+
+      $('select#type1').comboSelect();
+
+      $('select#type2').comboSelect({
+        ablefilter: false,
+        focusInput: false
+      });
+    </script>
+  </body>
+</html>
+</html>

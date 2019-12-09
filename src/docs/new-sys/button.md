@@ -38,9 +38,7 @@
 
 ```html
 <a class="fl mr10 blue" href="javascript:;">文字按钮</a>
-<a class="blue" style="color: #c0c4cc; cursor: not-allowed;" href="javascript:;"
-  >文字按钮</a
->
+<a class="blue" style="color: #c0c4cc; cursor: not-allowed;" href="javascript:;">文字按钮</a>
 ```
 
 :::

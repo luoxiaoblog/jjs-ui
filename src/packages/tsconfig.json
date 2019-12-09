@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "es5",
+    "lib": ["es2015", "es5", "es6", "es7", "dom", "es2015.core"]
+  },
+  "files": [
+    "radiogroup/src/radio.ts",
+    "badge/src/badge.ts",
+    "checkbox/src/checkbox.ts",
+    "message/src/message.ts",
+    "steps/src/steps.ts",
+    "timeline/src/timeline.ts"
+  ]
+}

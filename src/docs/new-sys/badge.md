@@ -23,21 +23,21 @@
 </div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#badge1').lyj_badge({ value: 11 })
-      $('#badge2').lyj_badge({ value: 2 })
-      $('#badge3').lyj_badge({ value: 1, type: BadgeType.Primary })
-      $('#badge4').lyj_badge({ value: 2, type: BadgeType.Warning })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#badge1').lyj_badge({ value: 11 })
+    $('#badge2').lyj_badge({ value: 2 })
+    $('#badge3').lyj_badge({ value: 1, type: BadgeType.Primary })
+    $('#badge4').lyj_badge({ value: 2, type: BadgeType.Warning })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#badge1').lyj_badge({ value: 11 })
-  $('#badge2').lyj_badge({ value: 2 })
-  $('#badge3').lyj_badge({ value: 1, type: BadgeType.Primary })
-  $('#badge4').lyj_badge({ value: 2, type: BadgeType.Warning })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#badge1').lyj_badge({ value: 11 })
+$('#badge2').lyj_badge({ value: 2 })
+$('#badge3').lyj_badge({ value: 1, type: BadgeType.Primary })
+$('#badge4').lyj_badge({ value: 2, type: BadgeType.Warning })
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -58,17 +58,17 @@
 </div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#badge5').lyj_badge({ value: 200, max: 99 })
-      $('#badge6').lyj_badge({ value: 100, max: 10 })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#badge5').lyj_badge({ value: 200, max: 99 })
+    $('#badge6').lyj_badge({ value: 100, max: 10 })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#badge5').lyj_badge({ value: 200, max: 99 })
-  $('#badge6').lyj_badge({ value: 100, max: 10 })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#badge5').lyj_badge({ value: 200, max: 99 })
+$('#badge6').lyj_badge({ value: 100, max: 10 })
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -89,17 +89,17 @@
 </div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#badge7').lyj_badge({ value: 'new' })
-      $('#badge8').lyj_badge({ value: 'hot' })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#badge7').lyj_badge({ value: 'new' })
+    $('#badge8').lyj_badge({ value: 'hot' })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#badge7').lyj_badge({ value: 'new' })
-  $('#badge8').lyj_badge({ value: 'hot' })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#badge7').lyj_badge({ value: 'new' })
+$('#badge8').lyj_badge({ value: 'hot' })
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -120,23 +120,22 @@
 </div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#badge9').lyj_badge({ isDot: true })
-      $('#badge10').lyj_badge({ isDot: true })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#badge9').lyj_badge({ isDot: true })
+    $('#badge10').lyj_badge({ isDot: true })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#badge9').lyj_badge({ isDot: true })
-  $('#badge10').lyj_badge({ isDot: true })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#badge9').lyj_badge({ isDot: true })
+$('#badge10').lyj_badge({ isDot: true })
+//DEMO_JS_SHOW_END
 </script>
 ```
 
 :::
 
-:::
 
 ### Options
 

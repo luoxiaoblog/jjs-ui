@@ -12,59 +12,59 @@
 <div id="steps1"></div>
 <button id="btn1" type="button" class="btn btn-primary mt20">下一步</button>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#steps1').lyj_steps({
-        stepList: [
-          {
-            title: '步骤一',
-            description: '这是一段很长很长很长的描述性文字'
-          },
-          {
-            title: '步骤二',
-            description: '这是一段很长很长很长的描述性文字'
-          },
-          {
-            title: '步骤三',
-            description: '这是一段很长很长很长的描述性文字'
-          }
-        ]
-      })
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#steps1').lyj_steps({
+      stepList: [
+        {
+          title: '步骤一',
+          description: '这是一段很长很长很长的描述性文字'
+        },
+        {
+          title: '步骤二',
+          description: '这是一段很长很长很长的描述性文字'
+        },
+        {
+          title: '步骤三',
+          description: '这是一段很长很长很长的描述性文字'
+        }
+      ]
+    })
 
-      $('#btn1').click(() => {
-        let steps = $('#steps1').data('steps')
-        let active = steps.active
-        if (active++ > 2) active = 0
-        steps.active = active
-      })
-    }
+    $('#btn1').click(() => {
+      let steps = $('#steps1').data('steps')
+      let active = steps.active
+      if (active++ > 2) active = 0
+      steps.active = active
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#steps1').lyj_steps({
-    stepList: [
-      {
-        title: '步骤一',
-        description: '这是一段很长很长很长的描述性文字'
-      },
-      {
-        title: '步骤二',
-        description: '这是一段很长很长很长的描述性文字'
-      },
-      {
-        title: '步骤三',
-        description: '这是一段很长很长很长的描述性文字'
-      }
-    ]
-  })
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#steps1').lyj_steps({
+  stepList: [
+    {
+      title: '步骤一',
+      description: '这是一段很长很长很长的描述性文字'
+    },
+    {
+      title: '步骤二',
+      description: '这是一段很长很长很长的描述性文字'
+    },
+    {
+      title: '步骤三',
+      description: '这是一段很长很长很长的描述性文字'
+    }
+  ]
+})
 
-  $('#btn1').click(function() {
-    var steps = $('#steps1').data('steps')
-    var active = steps.active
-    if (active++ > 2) active = 0
-    steps.active = active
-  })
-  //DEMO_JS_SHOW_END
+$('#btn1').click(function() {
+  var steps = $('#steps1').data('steps')
+  var active = steps.active
+  if (active++ > 2) active = 0
+  steps.active = active
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -79,41 +79,41 @@
 ```html
 <div id="steps2"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#steps2').lyj_steps({
-        space: 200,
-        stepList: [
-          {
-            title: '步骤一'
-          },
-          {
-            title: '步骤二'
-          },
-          {
-            title: '步骤三'
-          }
-        ]
-      })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#steps2').lyj_steps({
+      space: 200,
+      stepList: [
+        {
+          title: '步骤一'
+        },
+        {
+          title: '步骤二'
+        },
+        {
+          title: '步骤三'
+        }
+      ]
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#steps2').lyj_steps({
-    space: '20%',
-    stepList: [
-      {
-        title: '步骤一'
-      },
-      {
-        title: '步骤二'
-      },
-      {
-        title: '步骤三'
-      }
-    ]
-  })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#steps2').lyj_steps({
+  space: '20%',
+  stepList: [
+    {
+      title: '步骤一'
+    },
+    {
+      title: '步骤二'
+    },
+    {
+      title: '步骤三'
+    }
+  ]
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -132,43 +132,43 @@
   <div id="steps3"></div>
 </div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#steps3').lyj_steps({
-        direction: 'vertical',
-        alignCenter: false,
-        stepList: [
-          {
-            title: '步骤一'
-          },
-          {
-            title: '步骤二'
-          },
-          {
-            title: '步骤三'
-          }
-        ]
-      })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#steps3').lyj_steps({
+      direction: 'vertical',
+      alignCenter: false,
+      stepList: [
+        {
+          title: '步骤一'
+        },
+        {
+          title: '步骤二'
+        },
+        {
+          title: '步骤三'
+        }
+      ]
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#steps3').lyj_steps({
-    direction: 'vertical',
-    alignCenter: false,
-    stepList: [
-      {
-        title: '步骤一'
-      },
-      {
-        title: '步骤二'
-      },
-      {
-        title: '步骤三'
-      }
-    ]
-  })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#steps3').lyj_steps({
+  direction: 'vertical',
+  alignCenter: false,
+  stepList: [
+    {
+      title: '步骤一'
+    },
+    {
+      title: '步骤二'
+    },
+    {
+      title: '步骤三'
+    }
+  ]
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 

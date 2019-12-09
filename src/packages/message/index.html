@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_1544706_q80g6t3zpog.css"
+    />
+    <style>
+      .lyj-message {
+        min-width: 380px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid #ebeef5;
+        position: fixed;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        background-color: #edf2fc;
+        transition: opacity 0.3s, transform 0.4s, top 0.4s;
+        overflow: hidden;
+        padding: 15px 15px 15px 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .lyj-message.is-center {
+        justify-content: center;
+      }
+
+      .lyj-message.is-closable .lyj-message__content {
+        padding-right: 16px;
+      }
+
+      .lyj-message p {
+        margin: 0;
+      }
+
+      .lyj-message--info .lyj-message__content {
+        color: #909399;
+      }
+
+      .lyj-message--success {
+        background-color: #f0f9eb;
+        border-color: #e1f3d8;
+      }
+
+      .lyj-message--success .lyj-message__content {
+        color: #67c23a;
+      }
+
+      .lyj-message--warning {
+        background-color: #fdf6ec;
+        border-color: #faecd8;
+      }
+
+      .lyj-message--warning .lyj-message__content {
+        color: #e6a23c;
+      }
+
+      .lyj-message--error {
+        background-color: #fef0f0;
+        border-color: #fde2e2;
+      }
+
+      .lyj-message--error .lyj-message__content {
+        color: #f56c6c;
+      }
+
+      .lyj-message__icon {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+
+      .lyj-message__content {
+        padding: 0;
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      .lyj-message__content:focus {
+        outline-width: 0;
+      }
+
+      .lyj-message__closeBtn {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #c0c4cc;
+        font-size: 16px;
+      }
+
+      .lyj-message__closeBtn:focus {
+        outline-width: 0;
+      }
+
+      .lyj-message__closeBtn:hover {
+        color: #909399;
+      }
+
+      .lyj-message .lyj-icon-success {
+        color: #67c23a;
+      }
+
+      .lyj-message .lyj-icon-error {
+        color: #f56c6c;
+      }
+
+      .lyj-message .lyj-icon-info {
+        color: #909399;
+      }
+
+      .lyj-message .lyj-icon-warning {
+        color: #e6a23c;
+      }
+
+      .lyj-message-fade-enter,
+      .lyj-message-fade-leave-active {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+      }
+
+      .lyj-message-fade-enter,
+      .lyj-message-fade-leave-active {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="message" role="alert" class="lyj-message lyj-message--info lyj-message-fade-enter" style="top: 20px; z-index: 2177;">
+        <i class="lyj-message__icon iconfont lyj-icon-info"></i>
+        <p class="lyj-message__content">这是一条消息提示</p>
+      </div>
+
+    <div role="alert" class="lyj-message lyj-message--error is-closable" style="top: 20px; z-index: 2291;">
+      <i class="lyj-message__icon lyj-icon-error"></i>
+      <p class="lyj-message__content">错了哦，这是一条错误消息</p>
+      <i class="lyj-message__closeBtn iconfont lyj-icon-close"></i>
+    </div> -->
+
+    <button id="btn">enter</button>
+    <button id="btn2">leave</button>
+    <script
+      type="text/javascript"
+      src="https://front.leyoujia.com/js/jquery.js"
+    ></script>
+    <script src="src/message.js"></script>
+    <script>
+      // $.lyj_message.success('恭喜你，这是一条成功消息')
+      $('#btn').click(function() {
+        $(`#message`).removeClass('lyj-message-fade-enter')
+      })
+
+      $('#btn2').click(function() {
+        $('#message').addClass('lyj-message-fade-leave-active')
+        this.addEventListener('transitionend', function(e) {})
+      })
+      $.lyj_message.message({
+        type: 'info',
+        msg: '一条消息',
+        showClose: true,
+        duration: 0
+      })
+    </script>
+  </body>
+</html>

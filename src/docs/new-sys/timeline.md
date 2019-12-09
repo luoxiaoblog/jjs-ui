@@ -12,90 +12,89 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 item，时间
 <div id="radiogroup"></div>
 <div id="timeline1" style="margin-top: 20px;"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#timeline1').lyj_timeline({
-        timelimeItemOptionsList: [
-          {
-            timestamp: '2019-12-05',
-            content: 'timeline 组件开发'
-          },
-          {
-            timestamp: '2019-12-04',
-            content: 'steps 组件开发'
-          },
-          {
-            timestamp: '2019-12-03',
-            content: 'steps 组件开发'
-          },
-          {
-            timestamp: '2019-12-02',
-            content: 'checkbox 组件开发'
-          }
-        ]
-      })
-      $('#radiogroup').lyj_radiogroup({
-        value: 0,
-        name: 'isReverse',
-        radioGroup: [
-          {
-            value: 1,
-            label: '倒序'
-          },
-          {
-            value: 0,
-            label: '正序'
-          }
-        ],
-        changeHandler: function(val) {
-          var timeline = $('#timeline1').data('timeline')
-          timeline.reverse = val == 1
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#timeline1').lyj_timeline({
+      timelimeItemOptionsList: [
+        {
+          timestamp: '2019-12-05',
+          content: 'timeline 组件开发'
+        },
+        {
+          timestamp: '2019-12-04',
+          content: 'steps 组件开发'
+        },
+        {
+          timestamp: '2019-12-03',
+          content: 'steps 组件开发'
+        },
+        {
+          timestamp: '2019-12-02',
+          content: 'checkbox 组件开发'
         }
-      })
-    }
+      ]
+    })
+    $('#radiogroup').lyj_radiogroup({
+      value: 0,
+      name: 'isReverse',
+      radioGroup: [
+        {
+          value: 1,
+          label: '倒序'
+        },
+        {
+          value: 0,
+          label: '正序'
+        }
+      ],
+      changeHandler: function(val) {
+        var timeline = $('#timeline1').data('timeline')
+        timeline.reverse = val == 1
+      }
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#timeline1').lyj_timeline({
-    timelimeItemOptionsList: [
-      {
-        timestamp: '2019-12-05',
-        content: 'timeline 组件开发'
-      },
-      {
-        timestamp: '2019-12-04',
-        content: 'steps 组件开发'
-      },
-      {
-        timestamp: '2019-12-03',
-        content: 'steps 组件开发'
-      },
-      {
-        timestamp: '2019-12-02',
-        content: 'checkbox 组件开发'
-      }
-    ]
-  })
-  $('#radiogroup').lyj_radiogroup({
-    value: 0,
-    name: 'isReverse',
-    radioGroup: [
-      {
-        value: 1,
-        label: '倒序'
-      },
-      {
-        value: 0,
-        label: '正序'
-      }
-    ],
-    changeHandler: function(val) {
-      var timeline = $('#timeline1').data('timeline')
-      timeline.reverse = val == 1
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#timeline1').lyj_timeline({
+  timelimeItemOptionsList: [
+    {
+      timestamp: '2019-12-05',
+      content: 'timeline 组件开发'
+    },
+    {
+      timestamp: '2019-12-04',
+      content: 'steps 组件开发'
+    },
+    {
+      timestamp: '2019-12-03',
+      content: 'steps 组件开发'
+    },
+    {
+      timestamp: '2019-12-02',
+      content: 'checkbox 组件开发'
     }
-  })
-
-  //DEMO_JS_SHOW_END
+  ]
+})
+$('#radiogroup').lyj_radiogroup({
+  value: 0,
+  name: 'isReverse',
+  radioGroup: [
+    {
+      value: 1,
+      label: '倒序'
+    },
+    {
+      value: 0,
+      label: '正序'
+    }
+  ],
+  changeHandler: function(val) {
+    var timeline = $('#timeline1').data('timeline')
+    timeline.reverse = val == 1
+  }
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -110,52 +109,52 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 item，时间
 ```html
 <div id="timeline2"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#timeline2').lyj_timeline({
-        timelimeItemOptionsList: [
-          {
-            timestamp: '2019-12-05',
-            content: '自定义颜色',
-            color: 'blue'
-          },
-          {
-            timestamp: '2019-12-04',
-            content: 'type: primary',
-            type: 'primary'
-          },
-          {
-            timestamp: '2019-12-03',
-            content: '自定义图标',
-            icon: 'iconfont lyj-icon-fire'
-          }
-        ]
-      })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#timeline2').lyj_timeline({
+      timelimeItemOptionsList: [
+        {
+          timestamp: '2019-12-05',
+          content: '自定义颜色',
+          color: 'blue'
+        },
+        {
+          timestamp: '2019-12-04',
+          content: 'type: primary',
+          type: 'primary'
+        },
+        {
+          timestamp: '2019-12-03',
+          content: '自定义图标',
+          icon: 'iconfont lyj-icon-fire'
+        }
+      ]
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#timeline1').lyj_timeline({
-    timelimeItemOptionsList: [
-      {
-        timestamp: '2019-12-05',
-        content: 'timeline 组件开发'
-      },
-      {
-        timestamp: '2019-12-04',
-        content: 'steps 组件开发'
-      },
-      {
-        timestamp: '2019-12-03',
-        content: 'steps 组件开发'
-      },
-      {
-        timestamp: '2019-12-02',
-        content: 'checkbox 组件开发'
-      }
-    ]
-  })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#timeline1').lyj_timeline({
+  timelimeItemOptionsList: [
+    {
+      timestamp: '2019-12-05',
+      content: 'timeline 组件开发'
+    },
+    {
+      timestamp: '2019-12-04',
+      content: 'steps 组件开发'
+    },
+    {
+      timestamp: '2019-12-03',
+      content: 'steps 组件开发'
+    },
+    {
+      timestamp: '2019-12-02',
+      content: 'checkbox 组件开发'
+    }
+  ]
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 
@@ -169,78 +168,78 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 item，时间
 
 ```html
 <style>
-  .lyj-card {
-    border-radius: 4px;
-    border: 1px solid #ebeef5;
-    background-color: #fff;
-    overflow: hidden;
-    color: #303133;
-    transition: 0.3s;
-  }
+.lyj-card {
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  overflow: hidden;
+  color: #303133;
+  transition: 0.3s;
+}
 
-  .lyj-card.is-always-shadow,
-  .lyj-card.is-hover-shadow:focus,
-  .lyj-card.is-hover-shadow:hover {
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  }
+.lyj-card.is-always-shadow,
+.lyj-card.is-hover-shadow:focus,
+.lyj-card.is-hover-shadow:hover {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
 
-  .lyj-card__body {
-    padding: 20px;
-  }
+.lyj-card__body {
+  padding: 20px;
+}
 </style>
 <div id="timeline3"></div>
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#timeline3').lyj_timeline({
-        timelimeItemOptionsList: [
-          {
-            placement: 'top',
-            timestamp: '2019-12-05',
-            content:
-              '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/05 20:46</p></div></div>'
-          },
-          {
-            placement: 'top',
-            timestamp: '2019-12-04',
-            content:
-              '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/04 20:46</p></div></div>'
-          },
-          {
-            placement: 'top',
-            timestamp: '2019-12-03',
-            content:
-              '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/03 20:46</p></div></div>'
-          }
-        ]
-      })
-    }
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#timeline3').lyj_timeline({
+      timelimeItemOptionsList: [
+        {
+          placement: 'top',
+          timestamp: '2019-12-05',
+          content:
+            '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/05 20:46</p></div></div>'
+        },
+        {
+          placement: 'top',
+          timestamp: '2019-12-04',
+          content:
+            '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/04 20:46</p></div></div>'
+        },
+        {
+          placement: 'top',
+          timestamp: '2019-12-03',
+          content:
+            '<div class="lyj-card is-always-shadow"><div class="lyj-card__body"><h4>更新 Github 模板</h4> <p>王小虎 提交于 2019/12/03 20:46</p></div></div>'
+        }
+      ]
+    })
   }
-  //DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#timeline3').lyj_timeline({
-    timelimeItemOptionsList: [
-      {
-        placement: 'top',
-        timestamp: '2019-12-05',
-        content:
-          '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/05 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
-      },
-      {
-        placement: 'top',
-        timestamp: '2019-12-04',
-        content:
-          '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/04 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
-      },
-      {
-        placement: 'top',
-        timestamp: '2019-12-03',
-        content:
-          '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/03 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
-      }
-    ]
-  })
-  //DEMO_JS_SHOW_END
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#timeline3').lyj_timeline({
+  timelimeItemOptionsList: [
+    {
+      placement: 'top',
+      timestamp: '2019-12-05',
+      content:
+        '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/05 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
+    },
+    {
+      placement: 'top',
+      timestamp: '2019-12-04',
+      content:
+        '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/04 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
+    },
+    {
+      placement: 'top',
+      timestamp: '2019-12-03',
+      content:
+        '&lt;div class="lyj-card is-always-shadow"&gt;&lt;div class="lyj-card__body"&gt;&lt;h4&gt;更新 Github 模板&lt;/h4&gt;&lt;p&gt;王小虎 提交于 2019/12/03 20:46;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;'
+    }
+  ]
+})
+//DEMO_JS_SHOW_END
 </script>
 ```
 

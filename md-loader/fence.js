@@ -19,34 +19,30 @@ module.exports = md => {
       content = content
         .replace(content.slice(start, end + endLen), '')
         .replace('//DEMO_JS_SHOW_END', '')
-        .replace(' //DEMO_JS_SHOW_START', '')
+        .replace('//DEMO_JS_SHOW_START', '')
     }
     const html = stripTemplate(content)
     const css = stripStyle(content)
     const javascript = stripScript(content)
     if (token.info === 'html' && isInDemoContainer) {
       let res = `<template slot="highlight"><el-tab-pane label="Html" name="html">
+                  <span class="copy">复制</span>
                   <div class="highlight">
-                    <span class="copy">复制</span>
-                    <pre v-pre>
-                      <code class="html">${md.utils.escapeHtml(html)}</code>
-                    </pre>
+                    <pre v-pre><code class="html">${md.utils.escapeHtml(html)}</code></pre>
                   </div>
                 </el-tab-pane>`
       if (css) {
         res += `<el-tab-pane label="Css" name="css">
+                  <span class="copy">复制</span>
                   <div class="highlight">
-                    <span class="copy">复制</span>
-                    <pre v-pre>
-                      <code class="css">${css}</code>
-                    </pre>
+                    <pre v-pre><code class="css">${css}</code></pre>
                   </div>
                 </el-tab-pane>`
       }
       if (javascript) {
         res += `<el-tab-pane label="Javascript" name="javascript">
+                  <span class="copy">复制</span>
                   <div class="highlight">
-                    <span class="copy">复制</span>
                     <pre v-pre><code class="javascript">${javascript}</code></pre>
                   </div>
                 </el-tab-pane>`

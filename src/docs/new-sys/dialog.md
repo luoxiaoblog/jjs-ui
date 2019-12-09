@@ -95,19 +95,20 @@
 </div>
 
 <script>
-  //DEMO_JS_RUN_START
-  export default {
-    mounted() {
-      $('#tirggerModal').click(function () {
-        $('#myModal').modal();
-      });
-    }
-  }//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
-  $('#tirggerModal').click(function () {
-    // 调用model方法时可传入参数对象，参考“参数”一节
-    $('#myModal').modal();
-  });
-  //DEMO_JS_SHOW_END
+//DEMO_JS_RUN_START
+export default {
+  mounted() {
+    $('#tirggerModal').click(function () {
+      $('#myModal').modal();
+    });
+  }
+}
+//DEMO_JS_RUN_END//DEMO_JS_SHOW_START
+$('#tirggerModal').click(function () {
+  // 调用model方法时可传入参数对象，参考“参数”一节
+  $('#myModal').modal();
+});
+//DEMO_JS_SHOW_END
 </script>
 ```
 
