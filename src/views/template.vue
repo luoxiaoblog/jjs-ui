@@ -11,7 +11,7 @@
               alt=""
             />
             <div class="text-content">
-              <a href="/template/list-simple.html" target="_blank">
+              <a href="./template/list-simple.html" target="_blank">
                 简单列表页
               </a>
             </div>
@@ -25,7 +25,7 @@
               alt=""
             />
             <div class="text-content">
-              <a href="/template/detailPage.html" target="_blank">
+              <a href="./template/list-simple.html" target="_blank">
                 详情页
               </a>
             </div>
@@ -39,7 +39,7 @@
               alt=""
             />
             <div class="text-content">
-              <a href="/template/tabs.html" target="_blank">
+              <a href="./template/list-simple.html" target="_blank">
                 tabs
               </a>
             </div>
@@ -53,7 +53,7 @@
               alt=""
             />
             <div class="text-content">
-              <a href="/template/listPage.html" target="_blank">
+              <a href="./template/list-simple.html" target="_blank">
                 列表页
               </a>
             </div>
@@ -67,7 +67,7 @@
               alt=""
             />
             <div class="text-content">
-              <a href="/template/detailPage.html" target="_blank">
+              <a href="./template/list-simple.html" target="_blank">
                 详情页
               </a>
             </div>
@@ -81,7 +81,7 @@
               alt=""
             />
             <div class="text-content">
-              <a href="/template/detailPage.html" target="_blank">
+              <a href="./template/list-simple.html" target="_blank">
                 详情页
               </a>
             </div>

@@ -150,6 +150,9 @@ class RadioGroup {
 
 $.fn.extend({
   lyj_radiogroup: function(options: IRadioGroupOptions) {
+    let defaluts: IRadioGroupOptions = {
+      disabled: false
+    }
     var implementOptions = $.extend(true, {}, defaluts, options)
     this.each((i: number, item: any) => {
       var el = $(item)
@@ -159,7 +162,3 @@ $.fn.extend({
     return this
   }
 })
-
-let defaluts: IRadioGroupOptions = {
-  disabled: false
-}

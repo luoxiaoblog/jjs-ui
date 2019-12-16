@@ -47,7 +47,7 @@ import bus from '../bus'
 export default {
   data() {
     return {
-      isCollapse: true,
+      isCollapse: false,
       routeArr: []
     }
   },

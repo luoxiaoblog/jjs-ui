@@ -16,7 +16,7 @@ var Step = (function () {
             .text(this.title)
             .next()
             .text(this.description);
-        if (this.icon === undefined) {
+        if (this.icon === '') {
             obj.find('.lyj-step__icon').addClass('is-text');
         }
         else {
@@ -115,7 +115,7 @@ var Steps = (function () {
                     .removeClass('is-' + _this.processStatus)
                     .addClass('is-wait');
             }
-            if (step.icon === undefined) {
+            if (step.icon === '') {
                 statusObj.find('.lyj-step__icon-inner').text(i + 1);
             }
             if (i == _this.stepList.length - 1 && !_this.alignCenter) {

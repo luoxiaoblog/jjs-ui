@@ -124,6 +124,9 @@ var RadioGroup = (function () {
 }());
 $.fn.extend({
     lyj_radiogroup: function (options) {
+        var defaluts = {
+            disabled: false
+        };
         var implementOptions = $.extend(true, {}, defaluts, options);
         this.each(function (i, item) {
             var el = $(item);
@@ -134,7 +137,4 @@ $.fn.extend({
         return this;
     }
 });
-var defaluts = {
-    disabled: false
-};
 //# sourceMappingURL=radio.js.map

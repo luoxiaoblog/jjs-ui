@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "npm run build:packages && vue-cli-service serve",
+    "build": "npm run build:packages && vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:packages": "node build/build-packages.js"
   },
