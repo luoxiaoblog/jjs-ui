@@ -17,7 +17,8 @@
           <template v-if="routeArr.length - 1 == i">
             {{ item.title }}
           </template>
-          <a v-else :href="item.path">{{ item.title }}</a>
+          <!-- <a v-else :href="item.path">{{ item.title }}</a> -->
+          <router-link v-else :to="item.path">{{ item.title }}</router-link>
         </el-breadcrumb-item>
       </el-breadcrumb>
     </div>
@@ -104,7 +105,7 @@ export default {
     },
     resetIsCollapse(to, from) {
       if (from.path.indexOf('component') === -1) {
-        this.isCollapse = true
+        this.isCollapse = false
       }
     }
   }

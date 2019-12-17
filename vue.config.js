@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/components/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/jjs-ui-prod/' : '/',
   configureWebpack: {
     module: {
       rules: [
