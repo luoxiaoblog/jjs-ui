@@ -23,7 +23,7 @@
       </el-breadcrumb>
     </div>
     <div class="header-right">
-      <nav class="nav">
+      <nav class="nav" style="margin-right: 20px;">
         <ul class="nav-list">
           <li class="nav-list__item">
             <router-link to="/component">组件</router-link>
@@ -31,14 +31,14 @@
           <li class="nav-list__item">
             <router-link to="/template">模板</router-link>
           </li>
-          <li class="nav-list__item">
+          <!-- <li class="nav-list__item">
             <router-link to="/share">分享</router-link>
-          </li>
+          </li> -->
         </ul>
       </nav>
-      <div class="site-search" v-if="!isHome">
+      <!-- <div class="site-search" v-if="!isHome">
         <el-input placeholder="搜索"></el-input>
-      </div>
+      </div> -->
     </div>
   </header>
 </template>

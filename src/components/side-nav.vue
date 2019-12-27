@@ -5,8 +5,14 @@
       @open="handleOpen"
       @close="handleClose"
       :collapse="isCollapse"
+      unique-opened
     >
-      <el-submenu v-for="(item, i) in data" :key="i" :index="item.name">
+      <el-submenu
+        v-for="(item, i) in data"
+        :key="i"
+        :index="item.name"
+        :data-title="item.name"
+      >
         <template slot="title">
           <i :class="item.icon" class="menu-icon"></i>
           <span>{{ item.name }}</span>
@@ -59,17 +65,30 @@ export default {
   },
   methods: {
     handleOpen(key, keyPath) {
-      console.log(key, keyPath)
+      setTimeout(() => {
+        document.querySelector(
+          `[data-title='${key}'] .el-menu.el-menu--inline`
+        ).style.maxHeight =
+          document.documentElement.clientHeight - 64 - 224 + 'px'
+      }, 0)
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath)
     }
   },
   created() {
+    window.onresize = function() {
+      let o = document.querySelector('.is-opened .el-menu.el-menu--inline')
+      if (o) {
+        o.style.maxHeight =
+          document.documentElement.clientHeight - 64 - 224 + 'px'
+      }
+    }
     bus.$on('ON_COLLAPSE_CHANGE', val => {
       this.isCollapse = val
     })
-  }
+  },
+  mounted() {}
 }
 </script>
 <style lang="scss" scoped>
@@ -80,7 +99,6 @@ export default {
   left: 0;
   z-index: 9;
   max-height: 100%;
-  overflow-y: auto;
   padding: 0;
   // max-width: 260px;
   background-color: #fff;
@@ -108,15 +126,21 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-.el-submenu .el-menu-item a.active {
-  color: #409eff;
-}
 </style>
 
 <style>
+ul.el-menu.el-menu--inline {
+  overflow-y: auto;
+  max-height: 500px;
+}
+
 ul.el-menu.el-menu--popup.el-menu--popup-right-start {
   max-height: 600px;
   overflow: auto;
+}
+
+.el-submenu .el-menu-item a.active {
+  color: #409eff;
+  background-color: #ecf5ff;
 }
 </style>
