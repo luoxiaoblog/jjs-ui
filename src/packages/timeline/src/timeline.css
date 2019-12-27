@@ -97,3 +97,9 @@
 .lyj-timeline-item__timestamp.is-bottom {
   margin-top: 8px;
 }
+
+#timeline .lyj-icon-fire {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}

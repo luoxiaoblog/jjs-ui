@@ -113,8 +113,8 @@
   transform: translate(-50%, -100%);
 }
 
-.el-message-fade-enter,
-.el-message-fade-leave-active {
+.lyj-message-fade-enter,
+.lyj-message-fade-leave-active {
   opacity: 0;
   transform: translate(-50%, -100%);
 }

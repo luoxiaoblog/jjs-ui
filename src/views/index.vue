@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
 .banner {
   text-align: center;
-  background-image: linear-gradient(#1976d2, #8f93bf);
+  background-color: #1976d2;
 }
 .banner-desc {
   padding-top: 20px;

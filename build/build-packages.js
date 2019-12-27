@@ -1,8 +1,8 @@
 console.log('build packages')
 
-var fs = require('fs')
+let fs = require('fs')
 
-var files = [
+let jsFiles = [
   'badge/src/badge.js',
   'checkbox/src/checkbox.js',
   'message/src/message.js',
@@ -11,7 +11,17 @@ var files = [
   'timeline/src/timeline.js'
 ]
 
-var outputJs = 'public/plugins.new.js'
+let cssFiles = [
+  'badge/src/badge.css',
+  'checkbox/src/checkbox.css',
+  'message/src/message.css',
+  'radiogroup/src/radio.css',
+  'steps/src/steps.css',
+  'timeline/src/timeline.css'
+]
+
+let outputJs = 'public/plugins.new.js'
+let outputCss = 'public/plugins.new.css'
 
 fs.open(outputJs, 'w', (err, fd) => {
   if (err) {
@@ -23,12 +33,32 @@ fs.open(outputJs, 'w', (err, fd) => {
   }
 })
 
-files.forEach(item => {
+fs.open(outputCss, 'w', (err, fd) => {
+  if (err) {
+    console.error(err)
+  } else {
+    fs.writeFile(outputCss, '', () => {
+      fs.close(fd, () => {})
+    })
+  }
+})
+
+jsFiles.forEach(item => {
   fs.readFile('src/packages/' + item, (err, data) => {
     if (err) {
       console.error(err)
     } else {
       fs.appendFile(outputJs, data.toString() + '\n', () => {})
+    }
+  })
+})
+
+cssFiles.forEach(item => {
+  fs.readFile('src/packages/' + item, (err, data) => {
+    if (err) {
+      console.error(err)
+    } else {
+      fs.appendFile(outputCss, data.toString() + '\n', () => {})
     }
   })
 })
