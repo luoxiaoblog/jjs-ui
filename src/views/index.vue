@@ -202,6 +202,11 @@
     }
   }
 }
+.inline-block {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
 </style>
 <template>
   <div>
@@ -213,10 +218,25 @@
         <el-autocomplete
           prefix-icon="el-icon-search"
           class="inline-input"
-          placeholder="请输入内容"
+          placeholder="搜索"
+          v-model="searchKey"
           :trigger-on-focus="false"
+          clearable
+          :fetch-suggestions="querySearchAsync"
           @select="handleSelect"
-        ></el-autocomplete>
+        >
+          <template slot-scope="{ item }">
+            <div>
+              <router-link
+                active-class="active"
+                :to="item.path"
+                exact
+                class="inline-block"
+                >{{ item.value }}
+              </router-link>
+            </div>
+          </template>
+        </el-autocomplete>
       </div>
     </div>
 
@@ -270,12 +290,33 @@
   </div>
 </template>
 <script>
+import navsData from '../nav.config'
+
 export default {
   data() {
-    return {}
+    return {
+      searchKey: ''
+    }
   },
   methods: {
-    handleSelect() {}
+    handleSelect() {},
+    querySearchAsync(queryString, cb) {
+      let options = []
+      navsData.forEach(parent => {
+        parent.children.forEach(child => {
+          if (
+            child.name.toLowerCase().indexOf(queryString.toLowerCase()) != -1
+          ) {
+            child.fullpath = '/component' + parent.path + child.path
+            options.push({
+              path: '/component' + parent.path + child.path,
+              value: child.name
+            })
+          }
+        })
+      })
+      cb(options)
+    }
   },
   mounted() {}
 }

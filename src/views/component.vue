@@ -27,7 +27,7 @@ export default {
     }
   },
   data() {
-    return { navsData, isCollapse: true }
+    return { navsData, isCollapse: false }
   },
   created() {
     bus.$on('ON_COLLAPSE_CHANGE', val => {
@@ -52,7 +52,6 @@ export default {
   height: 100%;
 
   &.page-container {
-    width: 1180px;
     padding: 0 0 100px;
 
     p {

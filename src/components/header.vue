@@ -36,20 +36,39 @@
           </li> -->
         </ul>
       </nav>
-      <!-- <div class="site-search" v-if="!isHome">
-        <el-input placeholder="搜索"></el-input>
-      </div> -->
+      <div class="site-search" v-if="!isHome">
+        <el-autocomplete
+          prefix-icon="el-icon-search"
+          class="inline-input"
+          placeholder="搜索"
+          v-model="searchKey"
+          :trigger-on-focus="false"
+          :fetch-suggestions="querySearchAsync"
+          @select="handleSelect"
+          clearable
+        >
+          <template slot-scope="{ item }">
+            <div>
+              <router-link active-class="active" :to="item.path" exact
+                >{{ item.value }}
+              </router-link>
+            </div>
+          </template>
+        </el-autocomplete>
+      </div>
     </div>
   </header>
 </template>
 <script>
 import bus from '../bus'
+import navsData from '../nav.config'
 
 export default {
   data() {
     return {
       isCollapse: false,
-      routeArr: []
+      routeArr: [],
+      searchKey: ''
     }
   },
   watch: {
@@ -107,6 +126,23 @@ export default {
       if (from.path.indexOf('component') === -1) {
         this.isCollapse = false
       }
+    },
+    querySearchAsync(queryString, cb) {
+      let options = []
+      navsData.forEach(parent => {
+        parent.children.forEach(child => {
+          if (
+            child.name.toLowerCase().indexOf(queryString.toLowerCase()) != -1
+          ) {
+            child.fullpath = '/component' + parent.path + child.path
+            options.push({
+              path: '/component' + parent.path + child.path,
+              value: child.name
+            })
+          }
+        })
+      })
+      cb(options)
     }
   }
 }

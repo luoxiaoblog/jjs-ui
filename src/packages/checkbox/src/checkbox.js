@@ -32,9 +32,9 @@ var Checkbox = (function () {
         var self = this;
         this.element
             .find('.lyj-checkbox__original')
-            .on('change', function (i, item) {
-            self.checked = $(item).prop('checked');
-            self.element.trigger('lyj-checkbox-change', item);
+            .on('change', function (event) {
+            self.checked = $(event.target).prop('checked');
+            self.element.trigger('lyj-checkbox-change');
         });
     };
     Checkbox.prototype.refleshCptCheckStatus = function () {
@@ -94,7 +94,7 @@ var CheckboxGroup = (function () {
     }
     CheckboxGroup.prototype.initEvent = function () {
         var _this = this;
-        this.element.on('lyj-checkbox-change', function (event, checkbox) {
+        this.element.on('lyj-checkbox-change', function (event) {
             var value = [];
             _this.checkboxGroup.forEach(function (checkbox) {
                 if (checkbox.checked) {

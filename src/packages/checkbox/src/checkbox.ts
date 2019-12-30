@@ -71,9 +71,9 @@ class Checkbox {
     let self = this
     this.element
       .find('.lyj-checkbox__original')
-      .on('change', (i: number, item: any) => {
-        self.checked = $(item).prop('checked')
-        self.element.trigger('lyj-checkbox-change', item)
+      .on('change', (event: Event) => {
+        self.checked = $(event.target).prop('checked')
+        self.element.trigger('lyj-checkbox-change')
       })
   }
 
@@ -140,19 +140,16 @@ class CheckboxGroup {
   }
 
   initEvent() {
-    this.element.on(
-      'lyj-checkbox-change',
-      (event: Event, checkbox: Checkbox) => {
-        let value: string[] = []
-        this.checkboxGroup.forEach((checkbox: Checkbox) => {
-          if (checkbox.checked) {
-            value.push(checkbox.value)
-          }
-        })
-        this.value = value
-        this.changeHandler(this.value)
-      }
-    )
+    this.element.on('lyj-checkbox-change', (event: Event) => {
+      let value: string[] = []
+      this.checkboxGroup.forEach((checkbox: Checkbox) => {
+        if (checkbox.checked) {
+          value.push(checkbox.value)
+        }
+      })
+      this.value = value
+      this.changeHandler(this.value)
+    })
   }
 
   createElement(element: any): any {

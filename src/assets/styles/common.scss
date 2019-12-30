@@ -197,6 +197,12 @@ textarea {
 }
 
 .lyj-doc {
-  max-width: 1180px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+  .lyj-doc {
+    max-width: 800px;
+  }
 }

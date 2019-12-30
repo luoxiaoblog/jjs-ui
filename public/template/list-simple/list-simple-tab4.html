@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <title>简单列表页</title>
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/bootstrap-reset.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/topicsv2.css">
+    <link rel="stylesheet" type="text/css" href="https://front.leyoujia.com/css/common.css">
+    <link rel="stylesheet" href="./style/plugins.new.css">
+    <style>
+      .lyj-badge__content.is-fixed {
+        transform: translateY(-50%) translateX(80%);
+      }
+
+      .quick-label {
+        font-size: 12px;
+        line-height: 22px;
+        color: #4c4d50;
+        padding: 0 8px;
+        cursor: pointer;
+        border-radius: 2px;
+        border: 1px solid #e3e3e3;
+      }
+
+      .quick-label:hover {
+        background-color: #eceeef;
+      }
+
+      .quick-label.curr {
+        color: #0275d8;
+        border: 1px solid #0275d8;
+      }
+
+      #quickLabelWrapper {
+        margin-top: 2px;
+      }
+    </style>
+  </link>
+  <body>
+    <div id="main-content" class="line-28">
+      <div class="panel panel-border" style="margin:10px 0;">
+        <div class="panel-body" style="min-height: 300px;">
+          <div class="clearfix sub-nav">
+            <a href="index.html">标签页A</a>
+            <a href="list-simple-tab2.html">标签页B</a>
+            <a id="badgeDot" href="list-simple-tab3.html"><span>标签页C</span></a>
+            <a class="curr" id="badgeNew" href="javascript:;"><span>当前页D</span></a>
+            <span class="fr">
+              <button type="button" class="fl mr5 btn btn-primary">按钮</button>
+              <button type="button" class="fl btn btn-primary">按钮</button>
+            </span>         
+          </div>
+          <div style="min-height: 300px;">
+            <h2  style="line-height: 300px;" class="text-center">页面D</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+                        
+    
+
+    <script src="https://front.leyoujia.com/js/jquery.js"></script>
+    <script src="https://front.leyoujia.com/js/bootstrap.min.js"></script>
+    <script src="https://front.leyoujia.com/plugins/datepicker/WdatePicker.js"></script>
+    <script src="./js/plugins.new.js"></script>
+    <script>
+      $(function () {
+        $('#badgeNew').lyj_badge({ value: 'new' })
+        $('#badgeDot').lyj_badge({ isDot: true })
+      })
+    </script>
+  </body>
+</html>
+</html>
