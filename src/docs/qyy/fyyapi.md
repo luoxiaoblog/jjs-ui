@@ -31,6 +31,9 @@
 | [goToFindCJ](#gotofindcj)                       | 查成交                   |
 | [goToZhiNengXiaoLe](#gotozhinengxiaole)         | 智能小乐                 |
 | [goToHouseCardsPage](#gotohousecardspage)       | 跳转到房卡落地页         |
+| [goToInvitePage](#gotoinvitepage)               | 跳转到邀请好友页         |
+| [webReload](#webreload)                         | 刷新当前页面             |
+| [saveAndGetVarForMini](#saveandgetvarformini)   | 临时保存值，获取值       |
 
 ```javascript
 // 全局变量
@@ -763,3 +766,81 @@ function goToHouseCardsPage() {
 
 goToHouseCardsPage()
 ```
+
+### goToInvitePage
+
+跳转到邀请好友页
+
+```javascript
+/**
+ * 跳转到邀请好友页
+ */
+function goToInvitePage() {
+  try {
+    if (/iphone|ipad|ipod/.test(ua)) {
+      window.webkit.messageHandlers.goToInvitePage.postMessage({})
+    } else if (/android/.test(ua)) {
+      window.injs.goToInvitePage('')
+    }
+  } catch (e) {}
+}
+
+goToInvitePage()
+```
+
+### webReload
+
+刷新当前页面
+
+```javascript
+/**
+ * 刷新当前页面
+ * params： 1:刷新  0：不刷新
+ */
+function webReload(params) {
+  try {
+      if (/iphone|ipad|ipod/.test(ua)) {
+          window.webkit.messageHandlers.webReload.postMessage({
+              'webReload': params
+          });
+      } else if (/android/.test(ua)) {
+          window.injs.webReload(params);
+      }
+  } catch (e) {
+
+  }
+}
+
+webReload()
+```
+
+### saveAndGetVarForMini
+
+临时保存值，获取值
+
+```javascript
+/**
+ * 临时保存值，获取值
+ * actionType: 'save'//存  'get'//取
+ * value 值，为get时不用传
+ */
+function saveAndGetVarForMini(value) {
+  var params = {
+      'actionType': 'save',
+      'value': value + ''
+  }
+  try {
+      if (/iphone|ipad|ipod/.test(ua)) {
+          window.webkit.messageHandlers.saveAndGetVarForMini.postMessage(params);
+      } else if (/android/.test(ua)) {
+          window.injs.saveAndGetVarForMini(JSON.stringify(params));
+      }
+  } catch (e) {
+
+  }
+}
+
+saveAndGetVarForMini()
+```
+
+
