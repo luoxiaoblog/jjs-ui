@@ -67,200 +67,153 @@ $.fn.extend({
     }
 });
 //# sourceMappingURL=badge.js.map
-var Checkbox = (function () {
-    function Checkbox(options) {
-        this.name = options.name;
-        this.label = options.label;
-        this.value = options.value;
-        this._disabled = !!options.disabled;
-        this.template =
-            options.template ||
-                "\n    <label class=\"lyj-checkbox\">\n      <span class=\"lyj-checkbox__input\">\n        <span class=\"lyj-checkbox__inner\"></span>\n        <input type=\"checkbox\" class=\"lyj-checkbox__original\" value=\"\u590D\u9009\u6846 B\">\n      </span><span class=\"lyj-checkbox__label\">\u590D\u9009\u6846 B</span>\n    </label>\n    ";
-        this.checked = !!options.checked;
-        this.element = this.createElement();
-        this.bindEvent();
-    }
-    Checkbox.prototype.createElement = function () {
-        var checkbox = $(this.template);
-        if (this.disabled) {
-            checkbox
-                .find('.lyj-checkbox__input')
-                .addBack()
-                .addClass('is-disabled');
-            checkbox.find('.lyj-checkbox__original').attr('disabled', 'disabled');
-        }
-        checkbox
-            .find('.lyj-checkbox__original')
-            .val(this.value)
-            .prop('checked', this.checked)
-            .attr('name', this.name);
-        checkbox.find('.lyj-checkbox__label').text(this.label);
-        return checkbox;
-    };
-    Checkbox.prototype.bindEvent = function () {
-        var self = this;
-        this.element
-            .find('.lyj-checkbox__original')
-            .on('change', function (i, item) {
-            self.checked = $(item).prop('checked');
-            self.element.trigger('lyj-checkbox-change', item);
-        });
-    };
-    Checkbox.prototype.refleshCptCheckStatus = function () {
-        this.element
-            .find('.lyj-checkbox__input')
-            .addBack()
-            .toggleClass('is-checked', this.checked);
-        this.element.find('.lyj-checkbox__original').prop('checked', this.checked);
-    };
-    Checkbox.prototype.refleshCptDisableStatus = function () {
-        var $inputOriginal = this.element.find('.lyj-checkbox__original');
-        this.element
-            .find('.lyj-checkbox__input')
-            .addBack()
-            .toggleClass('is-disabled', this.disabled);
-        if (this.disabled) {
-            $inputOriginal.attr('disabled', 'disabled');
-        }
-        else {
-            $inputOriginal.removeAttr('disabled');
-        }
-    };
-    Object.defineProperty(Checkbox.prototype, "disabled", {
-        get: function () {
-            return this._disabled;
-        },
-        set: function (val) {
-            this._disabled = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return Checkbox;
-}());
-var CheckboxGroup = (function () {
-    function CheckboxGroup(element, options) {
-        var _this = this;
-        this._value = [];
-        this._disabled = false;
-        this.checkboxGroup = [];
-        this.name = options.name;
-        this.checkboxGroup = options.checkboxGroup.map(function (checkboxOptions) {
-            if (options.value !== undefined) {
-                checkboxOptions.checked =
-                    options.value.indexOf(checkboxOptions.value) != -1;
+$.extend({
+    lyj_message: (function () {
+        var LYJ_Message = (function () {
+            function LYJ_Message(options) {
+                this.template = '<div class="lyj-message lyj-message-fade-enter" style="top: 20px; z-index: 2177;">' +
+                    '<i class="lyj-message__icon iconfont"></i>' +
+                    '<p class="lyj-message__content">这是一条消息提示</p>' +
+                    '</div>';
+                this.type = options.type;
+                this.msg = options.msg;
+                this.duration = options.duration;
+                this.showClose = options.showClose;
+                this.element = this.createMessageAlert();
+                this.bindEvent();
+                this.setOffsetTop();
+                this.show();
+                LYJ_Message.messageInstances.push(this);
             }
-            checkboxOptions.name = _this.name;
-            return new Checkbox(checkboxOptions);
-        });
-        this.changeHandler = options.changeHandler || (function () { });
-        this.element = this.createElement(element);
-        this.disabled = !!options.disabled;
-        this.value = options.value || [];
-        this.min = options.min;
-        this.max = options.max;
-        this.initEvent();
-    }
-    CheckboxGroup.prototype.initEvent = function () {
-        var _this = this;
-        this.element.on('lyj-checkbox-change', function (event, checkbox) {
-            var value = [];
-            _this.checkboxGroup.forEach(function (checkbox) {
-                if (checkbox.checked) {
-                    value.push(checkbox.value);
+            LYJ_Message.prototype.createMessageAlert = function () {
+                var alert = $(this.template);
+                alert
+                    .addClass('lyj-message--' + this.type)
+                    .find('.lyj-message__icon')
+                    .addClass('lyj-icon-' + this.type)
+                    .next()
+                    .html(this.msg);
+                if (this.showClose) {
+                    alert
+                        .addClass('is-closable')
+                        .append('<i class="lyj-message__closeBtn iconfont lyj-icon-close"></i>');
                 }
-            });
-            _this.value = value;
-            _this.changeHandler(_this.value);
-        });
-    };
-    CheckboxGroup.prototype.createElement = function (element) {
-        element.addClass('lyj-checkbox-group').empty();
-        this.checkboxGroup.forEach(function (checkbox) {
-            element.append(checkbox.element);
-        });
-        return element;
-    };
-    CheckboxGroup.prototype.refleshCptCheckStatus = function () {
-        var _this = this;
-        this.checkboxGroup.forEach(function (checkbox) {
-            checkbox.checked = _this.value.indexOf(checkbox.value) !== -1;
-            checkbox.refleshCptCheckStatus();
-        });
-    };
-    CheckboxGroup.prototype.refleshCptDisableStatus = function () {
-        var _this = this;
-        if (this.disabled === undefined)
-            return;
-        this.checkboxGroup.forEach(function (checkbox) {
-            checkbox.disabled = _this.disabled;
-            checkbox.refleshCptDisableStatus();
-        });
-    };
-    CheckboxGroup.prototype.getValue = function (includeDisabled) {
-        var _this = this;
-        if (includeDisabled === void 0) { includeDisabled = false; }
-        if (includeDisabled) {
-            return this._value;
-        }
-        if (this.disabled) {
-            return [];
-        }
-        var t = this._value.slice();
-        this.checkboxGroup.forEach(function (checkbox) {
-            var i = _this.value.indexOf(checkbox.value);
-            if (i !== -1 && checkbox.disabled) {
-                t.splice(i, 1);
+                return alert.appendTo(document.body);
+            };
+            LYJ_Message.prototype.setOffsetTop = function () {
+                var top = 20;
+                LYJ_Message.messageInstances.forEach(function (item) {
+                    top += item.element.outerHeight() + 16;
+                });
+                this.element.css('top', top);
+            };
+            LYJ_Message.prototype.bindEvent = function () {
+                var _this = this;
+                this.element
+                    .on('mouseenter', function () {
+                    _this.clearTimer();
+                })
+                    .on('mouseleave', function () {
+                    _this.startTimer();
+                })
+                    .on('click', '.lyj-message__closeBtn', function () {
+                    _this.clearTimer();
+                    _this.close();
+                });
+            };
+            LYJ_Message.prototype.clearTimer = function () {
+                clearTimeout(this.timer);
+            };
+            LYJ_Message.prototype.startTimer = function () {
+                var _this = this;
+                if (this.duration) {
+                    this.timer = window.setTimeout(function () {
+                        _this.close();
+                    }, this.duration);
+                }
+            };
+            LYJ_Message.prototype.show = function () {
+                var _this = this;
+                var t = 0;
+                var onCretedTransitionend = function () {
+                    if (++t == 1 && _this.duration !== 0) {
+                        _this.startTimer();
+                    }
+                    else {
+                        _this.element
+                            .get(0)
+                            .removeEventListener('transitionend', onCretedTransitionend);
+                    }
+                };
+                setTimeout(function () {
+                    _this.element.removeClass('lyj-message-fade-enter');
+                    _this.element
+                        .get(0)
+                        .addEventListener('transitionend', onCretedTransitionend);
+                }, 0);
+            };
+            LYJ_Message.prototype.close = function () {
+                var _this = this;
+                this.element.get(0).addEventListener('transitionend', function () {
+                    $(_this.element).remove();
+                }, 0);
+                this.element.addClass('lyj-message-fade-leave-active');
+                var n = LYJ_Message.messageInstances.length;
+                var top = 20;
+                for (var i = 0; i < LYJ_Message.messageInstances.length; i++) {
+                    var item = LYJ_Message.messageInstances[i];
+                    if (i >= n) {
+                        item.element.css('top', top);
+                    }
+                    if (this === item) {
+                        n = i;
+                        LYJ_Message.messageInstances.splice(i--, 1);
+                    }
+                    else {
+                        top += item.element.outerHeight() + 16;
+                    }
+                }
+            };
+            LYJ_Message.messageInstances = [];
+            return LYJ_Message;
+        }());
+        return {
+            message: function (options) {
+                var defaultSetting = {
+                    duration: 3000,
+                    showClose: false
+                };
+                var settings = $.extend(true, {}, defaultSetting, options);
+                new LYJ_Message(settings);
+            },
+            success: function (msg) {
+                this.message({
+                    type: 'success',
+                    msg: msg
+                });
+            },
+            warning: function (msg) {
+                this.message(this.message({
+                    type: 'warning',
+                    msg: msg
+                }));
+            },
+            info: function (msg) {
+                this.message({
+                    type: 'info',
+                    msg: msg
+                });
+            },
+            error: function (msg) {
+                this.message({
+                    type: 'error',
+                    msg: msg
+                });
             }
-        });
-        return t;
-    };
-    Object.defineProperty(CheckboxGroup.prototype, "value", {
-        get: function () {
-            return this._value;
-        },
-        set: function (val) {
-            this._value = val;
-            this.refleshCptCheckStatus();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(CheckboxGroup.prototype, "disabled", {
-        get: function () {
-            return this._disabled;
-        },
-        set: function (val) {
-            this._disabled = val;
-            this.refleshCptDisableStatus();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return CheckboxGroup;
-}());
-$.fn.extend({
-    lyj_checkboxGroup: function (options) {
-        var _this = this;
-        var defaluts = {
-            name: '',
-            min: 0,
-            max: options.checkboxGroup.length,
-            value: [],
-            checkboxGroup: [],
-            changeHandler: function () { }
         };
-        var implementOptions = $.extend(true, {}, defaluts, options);
-        this.each(function () {
-            var el = $(_this);
-            if (el.data('checkboxGroup'))
-                el.data('checkboxGroup').remove();
-            el.data('checkboxGroup', new CheckboxGroup(el, implementOptions));
-        });
-        return this;
-    }
+    })()
 });
-//# sourceMappingURL=checkbox.js.map
+//# sourceMappingURL=message.js.map
 var Radio = (function () {
     function Radio(name, label, value, radioTemplate) {
         this.name = name;

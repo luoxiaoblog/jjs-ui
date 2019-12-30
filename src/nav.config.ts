@@ -182,6 +182,13 @@ export default [
         meta: {
           title: '文字提示'
         }
+      },
+      {
+        name: '公司、人员、部门自动补全',
+        path: '/autoComplugins',
+        meta: {
+          title: '公司、人员、部门自动补全'
+        }
       }
 
       // {
