@@ -34,6 +34,13 @@
           <!-- <li class="nav-list__item">
             <router-link to="/share">分享</router-link>
           </li> -->
+          <li class="nav-list__item">
+            <a
+              href="https://docs.qq.com/sheet/DYmdsTFBNTWFxdGl6?tab=jx8k82&c=V13B0A0"
+              target="_blank"
+              >前端排期</a
+            >
+          </li>
         </ul>
       </nav>
       <div class="site-search" v-if="!isHome">
